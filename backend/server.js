@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+import compression from 'compression';
 import connectDB from './config/database.js';
 import pharmacyRoutes from './routes/pharmacies.js';
 import authRoutes from './routes/authRoutes.js';
@@ -20,6 +21,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Security Headers Middleware
+app.use(compression());
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {

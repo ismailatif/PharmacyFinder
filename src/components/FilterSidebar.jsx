@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import {
   X,
   Filter,
@@ -14,6 +14,18 @@ import { useLanguage } from "../context/LanguageContext";
 
 const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
   const { t, isRTL } = useLanguage();
+
+  // Prevent body scroll when sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const statusOptions = [
     { key: "all", label: t.filterAll },
@@ -104,12 +116,11 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
 
       {/* Sidebar Panel */}
       <div
-        className={`fixed top-0 ${
-          isRTL ? "right-0" : "left-0"
-        } h-full w-full sm:w-96 bg-white dark:bg-gray-800 shadow-2xl z-50 transform transition-transform duration-300 flex flex-col`}
+        className={`fixed top-0 ${isRTL ? "right-0" : "left-0"
+          } h-[100dvh] w-full sm:w-96 bg-white dark:bg-gray-800 shadow-2xl z-50 transform transition-transform duration-300 flex flex-col`}
       >
         {/* Sticky Header */}
-        <div className="sticky top-0 bg-gradient-to-b from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 border-b border-emerald-100 dark:border-gray-700 px-6 py-4 sm:py-5 z-10">
+        <div className="sticky top-0 bg-gradient-to-b from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900 border-b border-emerald-100 dark:border-gray-700 px-6 py-4 sm:py-5 z-10 shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
@@ -138,22 +149,20 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+        <div className="flex-1 overflow-y-auto min-h-0 overscroll-contain px-6 py-6 space-y-6">
           {/* Status Filter */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">{` ${
-              isRTL ? "الحالة" : "Status"
-            }`}</h3>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">{` ${isRTL ? "الحالة" : "Status"
+              }`}</h3>
             <div className="grid grid-cols-2 gap-2">
               {statusOptions.map((option) => (
                 <button
                   key={option.key}
                   onClick={() => handleStatusChange(option.key)}
-                  className={`px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 ${
-                    filters.status === option.key
-                      ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/30"
-                      : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
-                  }`}
+                  className={`px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 ${filters.status === option.key
+                    ? "bg-emerald-500 text-white shadow-md shadow-emerald-500/30"
+                    : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
+                    }`}
                 >
                   {option.label}
                 </button>
@@ -171,18 +180,16 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
                 <button
                   key={option.key}
                   onClick={() => handlePriceRangeChange(option.key)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                    filters.priceRange.includes(option.key)
-                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
-                      : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
-                  }`}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${filters.priceRange.includes(option.key)
+                    ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                    : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
+                    }`}
                 >
                   <div
-                    className={`h-5 w-5 rounded border-2 flex items-center justify-center transition-all ${
-                      filters.priceRange.includes(option.key)
-                        ? "border-emerald-500 bg-emerald-500"
-                        : "border-gray-300 dark:border-gray-600"
-                    }`}
+                    className={`h-5 w-5 rounded border-2 flex items-center justify-center transition-all ${filters.priceRange.includes(option.key)
+                      ? "border-emerald-500 bg-emerald-500"
+                      : "border-gray-300 dark:border-gray-600"
+                      }`}
                   >
                     {filters.priceRange.includes(option.key) && (
                       <span className="text-white text-xs font-bold">✓</span>
@@ -208,29 +215,26 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
                   <button
                     key={option.key}
                     onClick={() => handleFeatureChange(option.key)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                      filters.features.includes(option.key)
-                        ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
-                        : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
-                    }`}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${filters.features.includes(option.key)
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                      : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
+                      }`}
                   >
                     <div
-                      className={`h-5 w-5 rounded border-2 flex items-center justify-center transition-all ${
-                        filters.features.includes(option.key)
-                          ? "border-emerald-500 bg-emerald-500"
-                          : "border-gray-300 dark:border-gray-600"
-                      }`}
+                      className={`h-5 w-5 rounded border-2 flex items-center justify-center transition-all ${filters.features.includes(option.key)
+                        ? "border-emerald-500 bg-emerald-500"
+                        : "border-gray-300 dark:border-gray-600"
+                        }`}
                     >
                       {filters.features.includes(option.key) && (
                         <span className="text-white text-xs font-bold">✓</span>
                       )}
                     </div>
                     <Icon
-                      className={`h-4 w-4 ${
-                        filters.features.includes(option.key)
-                          ? "text-emerald-600 dark:text-emerald-400"
-                          : "text-gray-400 dark:text-gray-500"
-                      }`}
+                      className={`h-4 w-4 ${filters.features.includes(option.key)
+                        ? "text-emerald-600 dark:text-emerald-400"
+                        : "text-gray-400 dark:text-gray-500"
+                        }`}
                     />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                       {option.label}
@@ -249,11 +253,10 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
             <div className="space-y-2">
               <button
                 onClick={() => handleRatingChange(0)}
-                className={`w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 text-sm font-medium ${
-                  filters.rating === 0
-                    ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400"
-                    : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600"
-                }`}
+                className={`w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 text-sm font-medium ${filters.rating === 0
+                  ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400"
+                  : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600"
+                  }`}
               >
                 {t.all || "All Ratings"}
               </button>
@@ -261,21 +264,19 @@ const FilterSidebar = ({ isOpen, onClose, filters, onFiltersChange }) => {
                 <button
                   key={rating}
                   onClick={() => handleRatingChange(rating)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                    filters.rating === rating
-                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
-                      : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
-                  }`}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg border-2 transition-all duration-200 ${filters.rating === rating
+                    ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/20"
+                    : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600"
+                    }`}
                 >
                   <div className="flex gap-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-4 w-4 ${
-                          i < rating
-                            ? "text-yellow-400 fill-current"
-                            : "text-gray-300 dark:text-gray-600"
-                        }`}
+                        className={`h-4 w-4 ${i < rating
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300 dark:text-gray-600"
+                          }`}
                       />
                     ))}
                   </div>

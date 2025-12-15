@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Scanner from '../components/Scanner';
+// Lazy load Scanner
+const Scanner = React.lazy(() => import('../components/Scanner'));
 import MedicationDetails from '../components/MedicationDetails';
 import { medicationApi } from '../utils/api';
 import { toast } from 'react-hot-toast';
@@ -75,8 +76,15 @@ const ScannerPage = () => {
                         >
                             {!showManualInput ? (
                                 <>
-                                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-800">
-                                        <Scanner onScan={handleScan} />
+                                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-100 dark:border-gray-800 min-h-[300px] flex items-center justify-center bg-black">
+                                        <React.Suspense fallback={
+                                            <div className="flex flex-col items-center justify-center text-white">
+                                                <div className="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mb-2"></div>
+                                                <p>Initializing Camera...</p>
+                                            </div>
+                                        }>
+                                            <Scanner onScan={handleScan} />
+                                        </React.Suspense>
                                     </div>
 
                                     <div className="flex justify-center">

@@ -58,8 +58,14 @@ export const getAllPharmacies = async (req, res, next) => {
         }
 
         // Execute query with pagination
-        const parsedLimit = parseInt(limit) || 20;
-        const parsedOffset = parseInt(offset) || 0;
+        let parsedLimit = parseInt(limit) || 20;
+        let parsedOffset = parseInt(offset) || 0;
+
+        // Constraint limit to prevent performance issues
+        // Increased max limit to allow fetching all pharmacies for map view
+        if (parsedLimit > 5000) parsedLimit = 5000;
+        if (parsedLimit < 1) parsedLimit = 20;
+        if (parsedOffset < 0) parsedOffset = 0;
 
         const pharmacies = await Pharmacy
             .find(query)
@@ -126,12 +132,18 @@ export const getNearbyPharmacies = async (req, res, next) => {
 
         const latitude = parseFloat(lat);
         const longitude = parseFloat(lng);
-        const searchRadius = parseFloat(radius) || 10; // Default 10km
-        const maxResults = parseInt(limit) || 50;
+        let searchRadius = parseFloat(radius) || 10; // Default 10km
+        let maxResults = parseInt(limit) || 50;
 
-        if (isNaN(latitude) || isNaN(longitude)) {
-            throw new AppError('Invalid coordinates', 400);
+        // Validate coordinates range
+        if (isNaN(latitude) || latitude < -90 || latitude > 90 ||
+            isNaN(longitude) || longitude < -180 || longitude > 180) {
+            throw new AppError('Invalid coordinates. Latitude must be between -90 and 90, Longitude between -180 and 180.', 400);
         }
+
+        // Validate radius and limit
+        if (searchRadius <= 0 || searchRadius > 500) searchRadius = 10;
+        if (maxResults <= 0 || maxResults > 100) maxResults = 50;
 
         // Use geospatial query with $near
         const pharmacies = await Pharmacy.aggregate([

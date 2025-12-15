@@ -1,9 +1,25 @@
+/**
+ * Calculate route between two points using OSRM
+ * @param {Object} start - Start coordinates {lat, lng}
+ * @param {Object} end - End coordinates {lat, lng}
+ * @param {number} timeout - Timeout in milliseconds
+ * @returns {Promise<Object>} Route object
+ */
 export const getRoute = async (start, end, timeout = 5000) => {
+    // Validate inputs
+    if (!start || !end || typeof start.lat !== 'number' || typeof start.lng !== 'number' || typeof end.lat !== 'number' || typeof end.lng !== 'number') {
+        throw new Error('Invalid coordinates provided for routing');
+    }
+
     const startCoord = `${start.lng},${start.lat}`;
     const endCoord = `${end.lng},${end.lat}`;
 
-    // Using local OSRM instance (Port 5001 to avoid conflict with backend)
-    const url = `http://localhost:5001/route/v1/driving/${startCoord};${endCoord}?overview=full&geometries=geojson`;
+    // Use environment variable or default to local OSRM
+    const baseUrl = process.env.OSRM_URL || 'http://localhost:5001/route/v1/driving';
+    // Remove trailing slash if present to avoid double slashes
+    const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
+
+    const url = `${cleanBaseUrl}/${startCoord};${endCoord}?overview=full&geometries=geojson`;
 
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), timeout);

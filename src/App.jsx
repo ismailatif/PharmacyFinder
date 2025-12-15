@@ -4,100 +4,114 @@ import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import SearchAndFilter from './components/SearchAndFilter';
 import FilterSidebar from './components/FilterSidebar';
+import ProtectedRoute from './components/ProtectedRoute';
+import PublicRoute from './components/PublicRoute';
 
 import PharmacyDetails from './components/PharmacyDetails';
 
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import LandingPage from './pages/LandingPage';
-import SearchPage from './pages/SearchPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import ScannerPage from './pages/ScannerPage';
-import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import ResetPasswordPage from './pages/ResetPasswordPage';
-import ProfilePage from './pages/ProfilePage';
-import NotFoundPage from './pages/NotFoundPage';
-import UnauthorizedPage from './pages/UnauthorizedPage';
-import ProtectedRoute from './components/ProtectedRoute';
-import PublicRoute from './components/PublicRoute';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
 import { AnimatePresence } from 'framer-motion';
+
+// Lazy load pages for code splitting
+const LandingPage = React.lazy(() => import('./pages/LandingPage'));
+const SearchPage = React.lazy(() => import('./pages/SearchPage'));
+const LoginPage = React.lazy(() => import('./pages/LoginPage'));
+const RegisterPage = React.lazy(() => import('./pages/RegisterPage'));
+const ScannerPage = React.lazy(() => import('./pages/ScannerPage'));
+const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPasswordPage'));
+const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
+const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
+const UnauthorizedPage = React.lazy(() => import('./pages/UnauthorizedPage'));
+
+// Loading Fallback Component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="relative w-16 h-16">
+      <div className="absolute top-0 left-0 w-full h-full border-4 border-emerald-200 dark:border-emerald-900 rounded-full"></div>
+      <div className="absolute top-0 left-0 w-full h-full border-4 border-emerald-500 rounded-full border-t-transparent animate-spin"></div>
+    </div>
+  </div>
+);
 
 function AnimatedRoutes() {
   const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LandingPage />} />
+      <React.Suspense fallback={<LoadingFallback />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LandingPage />} />
 
-        <Route
-          path="/login"
-          element={
-            <PublicRoute>
-              <LoginPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute>
-              <RegisterPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/forgot-password"
-          element={
-            <PublicRoute>
-              <ForgotPasswordPage />
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/resetpassword/:resettoken"
-          element={
-            <PublicRoute>
-              <ResetPasswordPage />
-            </PublicRoute>
-          }
-        />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/forgot-password"
+            element={
+              <PublicRoute>
+                <ForgotPasswordPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/resetpassword/:resettoken"
+            element={
+              <PublicRoute>
+                <ResetPasswordPage />
+              </PublicRoute>
+            }
+          />
 
-        <Route path="/unauthorized" element={<UnauthorizedPage />} />
+          <Route path="/unauthorized" element={<UnauthorizedPage />} />
 
-        {/* Protected Routes */}
-        <Route
-          path="/search"
-          element={
-            <ProtectedRoute>
-              <SearchPage />
-            </ProtectedRoute>
-          }
-        />
+          {/* Protected Routes */}
+          <Route
+            path="/search"
+            element={
+              <ProtectedRoute>
+                <SearchPage />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/scanner"
-          element={
-            <ProtectedRoute>
-              <ScannerPage />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/scanner"
+            element={
+              <ProtectedRoute>
+                <ScannerPage />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
 
-        {/* 404 Catch-all route - must be last */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          {/* 404 Catch-all route - must be last */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </React.Suspense>
     </AnimatePresence>
   );
 }

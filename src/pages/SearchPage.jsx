@@ -5,7 +5,8 @@ import SearchAndFilter from '../components/SearchAndFilter';
 import FilterSidebar from '../components/FilterSidebar';
 import PharmacyList from '../components/PharmacyList';
 import PharmacyDetails from '../components/PharmacyDetails';
-import PharmacyMap from '../components/PharmacyMap';
+// Lazy load PharmacyMap
+const PharmacyMap = React.lazy(() => import('../components/PharmacyMap'));
 import PharmacyListSkeleton from '../components/PharmacyListSkeleton';
 import MapSkeleton from '../components/MapSkeleton';
 import { Map as MapIcon, List, Navigation, Loader, MapPin } from 'lucide-react';
@@ -34,7 +35,7 @@ const SearchPage = () => {
   const [viewMode, setViewMode] = useState('list'); // 'list' or 'map'
   const [userLocation, setUserLocation] = useState(null);
   const [isLocating, setIsLocating] = useState(false);
-  
+
   // API state
   const [pharmacies, setPharmacies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -142,14 +143,14 @@ const SearchPage = () => {
 
     // Apply price range filter
     if (advancedFilters.priceRange.length > 0) {
-      filtered = filtered.filter((pharmacy) => 
+      filtered = filtered.filter((pharmacy) =>
         advancedFilters.priceRange.includes(pharmacy.priceRange)
       );
     }
 
     // Apply features filter
     if (advancedFilters.features.length > 0) {
-      filtered = filtered.filter((pharmacy) => 
+      filtered = filtered.filter((pharmacy) =>
         advancedFilters.features.every(feature => {
           switch (feature) {
             case 'hasParking': return pharmacy.hasParking;
@@ -228,7 +229,7 @@ const SearchPage = () => {
   const handleNearMe = () => {
     setIsLocating(true);
     const loadingToast = toast.loading('Locating you...');
-    
+
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -247,7 +248,7 @@ const SearchPage = () => {
                 </div>
               </div>
               <span className="font-medium">Location found!</span>
-            </div>, 
+            </div>,
             { id: loadingToast }
           );
         },
@@ -303,7 +304,7 @@ const SearchPage = () => {
     <PageWrapper>
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
         <Header />
-        
+
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <SearchAndFilter
             searchQuery={searchQuery}
@@ -321,11 +322,10 @@ const SearchPage = () => {
             <button
               onClick={handleNearMe}
               disabled={isLocating}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                userLocation
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${userLocation
                   ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'
                   : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-emerald-100 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               <Navigation className={`w-4 h-4 ${isLocating ? 'animate-spin' : ''}`} />
               {isLocating ? 'Locating...' : userLocation ? 'Near Me Active' : 'Near Me'}
@@ -334,37 +334,35 @@ const SearchPage = () => {
             <div className="bg-white dark:bg-gray-800 p-1 rounded-xl shadow-sm border border-emerald-100 dark:border-gray-700 inline-flex">
               <button
                 onClick={() => setViewMode('list')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  viewMode === 'list'
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${viewMode === 'list'
                     ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 <List className="w-4 h-4" />
                 List
               </button>
               <button
                 onClick={() => setViewMode('map')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  viewMode === 'map'
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${viewMode === 'map'
                     ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 <MapIcon className="w-4 h-4" />
                 Map
               </button>
             </div>
           </div>
-          
+
           {viewMode === 'list' ? (
             <>
               {loading ? (
                 <PharmacyListSkeleton count={6} />
               ) : (
                 <>
-                  <PharmacyList 
-                    pharmacies={currentPharmacies} 
+                  <PharmacyList
+                    pharmacies={currentPharmacies}
                     onViewDetails={handleViewDetails}
                   />
                   <Pagination
@@ -380,23 +378,25 @@ const SearchPage = () => {
               {loading ? (
                 <MapSkeleton />
               ) : (
-                <PharmacyMap 
-                  pharmacies={filteredPharmacies}
-                  onViewDetails={handleViewDetails}
-                  selectedLocation={userLocation ? { coordinates: userLocation } : null}
-                />
+                <React.Suspense fallback={<MapSkeleton />}>
+                  <PharmacyMap
+                    pharmacies={filteredPharmacies}
+                    onViewDetails={handleViewDetails}
+                    selectedLocation={userLocation ? { coordinates: userLocation } : null}
+                  />
+                </React.Suspense>
               )}
             </div>
           )}
         </main>
-        
+
         <FilterSidebar
           isOpen={isFilterSidebarOpen}
           onClose={() => setIsFilterSidebarOpen(false)}
           filters={advancedFilters}
           onFiltersChange={setAdvancedFilters}
         />
-        
+
         <footer className="bg-white dark:bg-gray-800 border-t border-emerald-200 dark:border-gray-700 mt-16 transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">

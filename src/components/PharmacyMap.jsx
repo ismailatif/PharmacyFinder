@@ -1,14 +1,19 @@
-import React, { useEffect, useMemo, useState, useRef } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap, Polyline } from 'react-leaflet';
+import React, { useMemo, useState, useRef } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { divIcon, point } from 'leaflet';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MapPin, Phone, Navigation2, Maximize, Minimize } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import 'leaflet/dist/leaflet.css';
-import 'leaflet-polylinedecorator';
-
 import L from 'leaflet';
+
+// Import extracted map components
+import MapUpdater from './map/MapUpdater';
+import RoutingControl from './map/RoutingControl';
+import ClusterTooltipHandler from './map/ClusterTooltipHandler';
+import ZoomToPharmacy from './map/ZoomToPharmacy';
+import MapRefHandler from './map/MapRefHandler';
 
 // Fix for default Leaflet marker shadow
 delete L.Icon.Default.prototype._getIconUrl;
@@ -17,244 +22,6 @@ L.Icon.Default.mergeOptions({
   iconUrl: null,
   shadowUrl: null,
 });
-
-// Google Maps–like route colors
-const ROUTE_COLOR_DARK = '#1858E0';
-const ROUTE_COLOR_LIGHT = '#71A6FF';
-
-// Component to update map view bounds when pharmacies change
-const MapUpdater = ({ pharmacies, selectedLocation }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (selectedLocation && selectedLocation.coordinates) {
-      // When user location is available, fly to it with smooth animation
-      map.flyTo([selectedLocation.coordinates.lat, selectedLocation.coordinates.lng], 13, {
-        duration: 1.5,
-        easeLinearity: 0.25,
-      });
-    } else if (pharmacies.length > 0) {
-      // Otherwise, fit all pharmacies
-      const validPharmacies = pharmacies.filter(
-        p =>
-          p.coordinates &&
-          typeof p.coordinates.lat === 'number' &&
-          typeof p.coordinates.lng === 'number'
-      );
-      if (validPharmacies.length > 0) {
-        const bounds = L.latLngBounds(
-          validPharmacies.map(p => [p.coordinates.lat, p.coordinates.lng])
-        );
-        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
-      }
-    }
-  }, [selectedLocation, pharmacies, map]);
-
-  return null;
-};
-
-// Google-style arrow decorator along the route
-const PolylineDecorator = ({ positions }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (!map || !positions || positions.length < 2) return;
-
-    const polyline = L.polyline(positions);
-
-    const decorator = L.polylineDecorator(polyline, {
-      patterns: [
-        {
-          offset: '6%',   // start a bit after the beginning
-          repeat: '10%',   // small frequent arrows, Google-like
-          symbol: L.Symbol.arrowHead({
-            pixelSize: 4.5,   // small arrows
-            headAngle: 45,
-            pathOptions: {
-              color: '#a5c1ffab', //  arrows for better contrast
-              weight: 2,
-              opacity: 1,
-              fillOpacity: 1,
-            },
-          }),
-        },
-      ],
-    }).addTo(map);
-
-    decorator.bringToFront();
-
-    return () => {
-      map.removeLayer(decorator);
-    };
-  }, [map, positions]);
-
-  return null;
-};
-
-// Add toast import
-import { toast } from 'react-hot-toast';
-
-const RoutingControl = ({ start, end, endId, onRouteFound }) => {
-  const [positions, setPositions] = useState([]);
-  const { isRTL } = useLanguage();
-
-  useEffect(() => {
-    if (!start || !end || !endId) return;
-
-    const fetchRoute = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:5000/api/pharmacies/route?startLat=${start.lat}&startLng=${start.lng}&pharmacyId=${endId}`
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.success && data.data && data.data.geometry) {
-          // OSRM GeoJSON is [lng, lat], Leaflet needs [lat, lng]
-          const coords = data.data.geometry.coordinates.map(coord => [coord[1], coord[0]]);
-          setPositions(coords);
-
-          if (onRouteFound) {
-            onRouteFound({
-              distance: (data.data.distance / 1000).toFixed(2),
-              time: Math.round(data.data.duration / 60),
-            });
-          }
-        } else {
-          // Handle API declared failure
-          throw new Error(data.message || 'Route calculation failed');
-        }
-      } catch (error) {
-        console.error('Error fetching route:', error);
-        toast.error(
-          isRTL
-            ? 'تعذر حساب المسار. يرجى المحاولة لاحقًا.'
-            : "Impossible de calculer l'itinéraire. Veuillez réessayer plus tard.",
-          {
-            id: 'route-error',
-            duration: 4000
-          }
-        );
-      }
-    };
-
-    fetchRoute();
-  }, [start, end, endId, onRouteFound, isRTL]);
-
-  if (positions.length === 0) return null;
-
-  return (
-    <>
-      {/* Outer light blue stroke */}
-      <Polyline
-        positions={positions}
-        pathOptions={{
-          color: ROUTE_COLOR_LIGHT,
-          weight: 9,
-          opacity: 0.8,
-          lineCap: 'round',
-          lineJoin: 'round',
-        }}
-      />
-      {/* Inner dark blue stroke */}
-      <Polyline
-        positions={positions}
-        pathOptions={{
-          color: ROUTE_COLOR_DARK,
-          weight: 5,
-          opacity: 1,
-          lineCap: 'round',
-          lineJoin: 'round',
-        }}
-      />
-      {/* Small repeated arrows */}
-      <PolylineDecorator positions={positions} />
-    </>
-  );
-};
-
-// Component to handle cluster tooltips on hover
-const ClusterTooltipHandler = () => {
-  const map = useMap();
-
-  useEffect(() => {
-    const handleClusterHover = e => {
-      const target = e.target;
-      // Safety checks
-      if (target && target.classList && target.classList.contains('cluster-marker')) {
-        const tooltipHtml = target.getAttribute('data-tooltip');
-        if (tooltipHtml && !target._tooltip) {
-          const tooltip = L.tooltip({
-            permanent: false,
-            direction: 'top',
-            className: 'cluster-info-tooltip',
-            offset: [0, -10],
-          })
-            .setLatLng(e.latlng)
-            .setContent(tooltipHtml)
-            .addTo(map);
-
-          target._tooltip = tooltip;
-
-          target.addEventListener(
-            'mouseout',
-            () => {
-              if (target._tooltip) {
-                map.removeLayer(target._tooltip);
-                target._tooltip = null;
-              }
-            },
-            { once: true }
-          );
-        }
-      }
-    };
-
-    map.on('mouseover', handleClusterHover);
-
-    return () => {
-      map.off('mouseover', handleClusterHover);
-    };
-  }, [map]);
-
-  return null;
-};
-
-// Component to zoom to selected pharmacy
-const ZoomToPharmacy = ({ selectedPharmacyId, pharmacies }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (selectedPharmacyId && pharmacies.length > 0) {
-      const pharmacy = pharmacies.find(p => p.id === selectedPharmacyId);
-      if (pharmacy && pharmacy.coordinates) {
-        map.flyTo([pharmacy.coordinates.lat, pharmacy.coordinates.lng], 16, {
-          duration: 1.5,
-          easeLinearity: 0.25,
-        });
-      }
-    }
-  }, [selectedPharmacyId, pharmacies, map]);
-
-  return null;
-};
-
-// Component to capture map reference
-const MapRefHandler = ({ mapRef }) => {
-  const map = useMap();
-
-  useEffect(() => {
-    if (mapRef) {
-      mapRef.current = map;
-    }
-  }, [map, mapRef]);
-
-  return null;
-};
 
 const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPharmacyId }) => {
   const { t, isRTL } = useLanguage();
@@ -440,95 +207,94 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
               pharmacy={pharmacy}
             >
               <Popup className={`custom-popup ${isRTL ? "rtl-popup" : "ltr-popup"}`}>
-  <div
-    className={`p-2 min-w-[220px] ${isRTL ? "rtl" : "ltr"}`}
-    dir={isRTL ? "rtl" : "ltr"}
-  >
-    {/* Header */}
-    <div className="flex items-start justify-between gap-2 mb-2">
-      <h3 className="font-bold text-gray-900 dark:text-white text-sm">
-        {isRTL ? pharmacy.nameAr : pharmacy.name}
-      </h3>
+                <div
+                  className={`p-2 min-w-[220px] ${isRTL ? "rtl" : "ltr"}`}
+                  dir={isRTL ? "rtl" : "ltr"}
+                >
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h3 className="font-bold text-gray-900 dark:text-white text-sm">
+                      {isRTL ? pharmacy.nameAr : pharmacy.name}
+                    </h3>
 
-      {pharmacy.isOnDuty && (
-        <span className="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-xs font-medium whitespace-nowrap">
-          {isRTL ? "مناوبة" : "Garde"}
-        </span>
-      )}
-    </div>
+                    {pharmacy.isOnDuty && (
+                      <span className="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-xs font-medium whitespace-nowrap">
+                        {isRTL ? "مناوبة" : "Garde"}
+                      </span>
+                    )}
+                  </div>
 
-    <div className="space-y-2 mb-3">
-      {/* Address */}
-      <div className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-xs">
-        <MapPin className="w-3 h-3 mt-[2px] shrink-0" />
-        <span className="break-words">
-          {isRTL ? pharmacy.addressAr : pharmacy.address}
-        </span>
-      </div>
+                  <div className="space-y-2 mb-3">
+                    {/* Address */}
+                    <div className="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-xs">
+                      <MapPin className="w-3 h-3 mt-[2px] shrink-0" />
+                      <span className="break-words">
+                        {isRTL ? pharmacy.addressAr : pharmacy.address}
+                      </span>
+                    </div>
 
-      {/* Phone: keep number LTR only */}
-      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-xs">
-        <Phone className="w-3 h-3 shrink-0" />
-        <span dir="ltr" className="unicode-bidi-plaintext">
-          {pharmacy.phone}
-        </span>
-      </div>
+                    {/* Phone: keep number LTR only */}
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-xs">
+                      <Phone className="w-3 h-3 shrink-0" />
+                      <span dir="ltr" className="unicode-bidi-plaintext">
+                        {pharmacy.phone}
+                      </span>
+                    </div>
 
-      {/* Hours */}
-      <div className="pt-2 mt-2 border-t border-gray-200 dark:border-gray-600">
-        <div className="flex items-center justify-between gap-2 text-xs">
-          <span className="font-semibold text-gray-700 dark:text-gray-200">
-            {isRTL ? "ساعات العمل:" : "Horaires:"}
-          </span>
+                    {/* Hours */}
+                    <div className="pt-2 mt-2 border-t border-gray-200 dark:border-gray-600">
+                      <div className="flex items-center justify-between gap-2 text-xs">
+                        <span className="font-semibold text-gray-700 dark:text-gray-200">
+                          {isRTL ? "ساعات العمل:" : "Horaires:"}
+                        </span>
 
-          <span
-            className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-              pharmacy.isOpen
-                ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300"
-                : "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300"
-            }`}
-          >
-            {pharmacy.isOpen ? (isRTL ? "مفتوحة" : "Ouvert") : (isRTL ? "مغلقة" : "Fermé")}
-          </span>
-        </div>
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-xs font-medium ${pharmacy.isOpen
+                              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300"
+                              : "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300"
+                            }`}
+                        >
+                          {pharmacy.isOpen ? (isRTL ? "مفتوحة" : "Ouvert") : (isRTL ? "مغلقة" : "Fermé")}
+                        </span>
+                      </div>
 
-        <div className="mt-1 text-xs text-gray-600 dark:text-gray-300">
-          {pharmacy.isOpen ? (
-            <span className="unicode-bidi-plaintext">{isRTL ? "مفتوح حتى 22:00" : "Ouvert jusqu'à 22:00"}</span>
-          ) : (
-            <span className="unicode-bidi-plaintext">{isRTL ? "يفتح في 08:00" : "Ouvre à 08:00"}</span>
-          )}
-        </div>
-      </div>
-    </div>
+                      <div className="mt-1 text-xs text-gray-600 dark:text-gray-300">
+                        {pharmacy.isOpen ? (
+                          <span className="unicode-bidi-plaintext">{isRTL ? "مفتوح حتى 22:00" : "Ouvert jusqu'à 22:00"}</span>
+                        ) : (
+                          <span className="unicode-bidi-plaintext">{isRTL ? "يفتح في 08:00" : "Ouvre à 08:00"}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
 
-    <button
-      onClick={() => onViewDetails(pharmacy)}
-      className="w-full py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center mb-2"
-    >
-      {isRTL ? "عرض التفاصيل" : "Voir détails"}
-    </button>
+                  <button
+                    onClick={() => onViewDetails(pharmacy)}
+                    className="w-full py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center mb-2"
+                  >
+                    {isRTL ? "عرض التفاصيل" : "Voir détails"}
+                  </button>
 
-    {selectedLocation?.coordinates && (
-      <button
-        onClick={() => {
-          setSelectedPharmacyForRoute({
-            lat: pharmacy.coordinates.lat,
-            lng: pharmacy.coordinates.lng,
-            id: pharmacy.id,
-          });
-          setTimeout(() => {
-            mapRef.current?.closePopup();
-          }, 100);
-        }}
-        className="w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1"
-      >
-        <Navigation2 className="w-3 h-3" />
-        {isRTL ? "الحصول على الاتجاهات" : "Itinéraire"}
-      </button>
-    )}
-  </div>
-</Popup>
+                  {selectedLocation?.coordinates && (
+                    <button
+                      onClick={() => {
+                        setSelectedPharmacyForRoute({
+                          lat: pharmacy.coordinates.lat,
+                          lng: pharmacy.coordinates.lng,
+                          id: pharmacy.id,
+                        });
+                        setTimeout(() => {
+                          mapRef.current?.closePopup();
+                        }, 100);
+                      }}
+                      className="w-full py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-1"
+                    >
+                      <Navigation2 className="w-3 h-3" />
+                      {isRTL ? "الحصول على الاتجاهات" : "Itinéraire"}
+                    </button>
+                  )}
+                </div>
+              </Popup>
 
             </Marker>
           ))}
