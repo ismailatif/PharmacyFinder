@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .preserve-3d {
+        transform-style: preserve-3d;
+    }
+
+    .backface-hidden {
+        backface-visibility: hidden;
+    }
+
+    .rotate-y-180 {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes scan-laser {
+    0% {
+        top: 10%;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
+
+.animate-scan-laser {
+    animation: scan-laser 2s linear infinite;
+}
+
+@layer base {
+    body {
+        @apply antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* Telegram-like Dark Mode Transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+/* Case: To Dark (Light -> Dark) - New (Dark) grows on top */
+.theme-transition-to-dark::view-transition-new(root) {
+    z-index: 9999;
+}
+
+.theme-transition-to-dark::view-transition-old(root) {
+    z-index: 1;
+}
+
+/* Case: To Light (Dark -> Light) - Old (Dark) shrinks on top */
+.theme-transition-to-light::view-transition-old(root) {
+    z-index: 9999;
+}
+
+
+/* Leaflet Popup Dark Mode Overrides */
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+    @apply bg-gray-800 text-gray-100 border border-gray-700;
+}
+
+.dark .leaflet-popup-content {
+    @apply text-gray-100;
+}
+
+/* Ensure close button is visible in dark mode */
+.dark .leaflet-popup-close-button {
+    @apply text-gray-400 hover:text-gray-200;
+}
+
+/* Force RTL/LTR at Leaflet popup container level */
+.custom-popup.rtl-popup .leaflet-popup-content-wrapper,
+.custom-popup.rtl-popup .leaflet-popup-content {
+    direction: rtl;
+    text-align: right;
+}
+
+.custom-popup.ltr-popup .leaflet-popup-content-wrapper,
+.custom-popup.ltr-popup .leaflet-popup-content {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Prevent mixed-direction glitches for numbers inside RTL text */
+.unicode-bidi-plaintext {
+    unicode-bidi: plaintext;
+}
