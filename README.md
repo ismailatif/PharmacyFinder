@@ -17,6 +17,15 @@ A full-stack MERN application that helps users locate nearby pharmacies, check r
 
 ---
 
+## 📸 Screenshots
+
+| **Elegant Landing Page** | **Secure Authentication** |
+|:---:|:---:|
+| ![Landing Page](public/screenshots/home-light.png) | ![Login Page](public/screenshots/login-page.png) |
+| *Modern, responsive design with quick access to features* | *Secure login with social auth integration* |
+
+---
+
 ## 📋 Table of Contents
 
 - [Features](#-features)
