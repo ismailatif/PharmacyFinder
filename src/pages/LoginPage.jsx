@@ -30,7 +30,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       toast.error(language === 'fr' ? 'Veuillez remplir tous les champs' : 'يرجى ملء جميع الحقول');
       return;
@@ -39,8 +39,8 @@ const LoginPage = () => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        toast.error(language === 'fr' ? 'Veuillez fournir une adresse email valide' : 'يرجى تقديم عنوان بريد إلكتروني صالح');
-        return;
+      toast.error(language === 'fr' ? 'Veuillez fournir une adresse email valide' : 'يرجى تقديم عنوان بريد إلكتروني صالح');
+      return;
     }
 
     const result = await login(email, password);
@@ -61,14 +61,14 @@ const LoginPage = () => {
   `;
 
   return (
-    <AuthLayout 
-      title={t.welcomeBack} 
+    <AuthLayout
+      title={t.welcomeBack}
       subtitle={t.signInAccess}
     >
       <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="space-y-5">
           {/* Email Input */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -94,7 +94,7 @@ const LoginPage = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
@@ -135,9 +135,9 @@ const LoginPage = () => {
 
         {/* Submit Button */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
         >
           <button
             type="submit"
@@ -146,9 +146,9 @@ const LoginPage = () => {
           >
             <span className={`absolute ${isRTL ? 'right-0 pr-4' : 'left-0 pl-4'} inset-y-0 flex items-center`}>
               {loading ? (
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
               ) : (
-                  <ArrowRight className={`h-5 w-5 text-emerald-100 group-hover:text-white transition-colors ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
+                <ArrowRight className={`h-5 w-5 text-emerald-100 group-hover:text-white transition-colors ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
               )}
             </span>
             {loading ? t.signingIn : t.signInButton}
@@ -156,11 +156,11 @@ const LoginPage = () => {
         </motion.div>
 
         {/* Divider */}
-        <motion.div 
-            className="relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
         >
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200 dark:border-gray-700/50"></div>
@@ -173,36 +173,36 @@ const LoginPage = () => {
         </motion.div>
 
         {/* Google Login */}
-        <motion.div 
-            className="flex justify-center"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
         >
-            <div className="w-full flex justify-center" dir="ltr">
-                 <GoogleLogin
-                    onSuccess={handleGoogleSuccess}
-                    onError={() => toast.error('Google Login Failed')}
-                    theme={theme === 'dark' ? 'filled_black' : 'outline'}
-                    shape="pill"
-                    text="continue_with"
-                    size="large"
-                    locale={language}
-                />
-            </div>
+          <div className="w-full flex justify-center" dir="ltr">
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => toast.error('Google Login Failed')}
+              theme={theme === 'dark' ? 'filled_black' : 'outline'}
+              shape="pill"
+              text="continue_with"
+              size="large"
+              locale={language}
+            />
+          </div>
         </motion.div>
 
       </form>
 
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="text-center mt-8 text-sm text-gray-600 dark:text-gray-400"
+        className="text-center mt-2 text-sm text-gray-600 dark:text-gray-400"
       >
         {t.noAccount}{' '}
         <Link to="/register" className="font-bold text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 transition-colors border-b-2 border-transparent hover:border-emerald-500 ml-1">
-            {t.createAccount}
+          {t.createAccount}
         </Link>
       </motion.p>
     </AuthLayout>
