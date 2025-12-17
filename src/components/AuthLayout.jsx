@@ -105,6 +105,8 @@ const AuthLayout = ({ children, title, subtitle, backLink = '/' }) => {
             src="/auth-hero.jpg"
             alt="Pharmacy"
             className="w-full h-full object-cover opacity-60"
+            fetchpriority="high"
+            loading="eager"
           />
         </motion.div>
 

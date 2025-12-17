@@ -1,13 +1,39 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import api, { authApi } from '../utils/api';
 import { toast } from 'react-hot-toast';
+import { useLanguage } from './LanguageContext';
+import { useTheme } from './ThemeContext';
 
 const AuthContext = createContext();
+
+
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const { setLanguage } = useLanguage();
+  const { setTheme } = useTheme();
+
+  const syncPreferences = (userData) => {
+    if (userData?.preferences) {
+      if (userData.preferences.language) {
+        setLanguage(userData.preferences.language);
+      }
+      if (userData.preferences.theme && userData.preferences.theme !== 'system') {
+        const theme = userData.preferences.theme;
+        setTheme(theme);
+        // Clean up view transition classes properly if needed, but context handles simple switching
+        const root = window.document.documentElement;
+        if (theme === 'dark') {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+        }
+      }
+    }
+  };
 
   // Check if user is logged in on mount
   useEffect(() => {
@@ -15,9 +41,10 @@ export const AuthProvider = ({ children }) => {
       try {
         // Try to get current user
         const { data } = await authApi.getMe();
-        
+
         setUser(data.data);
         setIsAuthenticated(true);
+        syncPreferences(data.data);
       } catch (err) {
         setUser(null);
         setIsAuthenticated(false);
@@ -33,12 +60,13 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const { data } = await authApi.login(email, password);
-      
+
       setUser(data.user);
       setIsAuthenticated(true);
-      
+      syncPreferences(data.user);
+
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
-      
+
       toast.success(`Welcome back, ${data.user.name.split(' ')[0]}!`);
       return { success: true };
     } catch (err) {
@@ -54,12 +82,13 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const { data } = await authApi.register(name, email, password);
-      
+
       setUser(data.user);
       setIsAuthenticated(true);
-      
+      syncPreferences(data.user);
+
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
-      
+
       toast.success('Registration successful!');
       return { success: true };
     } catch (err) {
@@ -75,12 +104,13 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const { data } = await authApi.googleLogin(tokenId);
-      
+
       setUser(data.user);
       setIsAuthenticated(true);
-      
+      syncPreferences(data.user);
+
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
-      
+
       toast.success(`Welcome back, ${data.user.name.split(' ')[0]}!`);
       return { success: true };
     } catch (err) {

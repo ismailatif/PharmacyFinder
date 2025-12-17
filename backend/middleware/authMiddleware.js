@@ -22,7 +22,7 @@ export const protect = async (req, res, next) => {
         // Verify token
         const decoded = jwt.verify(token, process.env.JWT_ACCESS_SECRET || 'access_secret_123');
 
-        console.log('Decoded Token:', decoded); // Debugging
+
 
         req.user = await User.findById(decoded.id);
 

@@ -10,6 +10,7 @@ import authRoutes from './routes/authRoutes.js';
 import medicationRoutes from './routes/medications.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { requestLogger } from './middleware/logger.js';
+import { getCities } from './controllers/pharmacyController.js';
 
 // Load environment variables
 dotenv.config();
@@ -37,6 +38,7 @@ app.use(helmet({
         }
     },
     crossOriginEmbedderPolicy: false, // Allow embedding for Google OAuth
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" }, // Allow Google Auth popups
 }));
 
 import rateLimit from 'express-rate-limit';
@@ -44,7 +46,7 @@ import rateLimit from 'express-rate-limit';
 // Rate Limiting
 const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // Limit each IP to 100 requests per windowMs
+    max: 1000, // Limit each IP to 1000 requests per windowMs
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
     message: {
@@ -88,14 +90,7 @@ app.use('/api/pharmacies', pharmacyRoutes);
 app.use('/api/medications', medicationRoutes);
 
 // Cities route
-app.get('/api/cities', async (req, res, next) => {
-    try {
-        const { getCities } = await import('./controllers/pharmacyController.js');
-        getCities(req, res, next);
-    } catch (error) {
-        next(error);
-    }
-});
+app.get('/api/cities', getCities);
 
 // 404 handler
 app.use((req, res) => {

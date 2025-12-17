@@ -108,10 +108,7 @@ export const refreshToken = async (req, res) => {
     try {
         const refreshToken = req.cookies.refreshToken;
 
-        console.log('Refresh Token Request Cookies:', req.cookies); // Debug log
-
         if (!refreshToken) {
-            console.log('No refresh token found in cookies'); // Debug log
             return res.status(401).json({ success: false, message: 'Not authorized, no refresh token' });
         }
 
@@ -367,7 +364,8 @@ const sendTokenResponse = (user, statusCode, res) => {
                 id: user._id,
                 name: user.name,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                preferences: user.preferences
             }
         });
 };
