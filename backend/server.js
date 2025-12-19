@@ -10,6 +10,7 @@ import authRoutes from './routes/authRoutes.js';
 import medicationRoutes from './routes/medications.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { requestLogger } from './middleware/logger.js';
+import { sanitizeInput } from './middleware/sanitize.js';
 import { getCities } from './controllers/pharmacyController.js';
 
 // Load environment variables
@@ -58,6 +59,21 @@ const apiLimiter = rateLimit({
 // Apply rate limiting to all API routes
 app.use('/api', apiLimiter);
 
+// Stricter rate limiting for authentication endpoints
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 5, // 5 attempts per 15 minutes
+    skipSuccessfulRequests: true,
+    message: {
+        success: false,
+        message: 'Too many authentication attempts, please try again later.'
+    }
+});
+
+app.use('/api/auth/login', authLimiter);
+app.use('/api/auth/register', authLimiter);
+app.use('/api/auth/forgotpassword', authLimiter);
+
 // CORS Middleware
 app.use(cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
@@ -68,6 +84,10 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Input sanitization - prevent NoSQL injection and XSS
+app.use(sanitizeInput);
+
 app.use(requestLogger);
 
 // Routes

@@ -103,15 +103,34 @@ export const getPharmacyById = async (req, res, next) => {
     try {
         const { id } = req.params;
 
+        // Check cache first
+        const { pharmacyCache } = await import('../utils/cache.js');
+        const cacheKey = `pharmacy_${id}`;
+        const cachedPharmacy = pharmacyCache.get(cacheKey);
+
+        if (cachedPharmacy) {
+            return res.json({
+                success: true,
+                data: cachedPharmacy,
+                cached: true
+            });
+        }
+
         const pharmacy = await Pharmacy.findOne({ id }).lean();
 
         if (!pharmacy) {
             throw new AppError('Pharmacy not found', 404);
         }
 
+        const transformedPharmacy = transformPharmacyData(pharmacy);
+
+        // Cache the result
+        pharmacyCache.set(cacheKey, transformedPharmacy);
+
         res.json({
             success: true,
-            data: transformPharmacyData(pharmacy)
+            data: transformedPharmacy,
+            cached: false
         });
     } catch (error) {
         next(error);
@@ -197,6 +216,19 @@ export const getNearbyPharmacies = async (req, res, next) => {
  */
 export const getCities = async (req, res, next) => {
     try {
+        // Check cache first
+        const { citiesCache } = await import('../utils/cache.js');
+        const cacheKey = 'all_cities';
+        const cachedCities = citiesCache.get(cacheKey);
+
+        if (cachedCities) {
+            return res.json({
+                success: true,
+                data: cachedCities,
+                cached: true
+            });
+        }
+
         // Use aggregation to get cities with counts
         const cities = await Pharmacy.aggregate([
             {
@@ -221,9 +253,13 @@ export const getCities = async (req, res, next) => {
             }
         ]);
 
+        // Cache the result
+        citiesCache.set(cacheKey, cities);
+
         res.json({
             success: true,
-            data: cities
+            data: cities,
+            cached: false
         });
     } catch (error) {
         next(error);

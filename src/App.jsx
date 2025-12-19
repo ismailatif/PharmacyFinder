@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
 
 import PharmacyDetails from './components/PharmacyDetails';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
@@ -218,16 +219,18 @@ function ToasterWrapper() {
 
 function App() {
   return (
-    <LanguageProvider>
-      <ThemeProvider>
-        <AuthProvider>
-          <BrowserRouter>
-            <AnimatedRoutes />
-            <ToasterWrapper />
-          </BrowserRouter>
-        </AuthProvider>
-      </ThemeProvider>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <BrowserRouter>
+              <AnimatedRoutes />
+              <ToasterWrapper />
+            </BrowserRouter>
+          </AuthProvider>
+        </ThemeProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
 

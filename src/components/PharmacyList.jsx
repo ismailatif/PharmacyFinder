@@ -146,6 +146,8 @@ const PharmacyList = ({ pharmacies, onViewDetails, columns = 3 }) => {
                   src={pharmacy.images[0]}
                   alt={pharmacy.name}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400">
@@ -281,4 +283,4 @@ const PharmacyList = ({ pharmacies, onViewDetails, columns = 3 }) => {
   );
 };
 
-export default PharmacyList;
+export default React.memo(PharmacyList);

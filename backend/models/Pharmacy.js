@@ -122,6 +122,12 @@ pharmacySchema.index({ city: 1, isOpen: 1 });
 pharmacySchema.index({ city: 1, isOnDuty: 1 });
 pharmacySchema.index({ city: 1, rating: -1 });
 
+// Additional optimized compound indexes for filtered searches
+pharmacySchema.index({ city: 1, isOpen: 1, rating: -1 });
+pharmacySchema.index({ city: 1, isOnDuty: 1, rating: -1 });
+pharmacySchema.index({ isOpen: 1, rating: -1 });
+pharmacySchema.index({ isOnDuty: 1, rating: -1 });
+
 // Text index for search functionality
 pharmacySchema.index({
     name: 'text',
