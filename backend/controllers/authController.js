@@ -365,6 +365,8 @@ const sendTokenResponse = (user, statusCode, res) => {
                 name: user.name,
                 email: user.email,
                 role: user.role,
+                image: user.image,
+                savedPharmacies: user.savedPharmacies,
                 preferences: user.preferences
             }
         });

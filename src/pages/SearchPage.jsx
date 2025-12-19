@@ -4,13 +4,13 @@ import Header from '../components/Header';
 import SearchAndFilter from '../components/SearchAndFilter';
 import FilterSidebar from '../components/FilterSidebar';
 import PharmacyList from '../components/PharmacyList';
-import PharmacyDetails from '../components/PharmacyDetails';
 // Lazy load PharmacyMap
 const PharmacyMap = React.lazy(() => import('../components/PharmacyMap'));
 import PharmacyListSkeleton from '../components/PharmacyListSkeleton';
 import MapSkeleton from '../components/MapSkeleton';
 import { Map as MapIcon, List, Navigation, Loader, MapPin } from 'lucide-react';
 import { getPharmacies } from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 import PageWrapper from '../components/PageWrapper';
 
@@ -19,10 +19,10 @@ import Pagination from '../components/Pagination';
 const ITEMS_PER_PAGE = 10;
 
 const SearchPage = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [filter, setFilter] = useState('all');
   const [selectedCity, setSelectedCity] = useState('all');
-  const [selectedPharmacy, setSelectedPharmacy] = useState(null);
   const [isFilterSidebarOpen, setIsFilterSidebarOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [advancedFilters, setAdvancedFilters] = useState({
@@ -219,11 +219,7 @@ const SearchPage = () => {
   }, [advancedFilters]);
 
   const handleViewDetails = (pharmacy) => {
-    setSelectedPharmacy(pharmacy);
-  };
-
-  const handleBackToList = () => {
-    setSelectedPharmacy(null);
+    navigate(`/pharmacy/${pharmacy.id}`);
   };
 
   const handleNearMe = () => {
@@ -292,14 +288,6 @@ const SearchPage = () => {
     );
   }
 
-  if (selectedPharmacy) {
-    return (
-      <PageWrapper>
-        <PharmacyDetails pharmacy={selectedPharmacy} onBack={handleBackToList} />
-      </PageWrapper>
-    );
-  }
-
   return (
     <PageWrapper>
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
@@ -323,8 +311,8 @@ const SearchPage = () => {
               onClick={handleNearMe}
               disabled={isLocating}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${userLocation
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-emerald-100 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700'
+                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/30'
+                : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-emerald-100 dark:border-gray-700 hover:bg-emerald-50 dark:hover:bg-gray-700'
                 }`}
             >
               <Navigation className={`w-4 h-4 ${isLocating ? 'animate-spin' : ''}`} />
@@ -335,8 +323,8 @@ const SearchPage = () => {
               <button
                 onClick={() => setViewMode('list')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${viewMode === 'list'
-                    ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
-                    : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
               >
                 <List className="w-4 h-4" />
@@ -345,8 +333,8 @@ const SearchPage = () => {
               <button
                 onClick={() => setViewMode('map')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${viewMode === 'map'
-                    ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
-                    : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}
               >
                 <MapIcon className="w-4 h-4" />

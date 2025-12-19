@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  MapPin, 
-  Clock, 
-  Phone, 
-  Star, 
-  Navigation, 
-  ArrowRight, 
+import {
+  MapPin,
+  Clock,
+  Phone,
+  Star,
+  Navigation,
+  ArrowRight,
   ArrowLeft,
   Shield,
   CheckCircle,
@@ -19,7 +19,7 @@ import { useAuth } from '../context/AuthContext';
 import { authApi } from '../utils/api';
 import { toast } from 'react-hot-toast';
 
-const PharmacyList = ({ pharmacies, onViewDetails }) => {
+const PharmacyList = ({ pharmacies, onViewDetails, columns = 3 }) => {
   const { t, isRTL, language } = useLanguage();
   const { user, setUser, isAuthenticated } = useAuth();
   const [savingId, setSavingId] = useState(null);
@@ -39,14 +39,14 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
     try {
       setSavingId(pharmacy.id);
       const response = await authApi.toggleSavedPharmacy(pharmacy.id);
-      
+
       if (response.data.success) {
         // Update user context with new saved list
         setUser({
           ...user,
           savedPharmacies: response.data.savedPharmacies
         });
-        
+
         const isNowSaved = response.data.savedPharmacies.includes(pharmacy.id);
         toast.success(
           isNowSaved
@@ -79,7 +79,7 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
 
   if (!pharmacies || pharmacies.length === 0) {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         className="flex flex-col items-center justify-center py-16 px-4 text-center bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-300"
@@ -91,7 +91,7 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
           {isRTL ? 'لا توجد صيدليات' : 'No pharmacies found'}
         </h3>
         <p className="text-gray-500 dark:text-gray-400 max-w-md">
-          {isRTL 
+          {isRTL
             ? 'لم نتمكن من العثور على أي صيدليات تطابق معايير البحث الخاصة بك. حاول تعديل عوامل التصفية.'
             : 'We couldn\'t find any pharmacies matching your search criteria. Try adjusting your filters.'}
         </p>
@@ -122,19 +122,19 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       variants={container}
       initial="hidden"
       animate="show"
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      className={`grid grid-cols-1 ${columns === 3 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2'} gap-6`}
     >
       {pharmacies.map((pharmacy) => {
         const { label, className, icon: StatusIcon } = getStatusConfig(pharmacy);
         const isSaved = isPharmacySaved(pharmacy.id);
         const isSaving = savingId === pharmacy.id;
-        
+
         return (
-          <motion.div 
+          <motion.div
             key={pharmacy.id}
             variants={item}
             className="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-lg shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-gray-700 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-300 flex flex-col"
@@ -142,9 +142,9 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
             {/* Image Banner Section */}
             <div className="relative h-48 w-full bg-gray-100 dark:bg-gray-700">
               {pharmacy.images && pharmacy.images.length > 0 ? (
-                <img 
-                  src={pharmacy.images[0]} 
-                  alt={pharmacy.name} 
+                <img
+                  src={pharmacy.images[0]}
+                  alt={pharmacy.name}
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -152,32 +152,31 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
                   <MapPin className="w-12 h-12 opacity-20" />
                 </div>
               )}
-              
+
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent dark:from-gray-900/60" />
 
-              {/* Heart Button (Top Left) */}
+              {/* Heart Button - positioned based on direction */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={(e) => handleToggleSaved(e, pharmacy)}
                 disabled={isSaving}
-                className={`absolute top-4 left-4 p-2 rounded-full backdrop-blur-md transition-all ${
-                  isSaved 
-                    ? 'bg-red-500 text-white shadow-lg shadow-red-500/30' 
-                    : 'bg-white/30 text-white hover:bg-white hover:text-red-500'
-                }`}
+                className={`absolute top-4 ${isRTL ? 'right-4' : 'left-4'} p-2.5 rounded-full backdrop-blur-md transition-all ${isSaved
+                  ? 'bg-red-500 text-white shadow-lg shadow-red-500/30'
+                  : 'bg-white/30 text-white hover:bg-white hover:text-red-500'
+                  }`}
               >
                 <Heart className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
               </motion.button>
 
-              {/* Status Badge (Top Right) */}
-              <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-sm backdrop-blur-md ${className}`}>
-                 <StatusIcon className="w-3.5 h-3.5" />
-                 <span>{label}</span>
+              {/* Status Badge - positioned based on direction */}
+              <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-4'} px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-sm backdrop-blur-md ${className}`}>
+                <StatusIcon className="w-3.5 h-3.5" />
+                <span>{label}</span>
               </div>
 
-               {/* Rating Badge (Bottom Left) */}
+              {/* Rating Badge (Bottom Left) */}
               <div className="absolute bottom-4 left-4 flex items-center gap-1.5 px-2.5 py-1 bg-white/90 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 shadow-sm">
                 <Star className="w-3.5 h-3.5 text-yellow-500 fill-current" />
                 <span className="font-bold text-sm">{pharmacy.rating}</span>
@@ -198,17 +197,17 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
                   <span className="text-gray-600 dark:text-gray-300 font-medium">{pharmacy.city || 'Fès'}</span>
                 </div>
                 {pharmacy.distance && (
-                   <span className="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded text-xs font-medium border border-blue-100 dark:border-blue-800">
-                     {pharmacy.distance.toFixed(1)} km
-                   </span>
+                  <span className="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-0.5 rounded text-xs font-medium border border-blue-100 dark:border-blue-800">
+                    {pharmacy.distance.toFixed(1)} km
+                  </span>
                 )}
               </div>
 
-               {/* Hours */}
+              {/* Hours */}
               <div className="flex items-center gap-2 mb-5 text-sm text-gray-500 dark:text-gray-400 font-medium">
                 <Clock className="w-4 h-4 text-emerald-500" />
                 <span>
-                   {language === 'ar' ? pharmacy.openingHoursAr : pharmacy.openingHours}
+                  {language === 'ar' ? pharmacy.openingHoursAr : pharmacy.openingHours}
                 </span>
               </div>
 
@@ -219,57 +218,60 @@ const PharmacyList = ({ pharmacies, onViewDetails }) => {
                     {service}
                   </span>
                 ))}
-                 {(language === 'ar' ? pharmacy.servicesAr : pharmacy.services).length > 2 && (
-                   <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
-                    +{ (language === 'ar' ? pharmacy.servicesAr : pharmacy.services).length - 2}
-                   </span>
-                 )}
+                {(language === 'ar' ? pharmacy.servicesAr : pharmacy.services).length > 2 && (
+                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
+                    +{(language === 'ar' ? pharmacy.servicesAr : pharmacy.services).length - 2}
+                  </span>
+                )}
               </div>
 
-              {/* Footer Buttons */}
-              <div className="grid grid-cols-[1fr,1.5fr,auto] gap-2 mt-auto">
-                 {/* 1. Phone Button */}
-                 <motion.button 
-                   whileHover={{ scale: 1.02 }}
-                   whileTap={{ scale: 0.98 }}
-                   onClick={(e) => {
-                     e.stopPropagation();
-                     if (pharmacy.phone) window.location.href = `tel:${pharmacy.phone}`;
-                   }}
-                   disabled={!pharmacy.phone}
-                   className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl transition-all text-sm font-bold border ${
-                     pharmacy.phone
-                       ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-500/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:text-blue-800 dark:hover:text-blue-300 group/phone cursor-pointer'
-                       : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-70'
-                   }`}
-                 >
-                   <Phone className={`w-4 h-4 ${pharmacy.phone ? 'group-hover/phone:rotate-12 transition-transform' : ''}`} />
-                   <span className="hidden sm:inline">{t.call || 'Appeler'}</span>
-                 </motion.button>
-
-                 {/* 2. View Details Button */}
-                 <motion.button 
+              {/* Footer Buttons - Improved Layout */}
+              <div className="space-y-2 mt-auto">
+                {/* Primary Action: View Details */}
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => onViewDetails(pharmacy)}
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/30 hover:bg-emerald-100 dark:hover:bg-emerald-600 dark:hover:text-white transition-all text-sm font-bold group/btn"
-                 >
-                   <Eye className="w-4 h-4" />
-                   <span>{t.viewDetails}</span>
-                 </motion.button>
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 transition-all text-sm font-bold shadow-md shadow-emerald-500/20"
+                >
+                  <Eye className="w-4 h-4" />
+                  <span>{t.viewDetails}</span>
+                </motion.button>
 
-                 {/* 3. Navigation Button (Icon Only) */}
-                 <motion.button 
-                   whileHover={{ scale: 1.05 }}
-                   whileTap={{ scale: 0.95 }}
-                   onClick={(e) => {
-                     e.stopPropagation();
-                     window.open(`https://maps.google.com/?q=${pharmacy.coordinates.lat},${pharmacy.coordinates.lng}`, '_blank');
-                   }}
-                   className="w-10 flex items-center justify-center rounded-xl bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 hover:bg-emerald-500 hover:text-white transition-all border border-transparent dark:border-gray-600"
-                 >
-                   <Navigation className="w-4 h-4" />
-                 </motion.button>
+                {/* Secondary Actions: Call & Directions */}
+                <div className="grid grid-cols-2 gap-2">
+                  {/* Call Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (pharmacy.phone) window.location.href = `tel:${pharmacy.phone}`;
+                    }}
+                    disabled={!pharmacy.phone}
+                    className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl transition-all text-sm font-bold border ${pharmacy.phone
+                      ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-500/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 cursor-pointer'
+                      : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500 border-gray-200 dark:border-gray-700 cursor-not-allowed opacity-60'
+                      }`}
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span className="hidden sm:inline">{language === 'ar' ? 'اتصال' : 'Appeler'}</span>
+                  </motion.button>
+
+                  {/* Directions Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(`https://maps.google.com/?q=${pharmacy.coordinates.lat},${pharmacy.coordinates.lng}`, '_blank');
+                    }}
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 transition-all border border-gray-200 dark:border-gray-600 text-sm font-bold"
+                  >
+                    <Navigation className="w-4 h-4" />
+                    <span className="hidden sm:inline">{language === 'ar' ? 'اتجاهات' : 'Itinéraire'}</span>
+                  </motion.button>
+                </div>
               </div>
             </div>
           </motion.div>

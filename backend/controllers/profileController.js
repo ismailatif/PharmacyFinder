@@ -185,15 +185,38 @@ export const toggleSavedPharmacy = async (req, res) => {
 // @access  Private
 export const getSavedPharmacies = async (req, res) => {
     try {
-        const user = await User.findById(req.user.id).populate('savedPharmacies');
+        const user = await User.findById(req.user.id);
 
         if (!user) {
             return res.status(404).json({ success: false, message: 'User not found' });
         }
 
+        // Manually fetch pharmacies by their string IDs
+        const Pharmacy = (await import('../models/Pharmacy.js')).default;
+        const pharmacies = await Pharmacy.find({ id: { $in: user.savedPharmacies } }).lean();
+
+        // Transform pharmacy data to frontend format
+        const transformedPharmacies = pharmacies.map(pharmacy => {
+            const transformed = { ...pharmacy };
+
+            // Convert MongoDB GeoJSON format to frontend format
+            if (pharmacy.location && pharmacy.location.coordinates) {
+                transformed.coordinates = {
+                    lng: pharmacy.location.coordinates[0],
+                    lat: pharmacy.location.coordinates[1]
+                };
+            }
+
+            // Remove MongoDB internal fields
+            delete transformed.__v;
+            delete transformed._id;
+
+            return transformed;
+        });
+
         res.status(200).json({
             success: true,
-            savedPharmacies: user.savedPharmacies
+            savedPharmacies: transformedPharmacies
         });
     } catch (err) {
         res.status(500).json({ success: false, message: err.message });

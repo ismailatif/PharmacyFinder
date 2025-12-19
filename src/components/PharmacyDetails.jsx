@@ -20,7 +20,8 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  ZoomIn
+  ZoomIn,
+  Heart
 } from 'lucide-react';
 import {
   MapContainer,
@@ -35,6 +36,9 @@ import { createPortal } from 'react-dom';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { useLanguage } from '../context/LanguageContext';
 import 'leaflet/dist/leaflet.css';
+import { useAuth } from '../context/AuthContext';
+import { authApi } from '../utils/api';
+import { toast } from 'react-hot-toast';
 
 
 // Create custom pharmacy marker icon
@@ -58,6 +62,43 @@ const createPharmacyIcon = () => {
 
 const PharmacyDetails = ({ pharmacy, onBack }) => {
   const { language, t, isRTL } = useLanguage();
+  const { user, setUser, isAuthenticated } = useAuth();
+  const [isSaving, setIsSaving] = useState(false);
+
+  const isSaved = user?.savedPharmacies?.some(p =>
+    (typeof p === 'object' ? p._id === (pharmacy.id || pharmacy._id) : p === (pharmacy.id || pharmacy._id))
+  );
+
+  const handleToggleSaved = async () => {
+    if (!isAuthenticated) {
+      toast.error(language === 'fr' ? 'Veuillez vous connecter pour sauvegarder' : 'يرجى تسجيل الدخول للحفظ');
+      return;
+    }
+
+    try {
+      setIsSaving(true);
+      const id = pharmacy.id || pharmacy._id;
+      const response = await authApi.toggleSavedPharmacy(id);
+
+      if (response.data.success) {
+        setUser({
+          ...user,
+          savedPharmacies: response.data.savedPharmacies
+        });
+
+        const isNowSaved = response.data.savedPharmacies.includes(id);
+        toast.success(
+          isNowSaved
+            ? (language === 'fr' ? 'Pharmacie sauvegardée' : 'تم حفظ الصيدلية')
+            : (language === 'fr' ? 'Pharmacie retirée' : 'تم إزالة الصيدلية')
+        );
+      }
+    } catch (error) {
+      toast.error(language === 'fr' ? 'Erreur lors de la sauvegarde' : 'خطأ في الحفظ');
+    } finally {
+      setIsSaving(false);
+    }
+  };
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const handlePrevImage = (e) => {
@@ -199,19 +240,33 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
               </div>
             </div>
 
-            <div className="flex items-center px-4 py-2 rounded-full border whitespace-nowrap" style={{
-              backgroundColor: statusInfo.color.includes('purple') ? 'rgb(243 232 255)' :
-                statusInfo.color.includes('emerald') ? 'rgb(209 250 229)' :
-                  'rgb(254 226 226)',
-              color: statusInfo.color.includes('purple') ? 'rgb(107 33 168)' :
-                statusInfo.color.includes('emerald') ? 'rgb(6 95 70)' :
-                  'rgb(153 27 27)',
-              borderColor: statusInfo.color.includes('purple') ? 'rgb(233 213 255)' :
-                statusInfo.color.includes('emerald') ? 'rgb(167 243 208)' :
-                  'rgb(254 202 202)'
-            }}>
-              <StatusIcon className="h-5 w-5" style={{ marginInlineEnd: '0.5rem' }} />
-              <span className="font-medium">{statusInfo.label}</span>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleToggleSaved}
+                disabled={isSaving}
+                className={`p-2.5 rounded-full transition-all border ${isSaved
+                    ? 'bg-red-50 border-red-100 text-red-500 hover:bg-red-100'
+                    : 'bg-gray-50 border-gray-200 text-gray-400 hover:bg-gray-100 hover:text-red-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 dark:hover:text-red-400'
+                  }`}
+                title={isSaved ? (language === 'fr' ? 'Retirer des favoris' : 'إزالة من المفضلة') : (language === 'fr' ? 'Ajouter aux favoris' : 'إضافة إلى المفضلة')}
+              >
+                <Heart className={`h-6 w-6 ${isSaved ? 'fill-current' : ''}`} />
+              </button>
+
+              <div className="flex items-center px-4 py-2 rounded-full border whitespace-nowrap" style={{
+                backgroundColor: statusInfo.color.includes('purple') ? 'rgb(243 232 255)' :
+                  statusInfo.color.includes('emerald') ? 'rgb(209 250 229)' :
+                    'rgb(254 226 226)',
+                color: statusInfo.color.includes('purple') ? 'rgb(107 33 168)' :
+                  statusInfo.color.includes('emerald') ? 'rgb(6 95 70)' :
+                    'rgb(153 27 27)',
+                borderColor: statusInfo.color.includes('purple') ? 'rgb(233 213 255)' :
+                  statusInfo.color.includes('emerald') ? 'rgb(167 243 208)' :
+                    'rgb(254 202 202)'
+              }}>
+                <StatusIcon className="h-5 w-5" style={{ marginInlineEnd: '0.5rem' }} />
+                <span className="font-medium">{statusInfo.label}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -248,7 +303,7 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                       <Phone className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                     </div>
                     <span className="font-medium italic">
-                      {language === 'ar' ? 'اتصل بالصيدلية للحصول على الرقم' : 'Contact pharmacy for phone number'}
+                      {language === 'ar' ? 'المعدرة لا نتوفر على رقم هده الصيدلية' : 'Sorry we don\'t have a phone number for this pharmacy'}
                     </span>
                   </div>
                 )}

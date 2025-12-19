@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
@@ -8,9 +9,11 @@ import { toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import ProfileSkeleton from '../components/ProfileSkeleton';
+import PharmacyList from '../components/PharmacyList';
 
 const ProfilePage = () => {
   const { user, setUser } = useAuth();
+  const navigate = useNavigate();
   const { t, language, setLanguage, isRTL } = useLanguage();
   const { theme, setTheme, toggleTheme } = useTheme();
   const [activeTab, setActiveTab] = useState('personal');
@@ -35,6 +38,10 @@ const ProfilePage = () => {
     notifications: true,
     searchRadius: 5000
   });
+
+  // Favorites State
+  const [savedPharmacies, setSavedPharmacies] = useState([]);
+  const [loadingFavorites, setLoadingFavorites] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -65,6 +72,27 @@ const ProfilePage = () => {
       console.error('Error loading preferences:', error);
     }
   };
+
+  const fetchSavedPharmacies = async () => {
+    try {
+      setLoadingFavorites(true);
+      const response = await authApi.getSavedPharmacies();
+      if (response.data.success) {
+        setSavedPharmacies(response.data.savedPharmacies);
+      }
+    } catch (error) {
+      console.error('Error loading saved pharmacies:', error);
+      toast.error(language === 'fr' ? 'Erreur lors du chargement des favoris' : 'خطأ في تحميل المفضلة');
+    } finally {
+      setLoadingFavorites(false);
+    }
+  };
+
+  useEffect(() => {
+    if (activeTab === 'favorites') {
+      fetchSavedPharmacies();
+    }
+  }, [activeTab]);
 
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
@@ -165,6 +193,7 @@ const ProfilePage = () => {
 
   const tabs = [
     { id: 'personal', label: language === 'fr' ? 'Informations' : 'المعلومات', icon: User },
+    { id: 'favorites', label: language === 'fr' ? 'Favoris' : 'المفضلة', icon: Heart },
     { id: 'security', label: language === 'fr' ? 'Sécurité' : 'الأمان', icon: Lock },
     { id: 'preferences', label: language === 'fr' ? 'Préférences' : 'التفضيلات', icon: Settings },
   ];
@@ -187,7 +216,7 @@ const ProfilePage = () => {
       {loading && !user ? (
         <ProfileSkeleton />
       ) : (
-        <div className="max-w-4xl mx-auto px-4 py-8 mt-20">
+        <div className="max-w-4xl mx-auto px-4 py-4 mt-4">
           {/* Profile Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -272,6 +301,33 @@ const ProfilePage = () => {
                     {loading ? (language === 'fr' ? 'Enregistrement...' : 'جاري الحفظ...') : (language === 'fr' ? 'Enregistrer' : 'حفظ')}
                   </button>
                 </motion.form>
+              )}
+
+              {/* Favorites Tab */}
+              {activeTab === 'favorites' && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="space-y-6"
+                >
+                  {loadingFavorites ? (
+                    <div className="flex justify-center py-12">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+                    </div>
+                  ) : savedPharmacies.length > 0 ? (
+                    <PharmacyList
+                      pharmacies={savedPharmacies}
+                      onViewDetails={(pharmacy) => navigate(`/pharmacy/${pharmacy._id || pharmacy.id}`)}
+                      columns={2}
+                    />
+                  ) : (
+                    <div className="text-center py-12 text-gray-500 dark:text-gray-400">
+                      <Heart className="mx-auto h-12 w-12 text-gray-300 dark:text-gray-600 mb-4" />
+                      <p className="text-lg font-medium">{language === 'fr' ? 'Aucun favori pour le moment' : 'لا توجد مفضلات حتى الآن'}</p>
+                      <p>{language === 'fr' ? 'Les pharmacies que vous ajoutez aux favoris apparaîtront ici' : 'الصيدليات التي تضيفها إلى المفضلة ستظهر هنا'}</p>
+                    </div>
+                  )}
+                </motion.div>
               )}
 
               {/* Security Tab */}

@@ -60,8 +60,7 @@ const userSchema = new mongoose.Schema({
         }
     },
     savedPharmacies: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Pharmacy'
+        type: String
     }],
     emailVerified: {
         type: Boolean,

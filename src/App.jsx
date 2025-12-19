@@ -23,6 +23,7 @@ const ScannerPage = React.lazy(() => import('./pages/ScannerPage'));
 const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPasswordPage'));
 const ResetPasswordPage = React.lazy(() => import('./pages/ResetPasswordPage'));
 const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
+const PharmacyDetailsPage = React.lazy(() => import('./pages/PharmacyDetailsPage'));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 const UnauthorizedPage = React.lazy(() => import('./pages/UnauthorizedPage'));
 
@@ -104,6 +105,15 @@ function AnimatedRoutes() {
             element={
               <ProtectedRoute>
                 <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/pharmacy/:id"
+            element={
+              <ProtectedRoute>
+                <PharmacyDetailsPage />
               </ProtectedRoute>
             }
           />
