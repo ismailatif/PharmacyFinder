@@ -11,6 +11,7 @@ import MapSkeleton from '../components/MapSkeleton';
 import { Map as MapIcon, List, Navigation, Loader, MapPin } from 'lucide-react';
 import { getPharmacies } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 import PageWrapper from '../components/PageWrapper';
 
@@ -20,6 +21,7 @@ const ITEMS_PER_PAGE = 10;
 
 const SearchPage = () => {
   const navigate = useNavigate();
+  const { t, language, isRTL } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [filter, setFilter] = useState('all');
   const [selectedCity, setSelectedCity] = useState('all');
@@ -389,14 +391,14 @@ const SearchPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">
               <div className="flex items-center justify-center mb-4">
-                <img src="/logo.png" alt="Logo" className="w-12 h-12 mr-3 object-contain" />
-                <span className="text-lg font-semibold text-emerald-800 dark:text-emerald-400">Pharmacies de Garde</span>
+                <img src="/logo.png" alt="Logo" className="w-12 h-12 ltr:mr-3 rtl:ml-3 object-contain" />
+                <span className="text-lg font-semibold text-emerald-800 dark:text-emerald-400">{t.footerTitle}</span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                © 2025 Pharmacies de Garde. Informations mises à jour en temps réel.
+                {t.footerCopyrightText}
               </p>
               <p className="text-gray-500 dark:text-gray-500 text-xs mt-2">
-                Trouvez rapidement les pharmacies ouvertes près de chez vous
+                {t.footerTagline}
               </p>
             </div>
           </div>

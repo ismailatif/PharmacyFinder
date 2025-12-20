@@ -73,7 +73,10 @@ const translations = {
     emailSent: 'Email envoyé ! Vérifiez votre boîte de réception.',
     enterEmailReset: 'Entrez votre email pour recevoir le lien de réinitialisation.',
     authHeroQuote: 'Dédiés à vous connecter aux soins dont vous avez besoin, instantanément et sans effort.',
-    footerCopyright: 'PharmacyFinder. Tous droits réservés.'
+    footerCopyright: 'PharmacyFinder. Tous droits réservés.',
+    footerTitle: 'Pharmacies de Garde',
+    footerCopyrightText: '© 2025 Pharmacies de Garde. Informations mises à jour en temps réel.',
+    footerTagline: 'Trouvez rapidement les pharmacies ouvertes près de chez vous'
   },
   ar: {
     title: 'الصيدليات المناوبة',
@@ -147,7 +150,10 @@ const translations = {
     emailSent: 'تم إرسال البريد الإلكتروني! تحقق من بريدك الوارد.',
     enterEmailReset: 'أدخل بريدك الإلكتروني لتلقي رابط إعادة التعيين.',
     authHeroQuote: 'ملتزمون بربطك بالرعاية التي تحتاجها، فوريًا وبسهولة.',
-    footerCopyright: 'PharmacyFinder. جميع الحقوق محفوظة.'
+    footerCopyright: 'PharmacyFinder. جميع الحقوق محفوظة.',
+    footerTitle: 'الصيدليات المناوبة',
+    footerCopyrightText: '© 2025 الصيدليات المناوبة. معلومات محدثة في الوقت الفعلي.',
+    footerTagline: 'ابحث بسرعة عن الصيدليات المفتوحة بالقرب منك'
   }
 };
 
