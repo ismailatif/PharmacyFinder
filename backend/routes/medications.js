@@ -3,19 +3,35 @@ import Medication from '../models/Medication.js';
 
 const router = express.Router();
 
-// GET /api/medications/search?q=name
+// GET /api/medications/search?q=name&page=1&limit=10
 router.get('/search', async (req, res) => {
     try {
-        const { q } = req.query;
+        const { q, page = 1, limit = 10 } = req.query;
         if (!q) {
             return res.status(400).json({ message: 'Query parameter q is required' });
         }
 
-        const medications = await Medication.find({
-            name: { $regex: q, $options: 'i' }
-        }).limit(20);
+        const pageNum = parseInt(page);
+        const limitNum = parseInt(limit);
+        const skip = (pageNum - 1) * limitNum;
 
-        res.json(medications);
+        const query = { name: { $regex: q, $options: 'i' } };
+
+        const [medications, total] = await Promise.all([
+            Medication.find(query)
+                .skip(skip)
+                .limit(limitNum),
+            Medication.countDocuments(query)
+        ]);
+
+        res.json({
+            data: medications,
+            pagination: {
+                total,
+                page: pageNum,
+                pages: Math.ceil(total / limitNum)
+            }
+        });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }

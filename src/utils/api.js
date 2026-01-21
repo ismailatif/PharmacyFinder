@@ -58,12 +58,12 @@ export const authApi = {
     getPreferences: () => api.get('/auth/preferences'),
     updatePreferences: (preferences) => api.put('/auth/preferences', preferences),
     toggleSavedPharmacy: (id) => api.put(`/auth/saved-pharmacies/${id}`),
-    getSavedPharmacies: () => api.get('/auth/saved-pharmacies')
+    getSavedPharmacies: (page = 1, limit = 10) => api.get(`/auth/saved-pharmacies?page=${page}&limit=${limit}`)
 };
 
 export const medicationApi = {
     getMedication: (code) => api.get(`/medications/${code}`),
-    search: (query) => api.get(`/medications/search?q=${query}`)
+    search: (query, page = 1, limit = 10) => api.get(`/medications/search?q=${query}&page=${page}&limit=${limit}`)
 };
 
 export default api;

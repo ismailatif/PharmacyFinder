@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { authApi } from '../utils/api';
-import { User, Lock, Settings, Heart, Calendar, Eye, EyeOff } from 'lucide-react';
+import { User, Lock, Settings, Heart, Calendar, Eye, EyeOff, ChevronLeft, ChevronRight } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
@@ -42,6 +42,7 @@ const ProfilePage = () => {
   // Favorites State
   const [savedPharmacies, setSavedPharmacies] = useState([]);
   const [loadingFavorites, setLoadingFavorites] = useState(false);
+  const [pagination, setPagination] = useState({ current: 1, pages: 1, total: 0 });
 
   useEffect(() => {
     if (user) {
@@ -73,18 +74,29 @@ const ProfilePage = () => {
     }
   };
 
-  const fetchSavedPharmacies = async () => {
+  const fetchSavedPharmacies = async (page = 1) => {
     try {
       setLoadingFavorites(true);
-      const response = await authApi.getSavedPharmacies();
+      const response = await authApi.getSavedPharmacies(page, 6);
       if (response.data.success) {
         setSavedPharmacies(response.data.savedPharmacies);
+        if (response.data.pagination) {
+          setPagination(response.data.pagination);
+        }
       }
     } catch (error) {
       console.error('Error loading saved pharmacies:', error);
       toast.error(language === 'fr' ? 'Erreur lors du chargement des favoris' : 'خطأ في تحميل المفضلة');
     } finally {
       setLoadingFavorites(false);
+    }
+  };
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= pagination.pages) {
+      fetchSavedPharmacies(newPage);
+      // smooth scroll to top of list if needed
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -315,11 +327,38 @@ const ProfilePage = () => {
                       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
                     </div>
                   ) : savedPharmacies.length > 0 ? (
-                    <PharmacyList
-                      pharmacies={savedPharmacies}
-                      onViewDetails={(pharmacy) => navigate(`/pharmacy/${pharmacy._id || pharmacy.id}`)}
-                      columns={2}
-                    />
+                    <>
+                      <PharmacyList
+                        pharmacies={savedPharmacies}
+                        onViewDetails={(pharmacy) => navigate(`/pharmacy/${pharmacy._id || pharmacy.id}`)}
+                        columns={2}
+                      />
+
+                      {/* Pagination Controls */}
+                      {pagination.pages > 1 && (
+                        <div className="flex justify-center items-center gap-4 mt-8">
+                          <button
+                            onClick={() => handlePageChange(pagination.current - 1)}
+                            disabled={pagination.current === 1}
+                            className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                          >
+                            <ChevronLeft className="w-5 h-5" />
+                          </button>
+
+                          <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                            {pagination.current} / {pagination.pages}
+                          </span>
+
+                          <button
+                            onClick={() => handlePageChange(pagination.current + 1)}
+                            disabled={pagination.current === pagination.pages}
+                            className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                          >
+                            <ChevronRight className="w-5 h-5" />
+                          </button>
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <div className="text-center py-12 text-gray-500 dark:text-gray-400">
                       <Heart className="mx-auto h-12 w-12 text-gray-300 dark:text-gray-600 mb-4" />

@@ -185,15 +185,31 @@ export const toggleSavedPharmacy = async (req, res) => {
 // @access  Private
 export const getSavedPharmacies = async (req, res) => {
     try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const skip = (page - 1) * limit;
+
         const user = await User.findById(req.user.id);
 
         if (!user) {
             return res.status(404).json({ success: false, message: 'User not found' });
         }
 
-        // Manually fetch pharmacies by their string IDs
+        // Get total count of saved pharmacies
+        const total = user.savedPharmacies.length;
+        const totalPages = Math.ceil(total / limit);
+
+        // Manually fetch pharmacies by their string IDs with pagination
         const Pharmacy = (await import('../models/Pharmacy.js')).default;
-        const pharmacies = await Pharmacy.find({ id: { $in: user.savedPharmacies } }).lean();
+
+        // We filter the IDs first for pagination to ensure consistent order
+        // Note: This relies on the order in user.savedPharmacies array if we want specific order,
+        // but Pharmacy.find({ $in }) doesn't guarantee order matching the input array.
+        // For consistent pagination, we should probably paginate the IDs first.
+
+        const slicedIds = user.savedPharmacies.slice(skip, skip + limit);
+
+        const pharmacies = await Pharmacy.find({ id: { $in: slicedIds } }).lean();
 
         // Transform pharmacy data to frontend format
         const transformedPharmacies = pharmacies.map(pharmacy => {
@@ -216,7 +232,12 @@ export const getSavedPharmacies = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            savedPharmacies: transformedPharmacies
+            savedPharmacies: transformedPharmacies,
+            pagination: {
+                current: page,
+                pages: totalPages,
+                total: total
+            }
         });
     } catch (err) {
         res.status(500).json({ success: false, message: err.message });

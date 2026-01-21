@@ -76,7 +76,27 @@ const translations = {
     footerCopyright: 'PharmacyFinder. Tous droits réservés.',
     footerTitle: 'Pharmacies de Garde',
     footerCopyrightText: '© 2025 Pharmacies de Garde. Informations mises à jour en temps réel.',
-    footerTagline: 'Trouvez rapidement les pharmacies ouvertes près de chez vous'
+    footerTagline: 'Trouvez rapidement les pharmacies ouvertes près de chez vous',
+    // Scanner/Search
+    scanBarcode: 'Scanner Code-barres',
+    searchName: 'Rechercher par Nom',
+    enterBarcode: 'Saisir Code Manuellement',
+    manualEntry: 'Saisie Manuelle',
+    lookupCode: 'Chercher Code',
+    cancel: 'Annuler',
+    scanAnother: 'Scanner un autre',
+    startNewSearch: 'Nouvelle recherche',
+    searchMedication: 'Rechercher un médicament...',
+    allTypes: 'Tous types',
+    princeps: 'Princeps',
+    generic: 'Générique',
+    allForms: 'Toutes formes',
+    noMatches: 'Aucune correspondance',
+    noMatchesDesc: 'Nous n\'avons trouvé aucun médicament correspondant.',
+    medicationFound: 'Médicament trouvé !',
+    medicationNotFound: 'Médicament non trouvé.',
+    loadingCamera: 'Chargement Caméra',
+    fetchingDetails: 'Récupération des détails...'
   },
   ar: {
     title: 'الصيدليات المناوبة',
@@ -153,7 +173,27 @@ const translations = {
     footerCopyright: 'PharmacyFinder. جميع الحقوق محفوظة.',
     footerTitle: 'الصيدليات المناوبة',
     footerCopyrightText: '© 2025 الصيدليات المناوبة. معلومات محدثة في الوقت الفعلي.',
-    footerTagline: 'ابحث بسرعة عن الصيدليات المفتوحة بالقرب منك'
+    footerTagline: 'ابحث بسرعة عن الصيدليات المفتوحة بالقرب منك',
+    // Scanner/Search
+    scanBarcode: 'مسح الباركود',
+    searchName: 'بحث بالاسم',
+    enterBarcode: 'أدخل الكود يدوياً',
+    manualEntry: 'إدخال يدوي',
+    lookupCode: 'بحث عن الكود',
+    cancel: 'إلغاء',
+    scanAnother: 'مسح آخر',
+    startNewSearch: 'بحث جديد',
+    searchMedication: 'بحث عن دواء...',
+    allTypes: 'كل الأنواع',
+    princeps: 'أصلي',
+    generic: 'جينيريك',
+    allForms: 'كل الأشكال',
+    noMatches: 'لا توجد نتائج',
+    noMatchesDesc: 'لم نعثر على أي دواء مطابق.',
+    medicationFound: 'تم العثور على الدواء!',
+    medicationNotFound: 'الدواء غير موجود.',
+    loadingCamera: 'جار تحميل الكاميرا',
+    fetchingDetails: 'جاري جلب التفاصيل...'
   }
 };
 
