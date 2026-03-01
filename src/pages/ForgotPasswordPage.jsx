@@ -23,7 +23,7 @@ const ForgotPasswordPage = () => {
       setEmailSent(true);
       toast.success(t.emailSent);
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Error sending email');
+      toast.error(err.response?.data?.message || 'Erreur lors de l\'envoi de l\'email');
     } finally {
       setLoading(false);
     }
@@ -41,14 +41,14 @@ const ForgotPasswordPage = () => {
   `;
 
   return (
-    <AuthLayout 
+    <AuthLayout
       title={t.resetPasswordTitle}
       subtitle={emailSent ? t.emailSent : t.enterEmailReset}
       backLink="/login"
     >
       {!emailSent ? (
         <form className="space-y-6" onSubmit={handleSubmit}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -74,9 +74,9 @@ const ForgotPasswordPage = () => {
           </motion.div>
 
           <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
           >
             <button
               type="submit"
@@ -85,9 +85,9 @@ const ForgotPasswordPage = () => {
             >
               <span className={`absolute ${isRTL ? 'right-0 pr-4' : 'left-0 pl-4'} inset-y-0 flex items-center`}>
                 {loading ? (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 ) : (
-                    <ArrowRight className={`h-5 w-5 text-emerald-100 group-hover:text-white transition-colors ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  <ArrowRight className={`h-5 w-5 text-emerald-100 group-hover:text-white transition-colors ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
                 )}
               </span>
               {loading ? (language === 'fr' ? 'Envoi...' : 'جاري الإرسال...') : t.sendResetLink}
@@ -95,7 +95,7 @@ const ForgotPasswordPage = () => {
           </motion.div>
         </form>
       ) : (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
@@ -117,14 +117,14 @@ const ForgotPasswordPage = () => {
         </motion.div>
       )}
 
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
         className="text-center mt-8 text-sm text-gray-600 dark:text-gray-400"
       >
         <Link to="/login" className="font-bold text-emerald-600 hover:text-emerald-500 dark:text-emerald-400 transition-colors border-b-2 border-transparent hover:border-emerald-500">
-            {t.backToLogin}
+          {t.backToLogin}
         </Link>
       </motion.p>
     </AuthLayout>

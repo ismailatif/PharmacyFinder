@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { divIcon, point } from 'leaflet';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { MapPin, Phone, Navigation2, Maximize, Minimize } from 'lucide-react';
+import { MapPin, Phone, Navigation2, Maximize, Minimize, Layers } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -27,6 +27,8 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
   const { t, isRTL } = useLanguage();
   const [routeInfo, setRouteInfo] = useState(null);
   const [selectedPharmacyForRoute, setSelectedPharmacyForRoute] = useState(null);
+  const [mapStyle, setMapStyle] = useState('OSM'); // Default to OpenStreetMap
+  const [showLayerMenu, setShowLayerMenu] = useState(false);
   const mapRef = useRef(null);
 
   // Filter out pharmacies with invalid coordinates
@@ -156,6 +158,11 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
     return 'closed';
   };
 
+  const layers = [
+    { id: 'OSM', name: 'OpenStreetMap', type: 'osm' },
+    { id: 'GoogleHybrid', name: 'Google Satellite', type: 'google' },
+  ];
+
   return (
     <div id="pharmacy-map-container" className="relative h-full w-full rounded-2xl overflow-hidden shadow-inner border border-emerald-100 dark:border-gray-700 z-0 bg-gray-50 dark:bg-gray-900">
       <MapContainer
@@ -164,10 +171,18 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
         className="h-full w-full z-0"
         scrollWheelZoom={true}
       >
-        <TileLayer
-          attribution=''
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        {mapStyle === 'OSM' && (
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        )}
+        {mapStyle === 'GoogleHybrid' && (
+          <TileLayer
+            attribution='&copy; Google'
+            url="https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
+          />
+        )}
 
         <MapUpdater pharmacies={validPharmacies} selectedLocation={selectedLocation} />
         <ClusterTooltipHandler />
@@ -250,8 +265,8 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
 
                         <span
                           className={`px-2 py-0.5 rounded-full text-xs font-medium ${pharmacy.isOpen
-                              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300"
-                              : "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300"
+                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-300"
+                            : "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300"
                             }`}
                         >
                           {pharmacy.isOpen ? (isRTL ? "مفتوحة" : "Ouvert") : (isRTL ? "مغلقة" : "Fermé")}
@@ -330,8 +345,43 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
         )}
       </MapContainer>
 
+      {/* Layer Control Button */}
+      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-16'} z-[400]`}>
+        <div className="relative">
+          <button
+            onClick={() => setShowLayerMenu(!showLayerMenu)}
+            className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-3 rounded-xl shadow-lg border border-emerald-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-colors"
+            title={isRTL ? 'تغيير الخريطة' : 'Changer la carte'}
+          >
+            <Layers className="w-5 h-5" />
+          </button>
+
+          {/* Layer Menu */}
+          {showLayerMenu && (
+            <div className={`absolute top-14 ${isRTL ? 'left-0' : 'right-0'} w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden`}>
+              {layers.map((layer) => (
+                <button
+                  key={layer.id}
+                  onClick={() => {
+                    setMapStyle(layer.id);
+                    setShowLayerMenu(false);
+                  }}
+                  className={`w-full text-left px-4 py-3 text-sm transition-colors flex items-center gap-2 ${mapStyle === layer.id
+                    ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 font-medium'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                    }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${mapStyle === layer.id ? 'bg-emerald-500' : 'bg-transparent border border-gray-400'}`}></span>
+                  {layer.name}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Full Screen Toggle */}
-      <div className={`absolute top-4 right-4 z-[400]`}>
+      <div className={`absolute top-4 ${isRTL ? 'left-20' : 'right-4'} z-[400]`}>
         <button
           onClick={() => {
             const element = document.getElementById('pharmacy-map-container');

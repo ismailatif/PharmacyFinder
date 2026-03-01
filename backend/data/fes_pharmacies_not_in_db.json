@@ -1,0 +1,4402 @@
+[
+  {
+    "name": "Pharmacie Central Ain Chkef",
+    "address": "arrondissement ain chkef, lotissement jnane1",
+    "phone": "0535 69 11 33",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0367774,
+      "lng": -4.9978768
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-central-ain-chkef-s249583.html"
+  },
+  {
+    "name": "Pharmacie Z9a9 Lahjar",
+    "address": "pharmacie zkak lahjar",
+    "phone": "0535 63 36 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-z9a9-lahjar-s242951.html"
+  },
+  {
+    "name": "Pharmacie Jnane Al Bardai",
+    "address": "lot bardai numéro 103, magasin 1 et 2, zouagha bas",
+    "phone": "0645 72 60 88",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0350311,
+      "lng": -5.0559337
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-al-bardai-s238350.html"
+  },
+  {
+    "name": "Pharmacie Oued Al Jawahir",
+    "address": "n°4",
+    "phone": "0535 72 80 76 0601052230",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0325174,
+      "lng": -5.0043374
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oued-al-jawahir-s253540.html"
+  },
+  {
+    "name": "Pharmacie Al Ikhlass",
+    "address": "boulevard koufa n°25",
+    "phone": "0535 61 70 56",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0071786,
+      "lng": -4.9867867
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-ikhlass-s244621.html"
+  },
+  {
+    "name": "Pharmacie Des Sciences",
+    "address": "12 bis lotissement al quaraouine",
+    "phone": "0535 96 66 37",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-sciences-s238501.html"
+  },
+  {
+    "name": "Pharmacie El Menzeh",
+    "address": "n° 46",
+    "phone": "0535 71 10 96",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.054641,
+      "lng": -4.9534357
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-menzeh-s242002.html"
+  },
+  {
+    "name": "Pharmacie Al Amal",
+    "address": "carrier hajoui ben debbab en face marché ben debbab",
+    "phone": "0535 64 56 35",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0088373,
+      "lng": -4.9635387
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-amal-s238503.html"
+  },
+  {
+    "name": "Pharmacie Errabie",
+    "address": "lot 6-4 lotissement farah, bensouda",
+    "phone": "0535 68 10 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0145105,
+      "lng": -4.9804461
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-errabie-s249584.html"
+  },
+  {
+    "name": "Pharmacie Populaire",
+    "address": "92, bab jyaf en face de bab samarine boulkhsisat, fes jdid",
+    "phone": "0535 62 19 29",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-populaire-s238502.html"
+  },
+  {
+    "name": "Pharmacie Louajryene",
+    "address": "n°33 derb jamae nouawel el melah, a coté de l'hôpital american",
+    "phone": "0655 32 26 76",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-louajryene-s242280.html"
+  },
+  {
+    "name": "Pharmacie Hay Al Ambra",
+    "address": "rue 44 lot",
+    "phone": "0535 60 85 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0111194,
+      "lng": -5.0589681
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-al-ambra-s241353.html"
+  },
+  {
+    "name": "Pharmacie Ibn Al Haytam",
+    "address": "n°104, bd al kayraouane",
+    "phone": "0535 96 04 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-al-haytam-s245944.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "commune ain hkef",
+    "phone": "0665 65 57 66 0538805111",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s253383.html"
+  },
+  {
+    "name": "Pharmacie Al Azhar",
+    "address": "résidence adarissa 2 en face de terrain et poste al adarissa",
+    "phone": "0535 60 90 65",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0191709,
+      "lng": -5.0129119
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-azhar-s244189.html"
+  },
+  {
+    "name": "Pharmacie Chraibi",
+    "address": "hay Hassani   rue 5  n°28  Ben Debbab",
+    "phone": "0655 48 95 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0703392,
+      "lng": -4.9970752
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chraibi-s245325.html"
+  },
+  {
+    "name": "Pharmacie Faculté  Echariaa",
+    "address": "19  rte de Sefrou -",
+    "phone": "0535 76 67 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-faculte-echariaa-s245690.html"
+  },
+  {
+    "name": "Pharmacie Al Makkia",
+    "address": "pharmacie almakkia, n°24, bd benmakhlouf, sehrij guenaoua",
+    "phone": "0535 76 42 46",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-makkia-s245867.html"
+  },
+  {
+    "name": "Pharmacie Al khattabi",
+    "address": "groupe addoha zouagha",
+    "phone": "0535 72 99 19",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-khattabi-s88200.html"
+  },
+  {
+    "name": "Pharmacie Route Sidi Harazem",
+    "address": "8, hay sania, route sidi harazem",
+    "phone": "0535 61 61 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0107414,
+      "lng": -4.9559142
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-sidi-harazem-s244719.html"
+  },
+  {
+    "name": "Pharmacie Meryem",
+    "address": "n°5 lot badr, route ain smen residence badr, bd abderrahim sekkat hay badr",
+    "phone": "0535 96 29 31",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0234068,
+      "lng": -5.0207651
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-meryem-s251515.html"
+  },
+  {
+    "name": "Pharmacie Imam Malik",
+    "address": "tranche n°184",
+    "phone": "0535 64 58 15",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.062398,
+      "lng": -5.0227023
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-imam-malik-s246120.html"
+  },
+  {
+    "name": "Pharmacie Jnane Mekouar",
+    "address": "93, rue massamida, jnane mekouar, sidi boujida",
+    "phone": "0535 71 14 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0333131,
+      "lng": -5.0700401
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-mekouar-s244618.html"
+  },
+  {
+    "name": "Pharmacie Bayrout",
+    "address": "139 bd bayrout, route sefrou a coté farina (tel2: 0535619660)",
+    "phone": "0532 11 15 37",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bayrout-s249761.html"
+  },
+  {
+    "name": "Pharmacie Nour Lhouda",
+    "address": "hay al amal, bd israe de 100m d'école prive zerhoun",
+    "phone": "0535 61 71 52",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nour-lhouda-s238001.html"
+  },
+  {
+    "name": "Pharmacie De L'hôpital Universitaire",
+    "address": "hay al amal bd madina monaouara",
+    "phone": "0532 11 08 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0266888,
+      "lng": -5.0308009
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-l-hopital-universitaire-s238498.html"
+  },
+  {
+    "name": "Pharmacie El Iraqui",
+    "address": "rue 3 n°26 bensouda en face de jazzarine",
+    "phone": "0535 72 96 47",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0722751,
+      "lng": -4.9949675
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-iraqui-s250658.html"
+  },
+  {
+    "name": "Pharmacie Jeroundi",
+    "address": "jnane 1",
+    "phone": "0535 69 16 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9550868,
+      "lng": -5.0307721
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jeroundi-s247916.html"
+  },
+  {
+    "name": "Pharmacie Jnane Saiss",
+    "address": "douar oulad hammou",
+    "phone": "0535 66 62 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9430439,
+      "lng": -5.0588258
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-saiss-s242632.html"
+  },
+  {
+    "name": "Pharmacie Espace Vert",
+    "address": "3, Lotiss",
+    "phone": "0602 90 86 96",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-espace-vert-s245020.html"
+  },
+  {
+    "name": "Pharmacie Mly M'Barek",
+    "address": "hay Ain Nokbi   blad Sfira  bloc 16 rue 13",
+    "phone": "0535 63 07 87",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9982527,
+      "lng": -5.0168198
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mly-m-barek-s245281.html"
+  },
+  {
+    "name": "Pharmacie Oued Al Jawahir",
+    "address": "n°4",
+    "phone": "0535 72 80 76",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0325174,
+      "lng": -5.0043374
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oued-al-jawahir-s242553.html"
+  },
+  {
+    "name": "Pharmacie L'human",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100 (tél fixe: 0538805111)",
+    "phone": "0707 55 31 30 06794750710538805111",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-human-s253381.html"
+  },
+  {
+    "name": "Pharmacie Tadamoune",
+    "address": "hay Sahrij Gnaoua   bloc 30 B n°54  Elmenzeh",
+    "phone": "0535 64 92 15",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-tadamoune-s245385.html"
+  },
+  {
+    "name": "Pharmacie Ajial",
+    "address": "oulad tayeb",
+    "phone": "0535 96 66 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.95980072,
+      "lng": -4.99561977
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ajial-s242840.html"
+  },
+  {
+    "name": "Pharmacie Al Jawahir",
+    "address": "82 lot al jawahir bensouda en face de lot chaimae ( mobile: 06 64 57 93 99 )",
+    "phone": "0535 97 45 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0335888,
+      "lng": -5.0008613
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-jawahir-s247022.html"
+  },
+  {
+    "name": "Pharmacie El Alaoui",
+    "address": "283 h lotissement ryad al yasamine, route ain chkef",
+    "phone": "0661 31 90 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9938105,
+      "lng": -5.0045045
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-alaoui-s237988.html"
+  },
+  {
+    "name": "Pharmacie La Croix Verte",
+    "address": "bd mohammed 5",
+    "phone": "0535 62 25 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0384801,
+      "lng": -5.0004637
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-croix-verte-s242278.html"
+  },
+  {
+    "name": "Pharmacie Al Khawarizmi",
+    "address": "410, hay jdid bensouda, a coté école ex-boughaba",
+    "phone": "0535 65 57 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0183369,
+      "lng": -5.0668915
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-khawarizmi-s244221.html"
+  },
+  {
+    "name": "Pharmacie Le Palais",
+    "address": "hay tarek 1",
+    "phone": "0691 43 77 15",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-le-palais-s247972.html"
+  },
+  {
+    "name": "Pharmacie Jnane Al Bardai",
+    "address": "lot bardai numéro 103, magasin 1 et 2, zouagha bas",
+    "phone": "0535 72 11 47",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0350311,
+      "lng": -5.0559337
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-al-bardai-s252797.html"
+  },
+  {
+    "name": "Pharmacie  Ain Chkef",
+    "address": "arrondissement ain chkef",
+    "phone": "0535 60 64 25",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-chkef-s245941.html"
+  },
+  {
+    "name": "Pharmacie Al Karam",
+    "address": "37 bis, rue 6",
+    "phone": "0535 70 33 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0699092,
+      "lng": -4.9891904
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-karam-s243412.html"
+  },
+  {
+    "name": "Pharmacie Kenza Skalli",
+    "address": "lot riad al yasamine, route ain chkef",
+    "phone": "0664 41 20 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9916291,
+      "lng": -5.005332
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-kenza-skalli-s252478.html"
+  },
+  {
+    "name": "Pharmacie Jnane Saiss",
+    "address": "douar oulad hammou (près de bim)",
+    "phone": "0535 60 91 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9430439,
+      "lng": -5.0588258
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-saiss-s242731.html"
+  },
+  {
+    "name": "Pharmacie  Ain Chkef",
+    "address": "commune ain chkef",
+    "phone": "0535 96 26 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-chkef-s246119.html"
+  },
+  {
+    "name": "Pharmacie Al Israe",
+    "address": "pharmacie al israe, près du café l'unica 2 et clinique al badie",
+    "phone": "0535 96 37 33",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.989219,
+      "lng": -5.0137024
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-israe-s253101.html"
+  },
+  {
+    "name": "Pharmacie Amina",
+    "address": "km16",
+    "phone": "0535 60 10 53",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.95980072,
+      "lng": -4.99561977
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-amina-s242629.html"
+  },
+  {
+    "name": "Pharmacie AlBouchra",
+    "address": "64  hay Jdid   Bensouda",
+    "phone": "0535 65 59 83",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-albouchra-s245134.html"
+  },
+  {
+    "name": "Pharmacie des F.a.r.",
+    "address": "rte de Meknès   Dokkarat",
+    "phone": "0535 94 22 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0407628,
+      "lng": -5.0165278
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-f-a-r-s245286.html"
+  },
+  {
+    "name": "Pharmacie AlOum",
+    "address": "pharmacie aloum, bloc 3 numéro 12 hay sidi boudher el merja",
+    "phone": "0535 72 62 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aloum-s95927.html"
+  },
+  {
+    "name": "Pharmacie Manabie Ain Chkef",
+    "address": "commune ain chkef -  lotissement jnane 1",
+    "phone": "0676 76 11 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-manabie-ain-chkef-s251387.html"
+  },
+  {
+    "name": "Pharmacie Jnane Drader",
+    "address": "pharmacie jnane drader, 34 rue 3 jnane drader sidi boujida",
+    "phone": "0535 76 38 49",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0675998,
+      "lng": -4.9704557
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-drader-s250246.html"
+  },
+  {
+    "name": "Pharmacie Socrate Al Hakim",
+    "address": "95",
+    "phone": "0634 38 60 05",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0039824,
+      "lng": -5.0173506
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-socrate-al-hakim-s253646.html"
+  },
+  {
+    "name": "Pharmacie Myel",
+    "address": "172 lot",
+    "phone": "0535 62 48 88",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0064297,
+      "lng": -5.0199414
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-myel-s253899.html"
+  },
+  {
+    "name": "Pharmacie La Bonté",
+    "address": "hay tarik 1, lot 20 n° 2 et 3, en face de collège l'hippodrome",
+    "phone": "0535 61 06 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.033531,
+      "lng": -5.0291446
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-bonte-s242238.html"
+  },
+  {
+    "name": "Pharmacie Ihab",
+    "address": "douar ouled hamou",
+    "phone": "0535 66 62 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ihab-s242730.html"
+  },
+  {
+    "name": "Pharmacie Hay Ryiad",
+    "address": "n°754 lotissement riad 4",
+    "phone": "0535 74 22 87",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-ryiad-s238688.html"
+  },
+  {
+    "name": "Pharmacie Oulad Maaref",
+    "address": "douar Oulad Maaref   Sejaa",
+    "phone": "0535 60 32 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oulad-maaref-s245386.html"
+  },
+  {
+    "name": "Pharmacie Attadamoun",
+    "address": "bloc 30 b el menzah sahrij gnawa",
+    "phone": "0535 64 92 15",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9420388,
+      "lng": -5.5567979
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-attadamoun-s238809.html"
+  },
+  {
+    "name": "Pharmacie Nellia Hay Jdid",
+    "address": "788  hay Jdid   Zouagha Oulia",
+    "phone": "0535 60 53 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0143783,
+      "lng": -5.036301
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nellia-hay-jdid-s245282.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0656 24 20 35",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s252171.html"
+  },
+  {
+    "name": "Pharmacie Al Bouchra",
+    "address": "64  hay jdid   bensouda",
+    "phone": "0535 65 59 83",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-bouchra-s244772.html"
+  },
+  {
+    "name": "Pharmacie Al Moussaoui",
+    "address": "32 rue 8 proche du club de tennis oued fes (mobie: 0550023966)",
+    "phone": "0535 72 92 18",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0328922,
+      "lng": -5.047751
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-moussaoui-s248192.html"
+  },
+  {
+    "name": "Pharmacie Jnane El Kadri",
+    "address": "bab al khoukha  jnane kadiri rue 45 n°25",
+    "phone": "0535 76 36 64",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0336332,
+      "lng": -5.0181991
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-el-kadri-s252074.html"
+  },
+  {
+    "name": "Pharmacie Al Hadika",
+    "address": "pharmacie alhadika, lot",
+    "phone": "0535 70 31 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0555058,
+      "lng": -5.0232767
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-hadika-s243991.html"
+  },
+  {
+    "name": "Pharmacie Fatima Fihriya",
+    "address": "n°167, derb bouajjara, bab jdid, près du lycée moulay abdessalam ben mchich",
+    "phone": "0535 74 13 53",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.057834,
+      "lng": -4.9772411
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fatima-fihriya-s241082.html"
+  },
+  {
+    "name": "Pharmacie Bd Du Golan",
+    "address": "poste atlas vers lido, a cote ancienne lacigogne, bd du golan",
+    "phone": "0535 73 31 09",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bd-du-golan-s245511.html"
+  },
+  {
+    "name": "Pharmacie Du Boulevard",
+    "address": "pharmacie du bouelvard, bd chefchaouni",
+    "phone": "0535 62 48 88",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0412473,
+      "lng": -4.99652
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-boulevard-s241350.html"
+  },
+  {
+    "name": "Pharmacie Jardins El Badie",
+    "address": "356, lotissement les jardins el badie, route ain chkef",
+    "phone": "0664 09 91 98 0535608010",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03465271,
+      "lng": -5.01619244
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jardins-el-badie-s253425.html"
+  },
+  {
+    "name": "Pharmacie L'oliveraie",
+    "address": "pharmacie l'oliveraie, lot",
+    "phone": "0535 69 18 07",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-oliveraie-s242841.html"
+  },
+  {
+    "name": "Pharmacie Les Champs",
+    "address": "n° 7 hay tazi",
+    "phone": "0535 72 69 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0360811,
+      "lng": -5.0347039
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-les-champs-s241720.html"
+  },
+  {
+    "name": "Pharmacie El Korachi",
+    "address": "bd ibn elkhatib, hay azhar",
+    "phone": "0535 74 84 97",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-korachi-s253541.html"
+  },
+  {
+    "name": "Pharmacie Avenue Mohamed Vi",
+    "address": "70 lot",
+    "phone": "0535 60 41 35",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.022303,
+      "lng": -5.0273598
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-avenue-mohamed-vi-s238180.html"
+  },
+  {
+    "name": "Pharmacie Jnane Al Bardai",
+    "address": "lot bardai numéro 103, magasin 1 et 2, zouagha bas",
+    "phone": "0624 01 73 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0350311,
+      "lng": -5.0559337
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-al-bardai-s245942.html"
+  },
+  {
+    "name": "Pharmacie Chifae Oulad Maala",
+    "address": "hay ain chkef douar oulad maala",
+    "phone": "0666 27 14 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0405315,
+      "lng": -5.0087831
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifae-oulad-maala-s253305.html"
+  },
+  {
+    "name": "Pharmacie City Golf",
+    "address": "n°203",
+    "phone": "0610 76 46 86",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0492982,
+      "lng": -5.0310775
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-city-golf-s253306.html"
+  },
+  {
+    "name": "Pharmacie Ilya",
+    "address": "lot",
+    "phone": "0613 91 71 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0450212,
+      "lng": -4.9888894
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ilya-s238179.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100",
+    "phone": "0707 55 31 30",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s247767.html"
+  },
+  {
+    "name": "Pharmacie Wijhat Al Ihssane",
+    "address": "113 route sefrou, lot",
+    "phone": "0606 67 04 21",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9956787,
+      "lng": -4.9779353
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-wijhat-al-ihssane-s251765.html"
+  },
+  {
+    "name": "Pharmacie Sidi Ali Boughaleb",
+    "address": "drouj malakia bab ftouh",
+    "phone": "0535 64 95 00",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0547321,
+      "lng": -4.9522984
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sidi-ali-boughaleb-s241083.html"
+  },
+  {
+    "name": "Pharmacie Zahra",
+    "address": "route sefrou, premier feu rouge après l'atlas (tel2: 0535642924)",
+    "phone": "0535 60 04 86",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zahra-s242347.html"
+  },
+  {
+    "name": "Pharmacie Du Ravin",
+    "address": "n°26 rue omar elidrissi",
+    "phone": "0535 62 47 85",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-du-ravin-s243576.html"
+  },
+  {
+    "name": "Pharmacie Loubna Fes",
+    "address": "zouagha 1 lotiss reda merja",
+    "phone": "0532 13 84 82",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0291484,
+      "lng": -5.0378054
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-loubna-fes-s253304.html"
+  },
+  {
+    "name": "Pharmacie Centrale Ain Chkef",
+    "address": "arrondissement ain chkef, lotissement jnane1",
+    "phone": "0653 82 83 11",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0367774,
+      "lng": -4.9978768
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-centrale-ain-chkef-s253209.html"
+  },
+  {
+    "name": "Pharmacie Al Hilal Green",
+    "address": "n°63 rue27, oued fès, 100 mètre du marché oued fès",
+    "phone": "0535 75 09 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0612866,
+      "lng": -5.033471
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-hilal-green-s252261.html"
+  },
+  {
+    "name": "Pharmacie Hay El Yakout",
+    "address": "n°6 rue 6 hay lalla el yakout, ain nokbi",
+    "phone": "0620 00 25 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.062063,
+      "lng": -4.9497003
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-el-yakout-s246460.html"
+  },
+  {
+    "name": "Pharmacie Al Kobba",
+    "address": "rue 2 jnane hjij, ain nakbi proche de l'ancien dar dbegh",
+    "phone": "0535 66 91 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0644072,
+      "lng": -4.9549902
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-kobba-s242204.html"
+  },
+  {
+    "name": "Pharmacie Al Amane",
+    "address": "n° 2 résidence al amane, route la feray a cote banque populaire hay al massira",
+    "phone": "0535 65 51 49",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9968375,
+      "lng": -5.0531165
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-amane-s242762.html"
+  },
+  {
+    "name": "Pharmacie Rhahli",
+    "address": "arrondissement ain chkef, lotissement jnane",
+    "phone": "0609 78 50 06",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9432419,
+      "lng": -5.0335822
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rhahli-s252146.html"
+  },
+  {
+    "name": "Pharmacie Bab El Khokha",
+    "address": "lotissement najah, bab el khokha",
+    "phone": "0535 64 96 10",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-el-khokha-s238683.html"
+  },
+  {
+    "name": "Pharmacie Santelyse",
+    "address": "n°7 lot",
+    "phone": "0535 66 68 53",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03465271,
+      "lng": -5.01619244
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-santelyse-s242627.html"
+  },
+  {
+    "name": "Pharmacie Aya Fes",
+    "address": "32 b lot zahrat madain 1, route ain chkef, en face de l'école mohamed zafzaf",
+    "phone": "0535 69 36 60",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0024776,
+      "lng": -5.0203976
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aya-fes-s249626.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Kora",
+    "address": "n°41 rue 6 hay nouveau secteur z",
+    "phone": "0535 60 56 85",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0337488,
+      "lng": -5.0040585
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-kora-s237997.html"
+  },
+  {
+    "name": "Pharmacie Chifae Ouled Maala",
+    "address": "commune ain chqef, douar ouled maala",
+    "phone": "0666 27 14 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifae-ouled-maala-s245599.html"
+  },
+  {
+    "name": "Pharmacie El Alaoui",
+    "address": "283 h lotissement ryad al yasamine, route ain chkef",
+    "phone": "0656 87 87 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-alaoui-s242763.html"
+  },
+  {
+    "name": "Pharmacie Siberia",
+    "address": "commune ain chkef, douar khrabcha",
+    "phone": "0655 17 36 77",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-siberia-s251245.html"
+  },
+  {
+    "name": "Pharmacie Hopital Bensouda",
+    "address": "82 hay chemin de fer près de l'hopital bensouda",
+    "phone": "0532 06 92 92",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0165397,
+      "lng": -5.0451188
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hopital-bensouda-s252529.html"
+  },
+  {
+    "name": "Pharmacie Al Oum",
+    "address": "pharmacie aloum, bloc 3 numéro 12 hay sidi boudher el merja",
+    "phone": "0535 72 62 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0251931,
+      "lng": -5.0449531
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-oum-s244161.html"
+  },
+  {
+    "name": "Pharmacie La Santé",
+    "address": "n° 58 bd ismailia mont fleuri 1, près du hammam boumehdi",
+    "phone": "0535 65 67 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0129024,
+      "lng": -4.9857662
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-sante-s248270.html"
+  },
+  {
+    "name": "Pharmacie Daif",
+    "address": "n°586",
+    "phone": "0535 60 73 97",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9975918,
+      "lng": -5.0371967
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-daif-s253426.html"
+  },
+  {
+    "name": "Pharmacie Ofok Sais",
+    "address": "n°51",
+    "phone": "0535 61 57 81",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9868872,
+      "lng": -4.9701711
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ofok-sais-s253896.html"
+  },
+  {
+    "name": "Pharmacie Bab Boujloud",
+    "address": "place bab boujloud fès médina",
+    "phone": "0535 63 32 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0619756,
+      "lng": -4.9857939
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-boujloud-s240973.html"
+  },
+  {
+    "name": "Pharmacie Bencheikh",
+    "address": "170  bd riad   hay el wafae ii narjiss",
+    "phone": "0535 61 48 06",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0129436,
+      "lng": -4.9703774
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bencheikh-s241352.html"
+  },
+  {
+    "name": "Pharmacie Californie",
+    "address": "lotissement cité des fleurs n°2",
+    "phone": "0535 96 62 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9924756,
+      "lng": -5.0229611
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-californie-s238820.html"
+  },
+  {
+    "name": "Pharmacie Chu Hassan 2",
+    "address": "route de séfrou, 400 m de acima, direction du complexe sportif à coté du café challenger",
+    "phone": "0535 61 58 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346207,
+      "lng": -4.9810798
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chu-hassan-2-s237992.html"
+  },
+  {
+    "name": "Pharmacie Chifae Oulad Maala",
+    "address": "hay ain chkef douar oulad maala",
+    "phone": "0662 27 14 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifae-oulad-maala-s245623.html"
+  },
+  {
+    "name": "Pharmacie La Corniche",
+    "address": "lotissement al jawahir arrondissement zouagha rte bensouda, rdc lot 3e 1-98",
+    "phone": "0538 11 97 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0337452,
+      "lng": -5.0649591
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-corniche-s252325.html"
+  },
+  {
+    "name": "Pharmacie M'cella",
+    "address": "n° 36 bis",
+    "phone": "0535 76 24 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0584305,
+      "lng": -4.9795562
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-m-cella-s238177.html"
+  },
+  {
+    "name": "Pharmacie Al Firdaous - Ch",
+    "address": "n°4, lotiss",
+    "phone": "0693 87 76 76",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.030968,
+      "lng": -5.064736
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-firdaous-ch-s251411.html"
+  },
+  {
+    "name": "Pharmacie Averoes",
+    "address": "9, rue ibn hajar, l'habitat, 200m du consulat de france",
+    "phone": "0535 62 28 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0308601,
+      "lng": -5.0342572
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-averoes-s242096.html"
+  },
+  {
+    "name": "Pharmacie Zalagh",
+    "address": "498  lotiss",
+    "phone": "0535 75 63 82",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zalagh-s245226.html"
+  },
+  {
+    "name": "Pharmacie Oxygène",
+    "address": "cité 2 rue tariq al moqadassa dher lmahraz",
+    "phone": "0611 70 62 72 0535657902",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346984863281,
+      "lng": -5.0161900520324
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oxygene-s253808.html"
+  },
+  {
+    "name": "Pharmacie Jinane Ain Chkef",
+    "address": "194 lotiss jinane 1",
+    "phone": "0535 96 70 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jinane-ain-chkef-s246461.html"
+  },
+  {
+    "name": "Pharmacie Derb El Ward",
+    "address": "route imouzer bd ibn el khatib direction route ain chqef a coté hammam elbacha",
+    "phone": "0535 60 67 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03465271,
+      "lng": -5.01619244
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-derb-el-ward-s243410.html"
+  },
+  {
+    "name": "Pharmacie Al Bassatine",
+    "address": "oulad tayeb soufla",
+    "phone": "0654 86 71 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9625774,
+      "lng": -4.9994636
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-bassatine-s242999.html"
+  },
+  {
+    "name": "Pharmacie De France",
+    "address": "n° 46 bd hassan 2 en face immeuble al watanya, et a coté porte quissariat el alej",
+    "phone": "0535 62 23 09",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0428408,
+      "lng": -5.0010216
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-france-s241863.html"
+  },
+  {
+    "name": "Pharmacie Jerondi",
+    "address": "Jenane Fes   Ain Chkef",
+    "phone": "0535 69 16 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jerondi-s245284.html"
+  },
+  {
+    "name": "Pharmacie Al Abawayne",
+    "address": "lot 9 bloc 3 nassim ben souda",
+    "phone": "0535 72 63 64",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0174772,
+      "lng": -5.0119434
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-abawayne-s241569.html"
+  },
+  {
+    "name": "Pharmacie Menzeh Saiss",
+    "address": "lotissement menzeh saiss",
+    "phone": "0535 76 60 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0080231,
+      "lng": -4.9539687
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-menzeh-saiss-s245752.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0535 64 12 77 0656242035",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s253212.html"
+  },
+  {
+    "name": "Pharmacie El Mammery",
+    "address": "lotissement",
+    "phone": "0535 72 13 54",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0324377,
+      "lng": -5.0609854
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-mammery-s242237.html"
+  },
+  {
+    "name": "Pharmacie Hay Hassani",
+    "address": "erac hay elhassani sidi brahim, près de la mosquée erac",
+    "phone": "0535 64 40 98",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0209101,
+      "lng": -4.9770446
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-hassani-s246296.html"
+  },
+  {
+    "name": "Pharmacie Aéroport Fès Saïs",
+    "address": "oulad tayeb",
+    "phone": "0535 72 79 34",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9484181,
+      "lng": -5.0012369
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aeroport-fes-sais-s244622.html"
+  },
+  {
+    "name": "Pharmacie Layla Kamal",
+    "address": "n°4 tranche 339, lotissement mnara, route meknès",
+    "phone": "0636 21 51 89",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-layla-kamal-s251459.html"
+  },
+  {
+    "name": "Pharmacie Jawhara",
+    "address": "rte ain chkef",
+    "phone": "0535 96 68 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9645959,
+      "lng": -5.0300039
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jawhara-s244998.html"
+  },
+  {
+    "name": "Pharmacie Ain Chkef",
+    "address": "commune ain chkef",
+    "phone": "0535 96 26 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-chkef-s249435.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0535 64 12 77",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s246297.html"
+  },
+  {
+    "name": "Pharmacie Ibn Al Baytar",
+    "address": "pharmacie ibn al baytar, rue 4 jnane souissisidi boujida",
+    "phone": "0535 76 23 02",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-al-baytar-s238681.html"
+  },
+  {
+    "name": "Pharmacie Tadlawi",
+    "address": "n) 85 lotissement oued fès,",
+    "phone": "0532 90 99 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-tadlawi-s244283.html"
+  },
+  {
+    "name": "Pharmacie Louizate",
+    "address": "pharmacie louizate, bled diouri n°44, douar riafa, bab ftouh",
+    "phone": "0535 62 98 82",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0594572,
+      "lng": -4.9565656
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-louizate-s241721.html"
+  },
+  {
+    "name": "Pharmacie Zahrat Al Jabal",
+    "address": "commune ain chkef -  douar tlalsa sejaa",
+    "phone": "0535 96 34 92",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9579698,
+      "lng": -5.0207299
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zahrat-al-jabal-s245058.html"
+  },
+  {
+    "name": "Pharmacie Route Oudaya",
+    "address": "bab siffer, rue 77 n°1 , route ouled jamaa",
+    "phone": "0535 64 76 43",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-oudaya-s249940.html"
+  },
+  {
+    "name": "Pharmacie Oulad Tayeb",
+    "address": "oulad tayeb",
+    "phone": "0535 61 28 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.95980072,
+      "lng": -4.99561977
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oulad-tayeb-s242689.html"
+  },
+  {
+    "name": "Pharmacie de la santé",
+    "address": "n° 58 bd ismailia mont fleuri 1, près du hammam boumehdi",
+    "phone": "0535 65 67 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-sante-s4035.html"
+  },
+  {
+    "name": "Pharmacie Almoussaoui",
+    "address": "32 rue 8 proche du club de tennis oued fes",
+    "phone": "0535 72 92 18",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-almoussaoui-s242842.html"
+  },
+  {
+    "name": "Pharmacie El Korachi",
+    "address": "bd ibn elkhatib, hay azhar",
+    "phone": "0535 74 87 97",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-korachi-s242003.html"
+  },
+  {
+    "name": "Pharmacie Aeroport Oulad Bouabid",
+    "address": "oulad tayeb",
+    "phone": "0671 89 18 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9943778,
+      "lng": -5.0803376
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aeroport-oulad-bouabid-s242625.html"
+  },
+  {
+    "name": "Pharmacie Al Amane Fès",
+    "address": "n° 2 résidence al amane, route la feray a cote banque populaire hay al massira",
+    "phone": "0535 65 51 49",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9968375,
+      "lng": -5.0531165
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-amane-fes-s247318.html"
+  },
+  {
+    "name": "Pharmacie Al Istichfae",
+    "address": "douar hchalfa",
+    "phone": "0664 46 69 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-istichfae-s242628.html"
+  },
+  {
+    "name": "Pharmacie Diar Ofok",
+    "address": "n°20 imm g, route bensouda fes, lot",
+    "phone": "0535 72 61 31",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-diar-ofok-s248145.html"
+  },
+  {
+    "name": "Pharmacie Ahl Fes",
+    "address": "264, lotissement aarsat zaytoun, ddoha, près du quartier industriel, ain chqef, fès",
+    "phone": "0535 96 64 00",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9877104,
+      "lng": -5.0408914
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ahl-fes-s244547.html"
+  },
+  {
+    "name": "Pharmacie Route D'imouzzer",
+    "address": "route d'imouzzer, a coté restaurant al ambra et al andalous",
+    "phone": "0535 65 70 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0331042,
+      "lng": -5.0028139
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-d-imouzzer-s241724.html"
+  },
+  {
+    "name": "Pharmacie Hopital Bensouda",
+    "address": "82 hay chemin de fer près de l'hopital bensouda",
+    "phone": "0535 63 92 92",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0165397,
+      "lng": -5.0451188
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hopital-bensouda-s251484.html"
+  },
+  {
+    "name": "Pharmacie Saquia Al Hamra",
+    "address": "hay al qods 2 lirak",
+    "phone": "0535 64 42 93",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-saquia-al-hamra-s244652.html"
+  },
+  {
+    "name": "Pharmacie La Lavande",
+    "address": "hay Rajae   rue 2 n°13 Champ de Cours",
+    "phone": "0535 60 78 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-lavande-s245229.html"
+  },
+  {
+    "name": "Pharmacie El Masjid",
+    "address": "numéro 1 rue 20 hay al amal, bab siffer hay 45, a coté de l'arrondissement al amal",
+    "phone": "0535 75 34 95",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346534,
+      "lng": -5.0161926
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-masjid-s243626.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100",
+    "phone": "0679 47 50 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s245869.html"
+  },
+  {
+    "name": "Pharmacie bvd du Golan",
+    "address": "poste atlas vers lido, a cote ancienne lacigogne, bd du golan",
+    "phone": "0535 73 31 09",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bvd-du-golan-s71614.html"
+  },
+  {
+    "name": "Pharmacie Es-salam",
+    "address": "4, hay ain kadouss, proche de la mosquée tajmouati",
+    "phone": "0535 64 51 01",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0605869,
+      "lng": -5.0140825
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-es-salam-s237989.html"
+  },
+  {
+    "name": "Pharmacie Al Moussaoui",
+    "address": "32 rue 8 proche du club de tennis oued fes",
+    "phone": "0550 02 39 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0328922,
+      "lng": -5.047751
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-moussaoui-s243945.html"
+  },
+  {
+    "name": "Pharmacie Loubna Fes",
+    "address": "zouagha 1 lotiss reda merja",
+    "phone": "0535 72 85 96",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0291484,
+      "lng": -5.0378054
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-loubna-fes-s252912.html"
+  },
+  {
+    "name": "Pharmacie Al Akhaouayne",
+    "address": "bd ismailia a cote baladiat",
+    "phone": "0535 64 45 95",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-akhaouayne-s241725.html"
+  },
+  {
+    "name": "Pharmacie Siqilya",
+    "address": "lot",
+    "phone": "0535 75 52 07",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0584305,
+      "lng": -4.9795562
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-siqilya-s241084.html"
+  },
+  {
+    "name": "PHARMACIE JAWHARA",
+    "address": "rte ain chkef",
+    "phone": "0532 31 39 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9645959,
+      "lng": -5.0300039
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jawhara-s253745.html"
+  },
+  {
+    "name": "Pharmacie Rond Point",
+    "address": "n°14 lotissement jihane",
+    "phone": "0535 72 16 26",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0095016,
+      "lng": -5.0456524
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rond-point-s242202.html"
+  },
+  {
+    "name": "Pharmacie Kacimi",
+    "address": "118 lot",
+    "phone": "0535 64 00 25",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9944553,
+      "lng": -5.0007679
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-kacimi-s249966.html"
+  },
+  {
+    "name": "Pharmacie Al Qods",
+    "address": "pharmacie al qods, bd principale n° 1 ben souda",
+    "phone": "0535 65 50 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0156405,
+      "lng": -5.0512004
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-qods-s241351.html"
+  },
+  {
+    "name": "Pharmacie Oulad Tayeb",
+    "address": "oulad tayeb",
+    "phone": "0535 61 28 68 0666197898",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.95980072,
+      "lng": -4.99561977
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oulad-tayeb-s244318.html"
+  },
+  {
+    "name": "Pharmacie Al Aziza",
+    "address": "numéro 1 lotissement al aziza",
+    "phone": "0535 60 50 75",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9937601,
+      "lng": -5.0335716
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-aziza-s237999.html"
+  },
+  {
+    "name": "Pharmacie Bab Elkhokha",
+    "address": "5  lotiss",
+    "phone": "0535 64 96 10",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-elkhokha-s245131.html"
+  },
+  {
+    "name": "Pharmacie Derb Lamty",
+    "address": "n°1, derb lamty, rue fouah, r'cif",
+    "phone": "0535 76 15 83",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0306458,
+      "lng": -5.0087577
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-derb-lamty-s237990.html"
+  },
+  {
+    "name": "Pharmacie Myel",
+    "address": "172 lot",
+    "phone": "0532 05 71 32",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0064297,
+      "lng": -5.0199414
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-myel-s250500.html"
+  },
+  {
+    "name": "Pharmacie Obtel",
+    "address": "n°623a, lotiss",
+    "phone": "0535 64 73 04",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0536753,
+      "lng": -5.0495458
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-obtel-s240972.html"
+  },
+  {
+    "name": "Pharmacie Bouchra",
+    "address": "lotissement jnane 1",
+    "phone": "0535 96 29 61",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bouchra-s244999.html"
+  },
+  {
+    "name": "Pharmacie Ahel Fes",
+    "address": "n°264",
+    "phone": "0535 96 64 00",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9883761,
+      "lng": -5.0449609
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ahel-fes-s238352.html"
+  },
+  {
+    "name": "Pharmacie Jardins El Badie",
+    "address": "356, lotissement les jardins el badie, route ain chkef",
+    "phone": "0664 09 91 98",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03465271,
+      "lng": -5.01619244
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jardins-el-badie-s243494.html"
+  },
+  {
+    "name": "Pharmacie Mouene",
+    "address": "hay Msallah   lotiss",
+    "phone": "0535 71 17 48",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0541139,
+      "lng": -4.9598095
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mouene-s245227.html"
+  },
+  {
+    "name": "Pharmacie Amrani",
+    "address": "bd lalla meryem place florence",
+    "phone": "0535 62 42 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0419913,
+      "lng": -5.0034098
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-amrani-s241085.html"
+  },
+  {
+    "name": "Pharmacie Al Massira",
+    "address": "350 hay al massira en face de l'hopital al massira",
+    "phone": "0600 27 42 14",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-massira-s238493.html"
+  },
+  {
+    "name": "Pharmacie Jnane Fes",
+    "address": "15, rue el akhtal (ex",
+    "phone": "0535 65 39 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0303905,
+      "lng": -5.0074612
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-fes-s242683.html"
+  },
+  {
+    "name": "Pharmacie Ibn Baytar",
+    "address": "4, rue Senhaja, Jnane suissi",
+    "phone": "0535 66 90 35",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-baytar-s245023.html"
+  },
+  {
+    "name": "Pharmacie Centrale Ain Chqef",
+    "address": "arrondissement ain chqef, lotissement jnane1",
+    "phone": "0535 69 11 33",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0367774,
+      "lng": -4.9978768
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-centrale-ain-chqef-s244997.html"
+  },
+  {
+    "name": "Pharmacie Amal Chifae",
+    "address": "n°113, lotissement",
+    "phone": "0601 91 94 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-amal-chifae-s241722.html"
+  },
+  {
+    "name": "Pharmacie Hay Al Anbra",
+    "address": "rue 44 lot",
+    "phone": "0535 60 85 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0111194,
+      "lng": -5.0589681
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-al-anbra-s248100.html"
+  },
+  {
+    "name": "Pharmacie Centrale Ain Chkef",
+    "address": "arrondissement ain chkef, lotissement jnane1, a coté droguerie bouzian",
+    "phone": "0535 69 11 33",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-centrale-ain-chkef-s245649.html"
+  },
+  {
+    "name": "Pharmacie Oulad Maaref",
+    "address": "commune ain chkef",
+    "phone": "0535 60 32 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9638465,
+      "lng": -5.0282873
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oulad-maaref-s245032.html"
+  },
+  {
+    "name": "Pharmacie Ras Elma",
+    "address": "53  hay Bensouda -    Ras Elma   Almostaqbal",
+    "phone": "0535 68 19 25",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ras-elma-s245754.html"
+  },
+  {
+    "name": "Pharmacie Lido",
+    "address": "lido dhar mehrez a cote kantrat lido",
+    "phone": "0535 64 10 97",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.033419,
+      "lng": -4.991599
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lido-s238819.html"
+  },
+  {
+    "name": "Pharmacie Des Roches",
+    "address": "69, lot",
+    "phone": "0535 96 60 61",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9945938,
+      "lng": -5.0097656
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-roches-s242513.html"
+  },
+  {
+    "name": "Pharmacie Imam Mouslim",
+    "address": "n° 61 hay mabrouka, pres hammam salima",
+    "phone": "0535 75 41 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0445523,
+      "lng": -5.0072406
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-imam-mouslim-s241714.html"
+  },
+  {
+    "name": "Pharmacie Masjid Attaqwa",
+    "address": "hay saada",
+    "phone": "0535 74 81 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-masjid-attaqwa-s244363.html"
+  },
+  {
+    "name": "Pharmacie AlFalah",
+    "address": "pharmacie alfalah, lotiss",
+    "phone": "0535 63 14 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alfalah-s95882.html"
+  },
+  {
+    "name": "Pharmacie Masjid Attaqua",
+    "address": "hay saada route ain chqef",
+    "phone": "0535 74 81 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-masjid-attaqua-s238494.html"
+  },
+  {
+    "name": "Pharmacie Des Far",
+    "address": "début dokkarat, route meknès",
+    "phone": "0535 94 22 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0409616,
+      "lng": -5.016986
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-far-s242561.html"
+  },
+  {
+    "name": "Pharmacie Souissi",
+    "address": "K050  rte de Sefrou    km 5 Domaine Ben Abdellah",
+    "phone": "0535 61 77 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-souissi-s245384.html"
+  },
+  {
+    "name": "Pharmacie Slaoui Kenz",
+    "address": "112, lot bab fes, zouagha route bensouda",
+    "phone": "0535 60 53 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0243181,
+      "lng": -5.0593864
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-slaoui-kenz-s249627.html"
+  },
+  {
+    "name": "Pharmacie Sidi Ahmed Chaoui",
+    "address": "n°28",
+    "phone": "0535 63 85 42",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0620882,
+      "lng": -4.9796572
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sidi-ahmed-chaoui-s252695.html"
+  },
+  {
+    "name": "Pharmacie Mont Fleuri 2",
+    "address": "avenue iskandaria",
+    "phone": "0535 61 54 92",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mont-fleuri-2-s95921.html"
+  },
+  {
+    "name": "Pharmacie Machae Allah",
+    "address": "marjane saiss, ouled tayeb",
+    "phone": "0535 60 06 41",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.958907,
+      "lng": -4.9982367
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-machae-allah-s242686.html"
+  },
+  {
+    "name": "Pharmacie Annassim",
+    "address": "numéro 3 bloc r6, nassim ben souda",
+    "phone": "0535 65 54 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-annassim-s238682.html"
+  },
+  {
+    "name": "Pharmacie Ibn Lkhateb",
+    "address": "34 bd 202 ain haroun",
+    "phone": "0535 64 51 54",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0664482,
+      "lng": -5.0057003
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-lkhateb-s242281.html"
+  },
+  {
+    "name": "Pharmacie La Providence",
+    "address": "n° 260 d, lot al bardai al marja ould fès",
+    "phone": "0532 16 00 01",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0381223,
+      "lng": -5.0556097
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-providence-s250326.html"
+  },
+  {
+    "name": "Pharmacie El Mostapha",
+    "address": "n°80 bd nour",
+    "phone": "0535 73 12 32",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-mostapha-s242554.html"
+  },
+  {
+    "name": "Pharmacie Khayra",
+    "address": "lotissement el menzeh",
+    "phone": "0535 76 89 65",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0107068,
+      "lng": -4.9463797
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-khayra-s254562.html"
+  },
+  {
+    "name": "Pharmacie Ain Aamir",
+    "address": "hay anas 3 proche de la clinique errazi route ain chkef",
+    "phone": "0535 96 88 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0030679,
+      "lng": -5.0051374
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-aamir-s238383.html"
+  },
+  {
+    "name": "Pharmacie Al Majd",
+    "address": "pharmacie almajd, bd al karaouine, b, narjis",
+    "phone": "0535 61 64 47",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0158944,
+      "lng": -4.9766044
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-majd-s244282.html"
+  },
+  {
+    "name": "Pharmacie Morchid",
+    "address": "pharmacie morchid, 2 rue tadhia, narjiss c, route de sefrou",
+    "phone": "0535 61 48 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0137435,
+      "lng": -4.9779439
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-morchid-s238821.html"
+  },
+  {
+    "name": "Pharmacie Al Jawahir",
+    "address": "82 lot al jawahir bensouda en face de lot chaimae",
+    "phone": "0664 57 93 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0335888,
+      "lng": -5.0008613
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-jawahir-s238496.html"
+  },
+  {
+    "name": "Pharmacie Le Grand Stade",
+    "address": "30",
+    "phone": "0535 73 66 89",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9931341,
+      "lng": -4.9745152
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-le-grand-stade-s254500.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100",
+    "phone": "0707 55 31 30 0665655766",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s254499.html"
+  },
+  {
+    "name": "Pharmacie Zqaq Lahjar",
+    "address": "zqaq lahjar",
+    "phone": "0535 63 36 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zqaq-lahjar-s244686.html"
+  },
+  {
+    "name": "Pharmacie Mounad",
+    "address": "hay Sehb El Ward   rue 1 n°17 bis  blad Raiss",
+    "phone": "0535 76 35 03",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mounad-s245327.html"
+  },
+  {
+    "name": "Pharmacie Le Remède",
+    "address": "3 bd hassan ibn noaman, hay taj",
+    "phone": "0535 75 58 30",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346527099609,
+      "lng": -5.0161924362182
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-le-remede-s238495.html"
+  },
+  {
+    "name": "Pharmacie Route Ras Elma",
+    "address": "53, lotissement route ras elma, bensouda",
+    "phone": "0535 68 19 25",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0129734,
+      "lng": -5.0696107
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-ras-elma-s237995.html"
+  },
+  {
+    "name": "Pharmacie La Coniche",
+    "address": "lotissement al jawahir arrondissement zouagha rte bensouda, rdc lot 3e 1-98",
+    "phone": "0538 11 97 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0337452,
+      "lng": -5.0649591
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-coniche-s252172.html"
+  },
+  {
+    "name": "Pharmacie AlMoussaoui",
+    "address": "lotiss",
+    "phone": "0550 02 39 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-almoussaoui-s245228.html"
+  },
+  {
+    "name": "Pharmacie El Inaya",
+    "address": "310 bd karaouiyine, narjis b",
+    "phone": "0535 64 42 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-inaya-s242399.html"
+  },
+  {
+    "name": "Pharmacie Jnane Ain Chqef",
+    "address": "jmaa ain chef",
+    "phone": "0535 96 70 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-ain-chqef-s245055.html"
+  },
+  {
+    "name": "Pharmacie Corniche Oued Fès",
+    "address": "n° 30",
+    "phone": "0607 08 89 43",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0509841,
+      "lng": -5.0283353
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-corniche-oued-fes-s254461.html"
+  },
+  {
+    "name": "Pharmacie De La Gare",
+    "address": "rue imam chafii hay la gare, derrière mosquée imam ali",
+    "phone": "0535 65 24 75",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-gare-s242555.html"
+  },
+  {
+    "name": "Pharmacie La Ferraille",
+    "address": "n°10 lotissement namae, quartier industriel",
+    "phone": "0535 72 95 57",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9997423,
+      "lng": -5.0540934
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-ferraille-s238500.html"
+  },
+  {
+    "name": "Pharmacie Foret Ain Chkef",
+    "address": "commune ain chkef, à coté du piscine diamant vert",
+    "phone": "0535 61 05 86",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.99045894,
+      "lng": -5.01712222
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-foret-ain-chkef-s250109.html"
+  },
+  {
+    "name": "Pharmacie Samia El Alami",
+    "address": "douar ouled hamou, ouled tayyeb- fès",
+    "phone": "0666 19 78 98",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0593088,
+      "lng": -4.9576012
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-samia-el-alami-s244546.html"
+  },
+  {
+    "name": "Pharmacie Al Mouahidine",
+    "address": "bd mouahidine dekkarat, hay az allah",
+    "phone": "0535 62 19 19",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-mouahidine-s242688.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0535 64 12 77 0666241213",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s254420.html"
+  },
+  {
+    "name": "Pharmacie Wislane",
+    "address": "sehb lward douar riafa, route sidi hrazem",
+    "phone": "0535 64 85 91 0653257224",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-wislane-s254419.html"
+  },
+  {
+    "name": "Pharmacie Mouldwa",
+    "address": "n°131",
+    "phone": "0688 91 82 01",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9841088,
+      "lng": -4.9862703
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mouldwa-s254418.html"
+  },
+  {
+    "name": "Pharmacie Oxygène",
+    "address": "cité 2 rue tariq al moqadassa dher lmahraz",
+    "phone": "0611 70 62 72 0535657902",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346984863281,
+      "lng": -5.0161900520324
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oxygene-s254417.html"
+  },
+  {
+    "name": "Pharmacie Al Fath",
+    "address": "bd mohamed slaoui a coté cinéma astor",
+    "phone": "0535 62 30 89",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-fath-s242794.html"
+  },
+  {
+    "name": "Pharmacie Jardin Oued Fès",
+    "address": "n° 83 - lotissement ddayâa 2- ain qadous",
+    "phone": "0535 75 62 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0582371,
+      "lng": -5.0355038
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jardin-oued-fes-s244506.html"
+  },
+  {
+    "name": "Pharmacie Rte Ain Chkef",
+    "address": "n° 333, lotissement riad el yasamine, route ain chkef",
+    "phone": "0535 96 74 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9980803,
+      "lng": -5.0171269
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rte-ain-chkef-s241925.html"
+  },
+  {
+    "name": "Pharmacie Diamant De Fes",
+    "address": "ferme ibn abdellah",
+    "phone": "0654 42 00 72",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9997749,
+      "lng": -5.0122414
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-diamant-de-fes-s238808.html"
+  },
+  {
+    "name": "Pharmacie Les Merinides",
+    "address": "numéro 24, hay ben zakour dher lkhmiss en face préfecture meriniyine",
+    "phone": "0535 64 51 69",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0330653,
+      "lng": -5.0006091
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-les-merinides-s238178.html"
+  },
+  {
+    "name": "Pharmacie Nour",
+    "address": "n° 85",
+    "phone": "0535 94 35 13",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nour-s238384.html"
+  },
+  {
+    "name": "Pharmacie Al Jamila",
+    "address": "lot ghali, magasin n°38, 1 rte de sefrou",
+    "phone": "0535 76 77 58",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9900997,
+      "lng": -4.9704553
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-jamila-s252753.html"
+  },
+  {
+    "name": "Pharmacie Bab El Hamra",
+    "address": "n°6 ras kaleaa, derrière sidi ali boughaleb, a coté dépot municipal",
+    "phone": "0535 64 82 20",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0466796,
+      "lng": -5.010643
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-el-hamra-s242562.html"
+  },
+  {
+    "name": "Pharmacie Manabie Ain Chkef",
+    "address": "commune ain chkef -  6",
+    "phone": "0676 76 11 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9500165,
+      "lng": -5.0355334
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-manabie-ain-chkef-s251297.html"
+  },
+  {
+    "name": "Pharmacie Tanara",
+    "address": "commune ain chkef, lotissement jnane",
+    "phone": "0535 97 91 20",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9467762,
+      "lng": -5.0340719
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-tanara-s247456.html"
+  },
+  {
+    "name": "Pharmacie Jerondi",
+    "address": "jnane fes1",
+    "phone": "0535 69 16 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jerondi-s245057.html"
+  },
+  {
+    "name": "Pharmacie Jawhara",
+    "address": "rte ain chkef",
+    "phone": "0535 96 68 16 0532313990",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9645959,
+      "lng": -5.0300039
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jawhara-s254155.html"
+  },
+  {
+    "name": "Pharmacie Hay Almassira",
+    "address": "350, hay Al Massira, q",
+    "phone": "0550 08 62 36",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-almassira-s245022.html"
+  },
+  {
+    "name": "Pharmacie Aeroport Fes Saiss",
+    "address": "oulad tayeb",
+    "phone": "0535 72 79 34",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9484181,
+      "lng": -5.0012369
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aeroport-fes-saiss-s242687.html"
+  },
+  {
+    "name": "Pharmacie Central Ain Chkef",
+    "address": "arrondissement ain chkef, lotissement jnane1",
+    "phone": "0653 82 83 11",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0367774,
+      "lng": -4.9978768
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-central-ain-chkef-s252390.html"
+  },
+  {
+    "name": "Pharmacie Sais",
+    "address": "rue l'hopital n°13",
+    "phone": "0535 65 52 13",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sais-s245510.html"
+  },
+  {
+    "name": "Pharmacie Le Palais",
+    "address": "hay tarek 1",
+    "phone": "0702 72 33 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-le-palais-s246869.html"
+  },
+  {
+    "name": "Pharmacie La Commune Nouvelle",
+    "address": "champs de cours a coté de la commune de fes et café sanabil",
+    "phone": "0535 93 11 57",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332156,
+      "lng": -5.0155713
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-commune-nouvelle-s242004.html"
+  },
+  {
+    "name": "Pharmacie Al Jawahir",
+    "address": "4  lotiss",
+    "phone": "0535 72 80 76",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-jawahir-s245132.html"
+  },
+  {
+    "name": "Pharmacie Les Palmiers",
+    "address": "bd hassan 2 en face du tribunal cour d'appel",
+    "phone": "0535 62 12 84",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0312256,
+      "lng": -5.0083188
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-les-palmiers-s238489.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0535 77 21 46",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s251823.html"
+  },
+  {
+    "name": "Pharmacie Youssef Ibn Tachfine",
+    "address": "lot riad limoune s14 n°3 route meknes",
+    "phone": "0535 75 37 02",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0548911,
+      "lng": -5.0438438
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-youssef-ibn-tachfine-s240971.html"
+  },
+  {
+    "name": "Pharmacie Jardins El Badie",
+    "address": "356, lotissement les jardins el badie, route ain chkef",
+    "phone": "0664 09 91 98 0535608010",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03465271,
+      "lng": -5.01619244
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jardins-el-badie-s253898.html"
+  },
+  {
+    "name": "Pharmacie Sabati",
+    "address": "numéro 131 résidense sabati 1 zohour 2 proche de la salle couverte el falah",
+    "phone": "0535 76 52 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9840565,
+      "lng": -4.988268
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sabati-s237981.html"
+  },
+  {
+    "name": "Pharmacie Diamant De Fes",
+    "address": "ferme ibn abdellah",
+    "phone": "0664 07 95 93",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9997749,
+      "lng": -5.0122414
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-diamant-de-fes-s250499.html"
+  },
+  {
+    "name": "Pharmacie Yakout",
+    "address": "384 lot aziza, magasin 1, route ain chkef",
+    "phone": "0532 07 57 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9954784,
+      "lng": -5.0350051
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-yakout-s251766.html"
+  },
+  {
+    "name": "Pharmacie Al Boukhari",
+    "address": "n 27 rue youssef ibn tachfine",
+    "phone": "0535 75 49 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0568427,
+      "lng": -5.0357091
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-boukhari-s238382.html"
+  },
+  {
+    "name": "Pharmacie La Menara",
+    "address": "635  bd al karaouiyine   narjiss c",
+    "phone": "0535 61 56 72",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0525611,
+      "lng": -4.9936035
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-menara-s241566.html"
+  },
+  {
+    "name": "Pharmacie Nour ElHouda",
+    "address": "146  bd Al Israe   hay Al Amal rte de Sefrou",
+    "phone": "0535 61 71 52",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-nour-elhouda-s245329.html"
+  },
+  {
+    "name": "Pharmacie Oum El Banine",
+    "address": "n°10, boulevard ahmed mekouar, bathaa, près du lycée oum el banine",
+    "phone": "0535 63 55 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.060802,
+      "lng": -4.9800465
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-el-banine-s237994.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "commune ain hkef",
+    "phone": "0665 65 57 66 0538805111",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s253807.html"
+  },
+  {
+    "name": "Pharmacie Moulay Mbarek",
+    "address": "bled sfira ain nokbi, a coté arrondissement al kobba",
+    "phone": "0535 63 07 87",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9982615,
+      "lng": -5.0211972
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-moulay-mbarek-s238686.html"
+  },
+  {
+    "name": "Pharmacie Aya Sofia",
+    "address": "242 bis, hay sidi el hadi zouagha olya, près de l'ancienne collège imam boukhari",
+    "phone": "0535 60 33 14",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0186675,
+      "lng": -5.0408091
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aya-sofia-s246462.html"
+  },
+  {
+    "name": "Pharmacie Aouinat Elhajjaj",
+    "address": "pharmacie aouinat elhajjaj, bloc a n°434 aouinate el hajaj",
+    "phone": "0538 38 71 41",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0333131,
+      "lng": -5.0700401
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aouinat-elhajjaj-s253780.html"
+  },
+  {
+    "name": "Pharmacie Jawhara",
+    "address": "rte ain chkef",
+    "phone": "0535 96 68 16 0532313990",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9645959,
+      "lng": -5.0300039
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jawhara-s253779.html"
+  },
+  {
+    "name": "Pharmacie Jnane Ain Chkef",
+    "address": "arrondissement ain chef",
+    "phone": "0535 96 70 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.953036,
+      "lng": -5.0279555
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jnane-ain-chkef-s247023.html"
+  },
+  {
+    "name": "Pharmacie Makka",
+    "address": "n°736 hay al massira bensouda",
+    "phone": "0535 72 81 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0333154,
+      "lng": -5.0014353
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-makka-s241356.html"
+  },
+  {
+    "name": "Pharmacie Docteur Mounir",
+    "address": "bd anawal narjiss d en face centre de santé aouinat el hajjaj",
+    "phone": "0535 61 93 77",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0190089,
+      "lng": -4.9694843
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-docteur-mounir-s241862.html"
+  },
+  {
+    "name": "Pharmacie City Golf",
+    "address": "n°203",
+    "phone": "0665 45 04 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0492982,
+      "lng": -5.0310775
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-city-golf-s253675.html"
+  },
+  {
+    "name": "Pharmacie De Fès",
+    "address": "jnane lahraichi   rue 8 n°33  ben debbab",
+    "phone": "0535 64 57 44",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0659233,
+      "lng": -5.0151475
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-fes-s241086.html"
+  },
+  {
+    "name": "Pharmacie Ahayan",
+    "address": "b27",
+    "phone": "0535 70 00 13",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.052195,
+      "lng": -5.0252563
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ahayan-s253645.html"
+  },
+  {
+    "name": "Pharmacie Iraqui Karima Derb Lwerd",
+    "address": "route imouzzar, bd ibn al khatib",
+    "phone": "0535 60 67 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0204594,
+      "lng": -5.002781
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-iraqui-karima-derb-lwerd-s253644.html"
+  },
+  {
+    "name": "Pharmacie Jardin Tghat",
+    "address": "lotiss",
+    "phone": "0535 70 00 60",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jardin-tghat-s245753.html"
+  },
+  {
+    "name": "Pharmacie Blida",
+    "address": "n°30 chouwara",
+    "phone": "0632 77 57 20",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0663839,
+      "lng": -5.0083444
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-blida-s242631.html"
+  },
+  {
+    "name": "Pharmacie Annasim",
+    "address": "n°3",
+    "phone": "0635 65 54 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9944247,
+      "lng": -5.0595832
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-annasim-s253534.html"
+  },
+  {
+    "name": "Pharmacie Bayrout",
+    "address": "139 bd bayrout, route sefrou a coté farina",
+    "phone": "0535 61 96 60 0532111537",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bayrout-s253533.html"
+  },
+  {
+    "name": "Pharmacie R'cif",
+    "address": "rahbat tben, bab jdid",
+    "phone": "0535 63 33 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0608132,
+      "lng": -4.9730952
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-r-cif-s237985.html"
+  },
+  {
+    "name": "Pharmacie Mojab",
+    "address": "lotissement latifa, tranche n°172, près du mosquée al falah",
+    "phone": "0535 66 60 39",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mojab-s242690.html"
+  },
+  {
+    "name": "Pharmacie Espace Vert",
+    "address": "lotissement jnane c3",
+    "phone": "0602 90 86 96",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9493334,
+      "lng": -5.0316895
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-espace-vert-s245000.html"
+  },
+  {
+    "name": "Pharmacie Oum Al Mouminine",
+    "address": "commune ain chkef",
+    "phone": "0535 64 12 77 0656242035",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9665523,
+      "lng": -5.0272649
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oum-al-mouminine-s253382.html"
+  },
+  {
+    "name": "Pharmacie Al Quods",
+    "address": "bd principal n1 bensouda pres station petit taxi",
+    "phone": "0535 65 50 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-quods-s238351.html"
+  },
+  {
+    "name": "Pharmacie Bab Lghoul",
+    "address": "n° 85",
+    "phone": "0535 62 69 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-lghoul-s245031.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100 (tél fixe: 0538805111, mobile: 0665665766)",
+    "phone": "0665 66 57 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s253316.html"
+  },
+  {
+    "name": "Pharmacie Hopital Bensouda",
+    "address": "82 hay chemin de fer près de l'hopital bensouda",
+    "phone": "0532 63 92 92",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0165397,
+      "lng": -5.0451188
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hopital-bensouda-s253308.html"
+  },
+  {
+    "name": "Pharmacie Najmat Saiss",
+    "address": "190 lotissement najmat saiss, magasin n°1 bensouda",
+    "phone": "0535 97 40 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0065093,
+      "lng": -5.0473981
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-najmat-saiss-s253282.html"
+  },
+  {
+    "name": "Pharmacie Hajjioui",
+    "address": "douar ouled bouabid, sakia",
+    "phone": "0623 86 93 55",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hajjioui-s242839.html"
+  },
+  {
+    "name": "Pharmacie Aouinat Elhajjaj",
+    "address": "pharmacie aouinat elhajjaj, bloc a n°434 aouinate el hajaj",
+    "phone": "0535 65 65 20 0538387141",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0333131,
+      "lng": -5.0700401
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aouinat-elhajjaj-s253210.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "commune ain hkef",
+    "phone": "0665 65 57 66",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s253206.html"
+  },
+  {
+    "name": "Pharmacie Ibn Al Baytar",
+    "address": "pharmacie ibn al baytar, rue 4 jnane souissisidi boujida",
+    "phone": "0535 76 31 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-al-baytar-s253205.html"
+  },
+  {
+    "name": "Pharmacie Andalous",
+    "address": "n°4 jnan slaoui sidi boujida",
+    "phone": "0535 64 91 82",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0664586,
+      "lng": -4.9673385
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-andalous-s240976.html"
+  },
+  {
+    "name": "Pharmacie De L'atlas",
+    "address": "place atlas",
+    "phone": "0535 64 18 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0316397,
+      "lng": -4.9946871
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-l-atlas-s238181.html"
+  },
+  {
+    "name": "Pharmacie L'entente - Alwifaq",
+    "address": "42, bd moulay rachid, route sefrou",
+    "phone": "0535 65 81 31",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-entente-alwifaq-s237983.html"
+  },
+  {
+    "name": "Pharmacie Chifa",
+    "address": "arrondissement ain chkef, douar lbsays",
+    "phone": "0535 96 67 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0407799,
+      "lng": -5.0141234
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifa-s245600.html"
+  },
+  {
+    "name": "Pharmacie Arrabie",
+    "address": "lot 4-6 lot farah, résidence arrabie bensouda",
+    "phone": "0535 68 10 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0010182,
+      "lng": -5.0501089
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-arrabie-s241719.html"
+  },
+  {
+    "name": "Pharmacie Assanabil",
+    "address": "pharmacie asanabil, immeuble bennani, bd sanabil",
+    "phone": "0535 60 63 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.021274,
+      "lng": -5.0354208
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-assanabil-s247389.html"
+  },
+  {
+    "name": "Pharmacie Zahrat Al Jabal",
+    "address": "commune ain chkef -  douar tlalsa sejaa",
+    "phone": "0624 86 05 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.957503,
+      "lng": -5.019967
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zahrat-al-jabal-s246298.html"
+  },
+  {
+    "name": "Pharmacie Ibn Nafis",
+    "address": "hay ain chkef dommaine ain chkef  douar tlalsa",
+    "phone": "0614 41 44 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9608488,
+      "lng": -5.0222982
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-nafis-s245519.html"
+  },
+  {
+    "name": "Pharmacie L'humanité",
+    "address": "n°1 mosquée attadamoun, a coté piscine diamant vert, california, 30100 (tél fixe: 0538805111, mobile: 0679475071)",
+    "phone": "0707 55 31 30",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9782206,
+      "lng": -5.0266215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-humanite-s247388.html"
+  },
+  {
+    "name": "Pharmacie Olha",
+    "address": "n°1 lot bab el ghol 2eme tranche dher mahraz",
+    "phone": "0677 20 89 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0432172,
+      "lng": -4.9918788
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-olha-s252792.html"
+  },
+  {
+    "name": "Pharmacie Idrissima",
+    "address": "super marché acima, bd allal ben abdellah",
+    "phone": "0535 94 43 10",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.026541,
+      "lng": -5.0262551
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-idrissima-s242402.html"
+  },
+  {
+    "name": "Pharmacie Zalagh",
+    "address": "lot hadika tranche 2",
+    "phone": "0535 70 10 25",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0334554,
+      "lng": -5.0700409
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zalagh-s246463.html"
+  },
+  {
+    "name": "Pharmacie Lilas",
+    "address": "num 1, imm 51, lot",
+    "phone": "0535 70 25 09",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0591054,
+      "lng": -5.0451038
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lilas-s252720.html"
+  },
+  {
+    "name": "Pharmacie Diar Ofok",
+    "address": "n°20 imm g, route bensouda fes, lot",
+    "phone": "0535 68 59 01",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.000899,
+      "lng": -5.0101303
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-diar-ofok-s252694.html"
+  },
+  {
+    "name": "Pharmacie Al Omrane",
+    "address": "bloc a5 numéro 2, 3  nassim bensouda",
+    "phone": "0535 65 55 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.031069,
+      "lng": -4.9976328
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-omrane-s238687.html"
+  },
+  {
+    "name": "Pharmacie Oulad Mhamed",
+    "address": "douar oulad mhamed, arrondissement ain chkef",
+    "phone": "0696 98 93 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9629203,
+      "lng": -5.0325504
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oulad-mhamed-s252495.html"
+  },
+  {
+    "name": "Pharmacie Fatima Fihria",
+    "address": "pharmacie fihria, n°167, derb bouajjara, bab jdid",
+    "phone": "0535 74 13 53",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fatima-fihria-s242795.html"
+  },
+  {
+    "name": "Pharmacie Chifa",
+    "address": "arrondissement ain chkef, douar lbsays",
+    "phone": "0673 71 83 78",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0407799,
+      "lng": -5.0141234
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chifa-s252126.html"
+  },
+  {
+    "name": "Pharmacie Avicenne De Fes",
+    "address": "5-160 lot al menzeh, route sidi hrazem",
+    "phone": "0532 08 69 57",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0108462,
+      "lng": -4.950113
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-avicenne-de-fes-s250571.html"
+  },
+  {
+    "name": "Pharmacie Al Ilaj",
+    "address": "736 hay el massira, ben souda",
+    "phone": "0535 72 81 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9913412,
+      "lng": -5.0620727
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-ilaj-s249350.html"
+  },
+  {
+    "name": "Pharmacie Zahra",
+    "address": "route sefrou, premier feu rouge après l'atlas",
+    "phone": "0535 64 29 24",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zahra-s246812.html"
+  },
+  {
+    "name": "Pharmacie Jinane Ain CHkef",
+    "address": "194  lotiss",
+    "phone": "0535 96 70 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-jinane-ain-chkef-s245224.html"
+  },
+  {
+    "name": "Pharmacie ElOtmani",
+    "address": "52  rue Boufekrane   Aouinat Hajaj",
+    "phone": "0535 96 01 44",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02619515,
+      "lng": -5.02318487
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elotmani-s245136.html"
+  },
+  {
+    "name": "Pharmacie Al Omniya",
+    "address": "n°85, lotissement om al qora, (entre mosquée att'akhi et atacadao)",
+    "phone": "0532 01 95 14",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0276003,
+      "lng": -5.0525939
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-omniya-s244160.html"
+  },
+  {
+    "name": "Pharmacie De La Liberté",
+    "address": "place de la résistance",
+    "phone": "0535 62 19 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0450747,
+      "lng": -4.9992966
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-de-la-liberte-s242626.html"
+  },
+  {
+    "name": "Pharmacie Skalli",
+    "address": "zouhour 2",
+    "phone": "0535 76 88 84",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0017355,
+      "lng": -4.9764118
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-skalli-s241354.html"
+  },
+  {
+    "name": "Pharmacie Meryama",
+    "address": "530 lot al mostaqbal hay al massira",
+    "phone": "0535 68 15 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9940929,
+      "lng": -5.0476129
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-meryama-s240975.html"
+  },
+  {
+    "name": "Pharmacie El Msaadi",
+    "address": "hay alwifaq rue ain smen",
+    "phone": "0535 60 18 36",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0297999,
+      "lng": -4.9948642
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-msaadi-s238490.html"
+  },
+  {
+    "name": "Pharmacie Oxygène",
+    "address": "cité 2 rue tariq al moqadassa dher lmahraz",
+    "phone": "0611 70 62 72",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0346984863281,
+      "lng": -5.0161900520324
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-oxygene-s238349.html"
+  },
+  {
+    "name": "Pharmacie Bab El Ghoul",
+    "address": "n° 85, bab el ghoul, dher el mehrez",
+    "phone": "0535 62 69 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.042955,
+      "lng": -4.9894215
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-el-ghoul-s237996.html"
+  },
+  {
+    "name": "Pharmacie la Famille",
+    "address": "n° 71 boulevard chankit menflouri 2",
+    "phone": "0535 61 01 33",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0046736,
+      "lng": -4.9891528
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-famille-s166111.html"
+  },
+  {
+    "name": "Pharmacie ElMalhi",
+    "address": "rue 3 n° 2 hay tarik 1, a coté école amine et espace enfant dokkarat",
+    "phone": "0535 61 10 29",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elmalhi-s166035.html"
+  },
+  {
+    "name": "Pharmacie l'Université",
+    "address": "79 bis, hay chouhada, sidi brahim",
+    "phone": "0535 73 25 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-universite-s165204.html"
+  },
+  {
+    "name": "Pharmacie Alirfane",
+    "address": "pharmacie alirfane, bd ben elkhatib route ain chqef",
+    "phone": "0535 61 08 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alirfane-s165207.html"
+  },
+  {
+    "name": "Pharmacie Dhar Elmahraz",
+    "address": "lodo dhar el mahrez",
+    "phone": "0535 64 20 21",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0385417,
+      "lng": -4.9920366
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-dhar-elmahraz-s165210.html"
+  },
+  {
+    "name": "Pharmacie Ibn Haytam",
+    "address": "104, bd al kayraouane",
+    "phone": "0535 96 04 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-haytam-s165162.html"
+  },
+  {
+    "name": "Pharmacie Hamdoun",
+    "address": "pharmacie hamdoun, hay essalam rue 17 n°8 ain kadous",
+    "phone": "0535 70 33 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0631545,
+      "lng": -5.0167676
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hamdoun-s165174.html"
+  },
+  {
+    "name": "Pharmacie Dokkarat",
+    "address": "a coté mosquée al azhar",
+    "phone": "0535 62 09 21",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-dokkarat-s165179.html"
+  },
+  {
+    "name": "Pharmacie AlWahda",
+    "address": "pharmacie alwahda, hay al wahda n° 1 bensouda a cote du mosquée al mohsinine",
+    "phone": "0535 72 67 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alwahda-s165180.html"
+  },
+  {
+    "name": "Pharmacie Mimosa",
+    "address": "avenue du prince héritier, près du salon des fêtes attohfa",
+    "phone": "0535 62 33 76",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0327541,
+      "lng": -5.0123754
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mimosa-s165183.html"
+  },
+  {
+    "name": "Pharmacie Ilham",
+    "address": "56  hay el qods",
+    "phone": "0535 72 66 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0184313,
+      "lng": -5.0494379
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ilham-s165186.html"
+  },
+  {
+    "name": "Pharmacie Bab Guissa",
+    "address": "numéro 25 bab guissa a cote du palais jamaai",
+    "phone": "0535 63 55 84",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0327272,
+      "lng": -5.0849665
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bab-guissa-s165188.html"
+  },
+  {
+    "name": "Pharmacie Laguzira",
+    "address": "n° 13 fran chrarda laguzira a coté de la mosquée al makhfiya et cinéma al amal",
+    "phone": "0535 76 39 00",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-laguzira-s165009.html"
+  },
+  {
+    "name": "Pharmacie ElWardi",
+    "address": "494  lotiss",
+    "phone": "0535 63 10 46",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elwardi-s165012.html"
+  },
+  {
+    "name": "Pharmacie Asanabil",
+    "address": "pharmacie asanabil, immeuble bennani, bd sanabil",
+    "phone": "0535 60 63 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.021274,
+      "lng": -5.0354208
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-asanabil-s165037.html"
+  },
+  {
+    "name": "Pharmacie AlFadila",
+    "address": "317  bd Karama   Mont fleuri 1",
+    "phone": "0535 64 42 31",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alfadila-s165043.html"
+  },
+  {
+    "name": "Pharmacie des F.a.r.",
+    "address": "rte de meknès   dokkarat",
+    "phone": "0535 94 22 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0407628,
+      "lng": -5.0165278
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-f-a-r-s164633.html"
+  },
+  {
+    "name": "Pharmacie Ibn Batouta",
+    "address": "bis 33",
+    "phone": "0535 64 94 58",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-batouta-s164652.html"
+  },
+  {
+    "name": "Pharmacie Boukhari",
+    "address": "27 rue youssef ibn tachfine oued fes a cote de l'arrondissement",
+    "phone": "0535 75 49 23",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0567305,
+      "lng": -5.0374192
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-boukhari-s164658.html"
+  },
+  {
+    "name": "Pharmacie L'iris",
+    "address": "19, bd bizerte menflouri 2 route imouzer",
+    "phone": "0535 74 80 19",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0026743,
+      "lng": -4.9900017
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-iris-s164672.html"
+  },
+  {
+    "name": "Pharmacie Bismillah",
+    "address": "lotissement al wahda1037, bensouda (nouvelle mosquée)",
+    "phone": "0535 65 56 65",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0427119,
+      "lng": -5.0100875
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bismillah-s164683.html"
+  },
+  {
+    "name": "Pharmacie Aïn Smen",
+    "address": "bloc b 172 hay al wifaq route ain smen",
+    "phone": "0535 60 24 19",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ain-smen-s164684.html"
+  },
+  {
+    "name": "Pharmacie AlKaoutar",
+    "address": "pharmacie alkaoutar, n°210 bloc a, hay al wifaq soufla, route ain smen",
+    "phone": "0535 61 24 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alkaoutar-s164685.html"
+  },
+  {
+    "name": "Pharmacie bayrout",
+    "address": "139 bd bayrout, route sefrou a coté farina",
+    "phone": "0535 61 96 60",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bayrout-s164690.html"
+  },
+  {
+    "name": "Pharmacie Bouziane",
+    "address": "n°40",
+    "phone": "0535 76 48 87",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bouziane-s164691.html"
+  },
+  {
+    "name": "Pharmacie Mil Roses",
+    "address": "k020  bd prince moulay abdallah   km 2 route d'imouzzer",
+    "phone": "0535 60 43 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mil-roses-s164693.html"
+  },
+  {
+    "name": "Pharmacie Benmimoun",
+    "address": "pharmacie benmimoun, 60, rue annasr hay riad, route ain smen",
+    "phone": "0535 61 08 48",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0403324,
+      "lng": -4.982987
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-benmimoun-s164576.html"
+  },
+  {
+    "name": "Pharmacie ElMenzeh",
+    "address": "pharmacie elmenzeh",
+    "phone": "0535 71 10 96",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elmenzeh-s164584.html"
+  },
+  {
+    "name": "Pharmacie Arrahma",
+    "address": "labita dher lkhmiss",
+    "phone": "0535 64 53 91",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0683403,
+      "lng": -4.9952276
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-arrahma-s164526.html"
+  },
+  {
+    "name": "Pharmacie Ait Skatto",
+    "address": "29, rue soulaimane el mouahidi , hay ait skatto",
+    "phone": "0535 74 86 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ait-skatto-s164547.html"
+  },
+  {
+    "name": "Pharmacie l'Avenir",
+    "address": "n°122 lot",
+    "phone": "0535 72 82 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0303318,
+      "lng": -5.0435377
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-avenir-s103859.html"
+  },
+  {
+    "name": "Pharmacie Champs de Course",
+    "address": "n° 7 hay al amal champs de course a coté école des champs",
+    "phone": "0535 65 23 38",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.036834,
+      "lng": -5.0176717
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-champs-de-course-s103860.html"
+  },
+  {
+    "name": "Pharmacie Bekkali",
+    "address": "206 bd rabia hay hassani 3 route ain chkef",
+    "phone": "0535 61 21 84",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bekkali-s98445.html"
+  },
+  {
+    "name": "Pharmacie AlKaram",
+    "address": "lotiss",
+    "phone": "0535 70 33 68",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.06990814,
+      "lng": -4.98919058
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alkaram-s98475.html"
+  },
+  {
+    "name": "Pharmacie L'Entente",
+    "address": "n°42, bd moulay rachid, route séfrou",
+    "phone": "0535 65 81 31",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03469849,
+      "lng": -5.01619005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-entente-s98417.html"
+  },
+  {
+    "name": "Pharmacie Azzahraouayne",
+    "address": "1, bab atlas, lot n° 41",
+    "phone": "0535 65 52 50",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0247339,
+      "lng": -5.0429771
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-azzahraouayne-s97878.html"
+  },
+  {
+    "name": "Pharmacie Rte Sidi Harazem",
+    "address": "8, hay sania, rte sidi harazem",
+    "phone": "0535 61 61 40",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0149657,
+      "lng": -4.95956
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-rte-sidi-harazem-s97879.html"
+  },
+  {
+    "name": "Pharmacie Hadaik Oued Fès",
+    "address": "pharmacie hadaik oued fès, n° 83 lot",
+    "phone": "0535 75 62 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hadaik-oued-fes-s97585.html"
+  },
+  {
+    "name": "Pharmacie Malaika",
+    "address": "hay badr 1 lot",
+    "phone": "0535 96 22 47",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0344245,
+      "lng": -5.0092941
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-malaika-s97140.html"
+  },
+  {
+    "name": "Pharmacie Fatima Zahra",
+    "address": "pharmacie fatima zahra, 2 lot",
+    "phone": "0535 60 45 21",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0339199,
+      "lng": -5.0352624
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fatima-zahra-s97145.html"
+  },
+  {
+    "name": "Pharmacie La Lavande",
+    "address": "pharmacie la lavande, terrain lkhayl hay rajaa n°13",
+    "phone": "0535 60 78 79",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-lavande-s97157.html"
+  },
+  {
+    "name": "Pharmacie des Platanes",
+    "address": "6  bd al wahda   hay hassani route ain chkef",
+    "phone": "0535 96 29 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0049202,
+      "lng": -5.0074723
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-des-platanes-s97158.html"
+  },
+  {
+    "name": "Pharmacie Lycee Technique",
+    "address": "zohour 2 proche du terminus du bus 23 jaune en direction du lycée technique",
+    "phone": "0535 61 61 46",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.00356,
+      "lng": -4.9815265
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-lycee-technique-s97184.html"
+  },
+  {
+    "name": "Pharmacie Alae Arrahmane",
+    "address": "pharmacie alae arrahmane, riad narjis, près du souk aouinat hojaj",
+    "phone": "0535 61 61 69",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alae-arrahmane-s97185.html"
+  },
+  {
+    "name": "Pharmacie les Trois Sources",
+    "address": "rte d'imouzzer   lotiss",
+    "phone": "0535 96 33 00",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-les-trois-sources-s97074.html"
+  },
+  {
+    "name": "Pharmacie Bvd Mohamed VI",
+    "address": "pharmacie bvd mohamed vi, 70 lotissement",
+    "phone": "0535 60 41 35",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bvd-mohamed-vi-s97075.html"
+  },
+  {
+    "name": "Pharmacie Mouene",
+    "address": "hay msallah  lotiss",
+    "phone": "0535 71 17 48",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0541634,
+      "lng": -4.9609005
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mouene-s96853.html"
+  },
+  {
+    "name": "Pharmacie Zouagha Essoufla",
+    "address": "n°7 lotissement moulay idriss, zouagha essoufla",
+    "phone": "0535 72 66 32",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zouagha-essoufla-s96889.html"
+  },
+  {
+    "name": "Pharmacie Zarrouk",
+    "address": "hay sidi boujida   jnane el ouad n°76",
+    "phone": "0535 76 24 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.033333,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zarrouk-s96893.html"
+  },
+  {
+    "name": "Pharmacie AlAhbab",
+    "address": "254 lot al fadila 3 route ain chkef",
+    "phone": "0534 87 00 90",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.00090027,
+      "lng": -5.0078702
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alahbab-s96702.html"
+  },
+  {
+    "name": "Pharmacie Bouslama",
+    "address": "pharmacie bouslama, 17 lotissement almousfir route imouzer",
+    "phone": "0535 60 81 06",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0002587,
+      "lng": -4.99493
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bouslama-s96703.html"
+  },
+  {
+    "name": "Pharmacie Boutouil",
+    "address": "46 boutouil, derb btatha, fes jdid a cote ecole bab ryafa",
+    "phone": "0535 65 28 45",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-boutouil-s96713.html"
+  },
+  {
+    "name": "Pharmacie L'Oliveraie",
+    "address": "pharmacie l'oliveraie, lot",
+    "phone": "0535 72 57 80",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-l-oliveraie-s95930.html"
+  },
+  {
+    "name": "Pharmacie Route Oudaya",
+    "address": "bab siffer, rue 77 n°1 , route ouled jamaa",
+    "phone": "0550 03 83 83",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-oudaya-s95936.html"
+  },
+  {
+    "name": "Pharmacie Anoual",
+    "address": "bloc f n°1 hay ain qadouss, près du mosquée hay m'cella",
+    "phone": "0535 70 13 02",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0619755,
+      "lng": -5.009365
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-anoual-s95966.html"
+  },
+  {
+    "name": "Pharmacie Souissi",
+    "address": "dayaa ben abdellah route sefrou km 5 en face du club des pharmaciens, derriere chu",
+    "phone": "0535 61 77 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0000578,
+      "lng": -4.9635716
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-souissi-s95877.html"
+  },
+  {
+    "name": "Pharmacie AlWissal",
+    "address": "pharmacie alwissal",
+    "phone": "0535 65 59 06",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alwissal-s95884.html"
+  },
+  {
+    "name": "Pharmacie Mamalik",
+    "address": "n°113 boulevard mamalik ben debab, ex-quasba",
+    "phone": "0535 70 36 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0661132,
+      "lng": -4.9974794
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mamalik-s95918.html"
+  },
+  {
+    "name": "Pharmacie AlAmane",
+    "address": "hay Al Massira   résid",
+    "phone": "0535 65 51 49",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alamane-s95923.html"
+  },
+  {
+    "name": "Pharmacie Kandousi",
+    "address": "pharmacie kandousi, 132 lot farah bensouda el massira",
+    "phone": "0535 72 71 95",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9949684,
+      "lng": -5.062413
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-kandousi-s95925.html"
+  },
+  {
+    "name": "Pharmacie Hay Al Mostakbal",
+    "address": "n° 139 lotissement al mostakbal hay al massira",
+    "phone": "0535 72 91 87",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-al-mostakbal-s88127.html"
+  },
+  {
+    "name": "Pharmacie Youssfi",
+    "address": "n) 41, lotiss",
+    "phone": "0535 61 86 19",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-youssfi-s88157.html"
+  },
+  {
+    "name": "Pharmacie Sid El Hadi",
+    "address": "n 135 rue 13 hay sidi el hadi zouagha fès",
+    "phone": "0532 19 80 80",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0158926,
+      "lng": -5.0394779
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sid-el-hadi-s88098.html"
+  },
+  {
+    "name": "Pharmacie Al Bassatine",
+    "address": "oulad tayeb ssofla",
+    "phone": "0535 60 55 74",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 33.9625774,
+      "lng": -4.9994636
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-al-bassatine-s88019.html"
+  },
+  {
+    "name": "Pharmacie Sidi Ahmed Chaoui",
+    "address": "n°28",
+    "phone": "0535 74 05 73",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0620882,
+      "lng": -4.9796572
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sidi-ahmed-chaoui-s86846.html"
+  },
+  {
+    "name": "Pharmacie Zalagh",
+    "address": "lot hadika tranche 2",
+    "phone": "0535 75 63 82",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0334554,
+      "lng": -5.0700409
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-zalagh-s86449.html"
+  },
+  {
+    "name": "Pharmacie Fes Shore",
+    "address": "n° 212 lot alhawaa el jamil",
+    "phone": "0535 61 95 28",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332598,
+      "lng": -5.0090152
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fes-shore-s78462.html"
+  },
+  {
+    "name": "Pharmacie La Criée",
+    "address": "n°11 hay al amane, bensouda",
+    "phone": "0535 65 53 27",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-la-criee-s73333.html"
+  },
+  {
+    "name": "Pharmacie Le Coin",
+    "address": "n°46",
+    "phone": "0535 60 98 54",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-le-coin-s73300.html"
+  },
+  {
+    "name": "Pharmacie Azzaytoune",
+    "address": "pharmacie azzaytoune, lot",
+    "phone": "0535 72 68 98",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-azzaytoune-s72921.html"
+  },
+  {
+    "name": "Pharmacie El Mernissi",
+    "address": "lotiss",
+    "phone": "0535 62 67 67",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0392414,
+      "lng": -5.0131063
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-mernissi-s72689.html"
+  },
+  {
+    "name": "Pharmacie Chu Hassan II",
+    "address": "pharmacie chu hassan ii",
+    "phone": "0535 61 58 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-chu-hassan-ii-s69066.html"
+  },
+  {
+    "name": "Pharmacie Mounad",
+    "address": "bled raiss",
+    "phone": "0535 76 35 03",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mounad-s54598.html"
+  },
+  {
+    "name": "Pharmacie Mly Slimane",
+    "address": "pharmacie mly slimane, en face du lycée moulay slimane, route hay saada",
+    "phone": "0535 57 60 08",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-mly-slimane-s54601.html"
+  },
+  {
+    "name": "Pharmacie Merja",
+    "address": "numéro 43 rue 1 hay el merja zouagha",
+    "phone": "0535 72 69 99",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.01755,
+      "lng": -5.0491607
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-merja-s54613.html"
+  },
+  {
+    "name": "Pharmacie Fares",
+    "address": "dhar lkhmis 4",
+    "phone": "0535 75 19 12",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-fares-s54632.html"
+  },
+  {
+    "name": "Pharmacie El Yousr",
+    "address": "pharmacie el yousr",
+    "phone": "0535 61 26 59",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-el-yousr-s54642.html"
+  },
+  {
+    "name": "Pharmacie Elomran",
+    "address": "hay Nassim   bloc A5 n°2  Bensouda",
+    "phone": "0535 65 55 71",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elomran-s54644.html"
+  },
+  {
+    "name": "Pharmacie Elborj",
+    "address": "pharmacie elborj, 25, hay dhar lakhmis",
+    "phone": "0535 64 53 42",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-elborj-s54647.html"
+  },
+  {
+    "name": "Pharmacie AlHilal",
+    "address": "pharmacie alhilal, lot",
+    "phone": "0535 75 09 22",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alhilal-s54663.html"
+  },
+  {
+    "name": "Pharmacie AlHanae",
+    "address": "hay Msallah   Jnane Tbib  Sehrij Gnaoua",
+    "phone": "0535 76 35 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alhanae-s54668.html"
+  },
+  {
+    "name": "Pharmacie AlAkhawayn",
+    "address": "3  rue Ismailia   Mont Fleuri II",
+    "phone": "0535 61 47 55",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-alakhawayn-s54672.html"
+  },
+  {
+    "name": "Pharmacie Aeroport",
+    "address": "oulad tayeb",
+    "phone": "0535 60 43 62",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-aeroport-s54676.html"
+  },
+  {
+    "name": "Pharmacie Wislane",
+    "address": "sehb lward douar riafa, route sidi hrazem",
+    "phone": "0535 64 85 91",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-wislane-s54536.html"
+  },
+  {
+    "name": "Pharmacie Sehrij Gnaoua",
+    "address": "n°201 blad tahri, sahrij gnaoua",
+    "phone": "0535 63 08 16",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-sehrij-gnaoua-s54565.html"
+  },
+  {
+    "name": "Pharmacie Route Meknès",
+    "address": "hay dokkarat   lotiss",
+    "phone": "0535 94 48 57",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0332984924316,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-route-meknes-s54577.html"
+  },
+  {
+    "name": "Pharmacie Riad",
+    "address": "av",
+    "phone": "0535 64 05 54",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.02220154,
+      "lng": -5.01773977
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-riad-s54581.html"
+  },
+  {
+    "name": "Pharmacie Hay ElHassani",
+    "address": "erac hay elhassani sidi brahim, près de la mosquée erac",
+    "phone": "0535 64 40 98",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0209101,
+      "lng": -4.9770446
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-hay-elhassani-s50431.html"
+  },
+  {
+    "name": "Pharmacie Quartier Industriel",
+    "address": "quartier industriel, quartier industriel lirak, route aouinat lhajaj",
+    "phone": "0535 73 31 94",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0224599,
+      "lng": -4.971759
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-quartier-industriel-s49209.html"
+  },
+  {
+    "name": "Pharmacie Ibn Tachfine",
+    "address": "narjis",
+    "phone": "0535 61 45 97",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0181246,
+      "lng": -5.0078451
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-ibn-tachfine-s32438.html"
+  },
+  {
+    "name": "Pharmacie Bouzoubaâ",
+    "address": "pharmacie bouzoubaâ, 86, hay lalla soukaina, zouagha haut",
+    "phone": "0535 74 81 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.0215682,
+      "lng": -5.0281996
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bouzoubaa-s17354.html"
+  },
+  {
+    "name": "Pharmacie Bel Bacha",
+    "address": "pharmacie bel bacha, bd allal ben abdellah, rue mohamed ba hnini, a coté res mimoza",
+    "phone": "0535 65 48 70",
+    "city": "Fes",
+    "coordinates": {
+      "lat": 34.03329849,
+      "lng": -5
+    },
+    "scrapedUrl": "https://www.annuaire-gratuit.ma/pharmacies/pharmacie-bel-bacha-s32459.html"
+  }
+]

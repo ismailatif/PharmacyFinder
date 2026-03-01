@@ -245,8 +245,8 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                 onClick={handleToggleSaved}
                 disabled={isSaving}
                 className={`p-2.5 rounded-full transition-all border ${isSaved
-                    ? 'bg-red-50 border-red-100 text-red-500 hover:bg-red-100'
-                    : 'bg-gray-50 border-gray-200 text-gray-400 hover:bg-gray-100 hover:text-red-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 dark:hover:text-red-400'
+                  ? 'bg-red-50 border-red-100 text-red-500 hover:bg-red-100'
+                  : 'bg-gray-50 border-gray-200 text-gray-400 hover:bg-gray-100 hover:text-red-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 dark:hover:text-red-400'
                   }`}
                 title={isSaved ? (language === 'fr' ? 'Retirer des favoris' : 'إزالة من المفضلة') : (language === 'fr' ? 'Ajouter aux favoris' : 'إضافة إلى المفضلة')}
               >
@@ -303,7 +303,7 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                       <Phone className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                     </div>
                     <span className="font-medium italic">
-                      {language === 'ar' ? 'المعدرة لا نتوفر على رقم هده الصيدلية' : 'Sorry we don\'t have a phone number for this pharmacy'}
+                      {language === 'ar' ? 'المعدرة لا نتوفر على رقم هده الصيدلية' : 'Désolé, nous n\'avons pas de numéro pour cette pharmacie'}
                     </span>
                   </div>
                 )}
@@ -375,7 +375,7 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                   <div className="flex items-center gap-2 mb-3 px-2">
                     <MapPin className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                     <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                      {language === 'ar' ? 'الموقع على الخريطة' : t.locationOnMap || 'Location on Map'}
+                      {language === 'ar' ? 'الموقع على الخريطة' : t.locationOnMap || 'Localisation sur la carte'}
                     </h4>
                   </div>
                   <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl border border-emerald-100 dark:border-gray-700 overflow-hidden shadow-sm relative">
@@ -420,7 +420,7 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                   <p className="text-xs text-gray-600 dark:text-gray-400 text-center">
                     {language === 'ar'
                       ? 'إحداثيات الموقع غير متوفرة'
-                      : 'Location coordinates are not available.'}
+                      : 'Les coordonnées de localisation ne sont pas disponibles.'}
                   </p>
                 </div>
               )}

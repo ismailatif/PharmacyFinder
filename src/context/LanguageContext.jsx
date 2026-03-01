@@ -46,6 +46,11 @@ const translations = {
     sortName: 'Nom',
     locationOnMap: 'Localisation sur la carte',
     // Auth
+    logoutSuccess: 'Déconnexion réussie',
+    loginFailed: 'Échec de la connexion',
+    registrationSuccess: 'Inscription réussie !',
+    registrationFailed: 'Échec de l\'inscription',
+    googleLoginFailed: 'Échec de la connexion Google',
     welcomeBack: 'Bon retour',
     signInAccess: 'Connectez-vous pour accéder à votre tableau de bord',
     emailLabel: 'Adresse email',
@@ -75,7 +80,7 @@ const translations = {
     authHeroQuote: 'Dédiés à vous connecter aux soins dont vous avez besoin, instantanément et sans effort.',
     footerCopyright: 'PharmacyFinder. Tous droits réservés.',
     footerTitle: 'Pharmacies de Garde',
-    footerCopyrightText: '© 2025 Pharmacies de Garde. Informations mises à jour en temps réel.',
+    footerCopyrightText: `© ${new Date().getFullYear()} Pharmacies de Garde. Informations mises à jour en temps réel.`,
     footerTagline: 'Trouvez rapidement les pharmacies ouvertes près de chez vous',
     // Scanner/Search
     scanBarcode: 'Scanner Code-barres',
@@ -143,6 +148,11 @@ const translations = {
     sortName: 'الاسم',
     locationOnMap: 'الموقع على الخريطة',
     // Auth
+    logoutSuccess: 'تم تسجيل الخروج بنجاح',
+    loginFailed: 'فشل تسجيل الدخول',
+    registrationSuccess: 'تم التسجيل بنجاح!',
+    registrationFailed: 'فشل التسجيل',
+    googleLoginFailed: 'فشل تسجيل الدخول عبر Google',
     welcomeBack: 'مرحبًا بعودتك',
     signInAccess: 'سجل الدخول للوصول إلى لوحة التحكم',
     emailLabel: 'البريد الإلكتروني',
@@ -172,7 +182,7 @@ const translations = {
     authHeroQuote: 'ملتزمون بربطك بالرعاية التي تحتاجها، فوريًا وبسهولة.',
     footerCopyright: 'PharmacyFinder. جميع الحقوق محفوظة.',
     footerTitle: 'الصيدليات المناوبة',
-    footerCopyrightText: '© 2025 الصيدليات المناوبة. معلومات محدثة في الوقت الفعلي.',
+    footerCopyrightText: `© ${new Date().getFullYear()} الصيدليات المناوبة. معلومات محدثة في الوقت الفعلي.`,
     footerTagline: 'ابحث بسرعة عن الصيدليات المفتوحة بالقرب منك',
     // Scanner/Search
     scanBarcode: 'مسح الباركود',

@@ -53,12 +53,12 @@ const ScannerPage = () => {
 
             const { data } = await medicationApi.getMedication(code);
             setScannedMedication(data);
-            toast.success('Medication found!');
+            toast.success('Médicament trouvé !');
         } catch (error) {
             console.error(error);
             const errorMessage = error.response?.status === 404
-                ? 'Medication not found in database.'
-                : 'Network error or invalid code.';
+                ? 'Médicament non trouvé dans la base de données.'
+                : 'Erreur réseau ou code invalide.';
             toast.error(errorMessage);
             setIsScanning(true); // Auto-resume on error
         } finally {
@@ -69,7 +69,7 @@ const ScannerPage = () => {
     const handleManualSubmit = (e) => {
         e.preventDefault();
         if (manualCode.length < 3) {
-            toast.error('Please enter a valid code');
+            toast.error('Veuillez entrer un code valide');
             return;
         }
         handleScan(manualCode);
@@ -108,7 +108,7 @@ const ScannerPage = () => {
                 }
             } catch (error) {
                 console.error("Search error", error);
-                toast.error("Failed to search medications");
+                toast.error("Échec de la recherche de médicaments");
             } finally {
                 setSearchLoading(false);
             }
@@ -145,10 +145,10 @@ const ScannerPage = () => {
                 {/* Header Section */}
                 <div className="text-center space-y-3">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 tracking-tight pb-1">
-                        Medication Lookup
+                        Recherche de Médicaments
                     </h1>
                     <p className="text-base text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-                        Instantly access medication details, pricing, and availability by scanning a barcode or searching by name.
+                        Accédez instantanément aux détails des médicaments, aux prix et à la disponibilité en scannant un code-barres ou en recherchant par nom.
                     </p>
                 </div>
 
@@ -345,7 +345,7 @@ const ScannerPage = () => {
                                                 {searchLoading ? (
                                                     <div className="flex flex-col items-center justify-center py-20 gap-4">
                                                         <div className="w-10 h-10 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
-                                                        <span className="text-gray-500 dark:text-gray-400 font-medium animate-pulse">Searching global database...</span>
+                                                        <span className="text-gray-500 dark:text-gray-400 font-medium animate-pulse">Recherche dans la base de données...</span>
                                                     </div>
                                                 ) : searchQuery.length > 2 && filteredResults.length === 0 ? (
                                                     <div className="flex flex-col items-center justify-center py-20 text-center px-4">
@@ -400,7 +400,7 @@ const ScannerPage = () => {
                                                                     </div>
                                                                     {med.reimbursementRate && (
                                                                         <div className="mt-1 text-[10px] bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-lg border border-emerald-100 dark:border-emerald-800 font-bold whitespace-nowrap">
-                                                                            {med.reimbursementRate} Refund
+                                                                            {med.reimbursementRate} Remboursement
                                                                         </div>
                                                                     )}
                                                                 </div>

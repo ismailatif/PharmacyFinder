@@ -53,8 +53,8 @@ const SearchPage = () => {
         setPharmacies(response.data);
       } catch (err) {
         console.error('Error fetching pharmacies:', err);
-        setError('Failed to load pharmacies. Please try again later.');
-        toast.error('Failed to load pharmacies');
+        setError(language === 'fr' ? 'Échec du chargement des pharmacies. Veuillez réessayer plus tard.' : 'فشل تحميل الصيدليات. يرجى المحاولة مرة أخرى لاحقًا.');
+        toast.error(language === 'fr' ? 'Échec du chargement des pharmacies' : 'فشل تحميل الصيدليات');
       } finally {
         setLoading(false);
       }
@@ -226,7 +226,7 @@ const SearchPage = () => {
 
   const handleNearMe = () => {
     setIsLocating(true);
-    const loadingToast = toast.loading('Locating you...');
+    const loadingToast = toast.loading(language === 'fr' ? 'Localisation en cours...' : 'جاري تحديد موقعك...');
 
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -245,7 +245,7 @@ const SearchPage = () => {
                   <MapPin className="w-6 h-6 text-emerald-400 opacity-75" />
                 </div>
               </div>
-              <span className="font-medium">Location found!</span>
+              <span className="font-medium">{language === 'fr' ? 'Localisation trouvée !' : 'تم العثور على الموقع!'}</span>
             </div>,
             { id: loadingToast }
           );
@@ -253,12 +253,12 @@ const SearchPage = () => {
         (error) => {
           console.error('Error getting location:', error);
           setIsLocating(false);
-          toast.error('Could not get your location', { id: loadingToast });
+          toast.error(language === 'fr' ? 'Impossible d\'obtenir votre position' : 'تعذر الحصول على موقعك', { id: loadingToast });
         }
       );
     } else {
       setIsLocating(false);
-      toast.error('Geolocation is not supported', { id: loadingToast });
+      toast.error(language === 'fr' ? 'La géolocalisation n\'est pas supportée' : 'تحديد الموقع الجغرافي غير مدعوم', { id: loadingToast });
     }
   };
 
@@ -275,13 +275,13 @@ const SearchPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Oops! Something went wrong</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{language === 'fr' ? 'Oups ! Une erreur s\'est produite' : 'عذرًا! حدث خطأ ما'}</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">{error}</p>
               <button
                 onClick={() => window.location.reload()}
                 className="px-6 py-3 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-colors font-medium shadow-lg shadow-emerald-500/25"
               >
-                Try Again
+                {language === 'fr' ? 'Réessayer' : 'حاول مرة أخرى'}
               </button>
             </div>
           </div>
@@ -318,7 +318,7 @@ const SearchPage = () => {
                 }`}
             >
               <Navigation className={`w-4 h-4 ${isLocating ? 'animate-spin' : ''}`} />
-              {isLocating ? 'Locating...' : userLocation ? 'Near Me Active' : 'Near Me'}
+              {isLocating ? (language === 'fr' ? 'Localisation...' : 'جاري التحديد...') : userLocation ? (language === 'fr' ? 'Les Pharmacies Près de moi' : 'الصيدليات في القرب مني') : (language === 'fr' ? 'Les Pharmacies Près de moi' : 'الصيدليات في القرب مني')}
             </button>
 
             <div className="bg-white dark:bg-gray-800 p-1 rounded-xl shadow-sm border border-emerald-100 dark:border-gray-700 inline-flex">
@@ -330,7 +330,7 @@ const SearchPage = () => {
                   }`}
               >
                 <List className="w-4 h-4" />
-                List
+                {language === 'fr' ? 'la Liste' : 'القائمة'}
               </button>
               <button
                 onClick={() => setViewMode('map')}
@@ -340,7 +340,7 @@ const SearchPage = () => {
                   }`}
               >
                 <MapIcon className="w-4 h-4" />
-                Map
+                {language === 'fr' ? 'la Carte' : 'الخريطة'}
               </button>
             </div>
           </div>

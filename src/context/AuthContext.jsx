@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const { setLanguage } = useLanguage();
+  const { setLanguage, t } = useLanguage();
   const { setTheme } = useTheme();
 
   const syncPreferences = (userData) => {
@@ -67,10 +67,10 @@ export const AuthProvider = ({ children }) => {
 
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
 
-      toast.success(`Welcome back, ${data.user.name.split(' ')[0]}!`);
+      toast.success(`${t.welcomeBack}, ${data.user.name.split(' ')[0]}!`);
       return { success: true };
     } catch (err) {
-      const msg = err.response?.data?.message || 'Login failed';
+      const msg = err.response?.data?.message || t.loginFailed;
       toast.error(msg);
       return { success: false, message: msg };
     } finally {
@@ -89,10 +89,10 @@ export const AuthProvider = ({ children }) => {
 
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
 
-      toast.success('Registration successful!');
+      toast.success(t.registrationSuccess);
       return { success: true };
     } catch (err) {
-      const msg = err.response?.data?.message || 'Registration failed';
+      const msg = err.response?.data?.message || t.registrationFailed;
       toast.error(msg);
       return { success: false, message: msg };
     } finally {
@@ -111,10 +111,10 @@ export const AuthProvider = ({ children }) => {
 
       api.defaults.headers.common['Authorization'] = `Bearer ${data.accessToken}`;
 
-      toast.success(`Welcome back, ${data.user.name.split(' ')[0]}!`);
+      toast.success(`${t.welcomeBack}, ${data.user.name.split(' ')[0]}!`);
       return { success: true };
     } catch (err) {
-      const msg = err.response?.data?.message || 'Google Login failed';
+      const msg = err.response?.data?.message || t.googleLoginFailed;
       toast.error(msg);
       return { success: false, message: msg };
     } finally {
@@ -128,7 +128,7 @@ export const AuthProvider = ({ children }) => {
       setUser(null);
       setIsAuthenticated(false);
       delete api.defaults.headers.common['Authorization'];
-      toast.success('Logged out successfully');
+      toast.success(t.logoutSuccess);
     } catch (err) {
       console.error('Logout failed', err);
     }

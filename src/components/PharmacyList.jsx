@@ -88,12 +88,12 @@ const PharmacyList = ({ pharmacies, onViewDetails, columns = 3 }) => {
           <MapPin className="w-8 h-8 text-emerald-500 dark:text-emerald-400 opacity-50" />
         </div>
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {isRTL ? 'لا توجد صيدليات' : 'No pharmacies found'}
+          {isRTL ? 'لا توجد صيدليات' : 'Aucune pharmacie trouvée'}
         </h3>
         <p className="text-gray-500 dark:text-gray-400 max-w-md">
           {isRTL
             ? 'لم نتمكن من العثور على أي صيدليات تطابق معايير البحث الخاصة بك. حاول تعديل عوامل التصفية.'
-            : 'We couldn\'t find any pharmacies matching your search criteria. Try adjusting your filters.'}
+            : 'Nous n\'avons trouvé aucune pharmacie correspondant à vos critères de recherche. Essayez de modifier vos filtres.'}
         </p>
       </motion.div>
     );

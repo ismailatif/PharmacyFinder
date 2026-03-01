@@ -1,0 +1,58 @@
+[
+  {
+    "scrapedName": "Pharmacie Central Ain Chkef",
+    "dbName": "Pharmacie Centrale",
+    "distance": 3,
+    "oldPhone": "0535 62 25 04",
+    "newPhone": "0535 69 11 33"
+  },
+  {
+    "scrapedName": "Pharmacie Route Sidi Harazem",
+    "dbName": "Pharmacie Route Sidi Hrazem",
+    "distance": 2,
+    "oldPhone": "",
+    "newPhone": "0535 61 61 40"
+  },
+  {
+    "scrapedName": "Pharmacie El Hijazi",
+    "dbName": "Pharmacie Lalla Soukaina",
+    "distance": 3,
+    "oldPhone": "",
+    "newPhone": "0535 72 97 64"
+  },
+  {
+    "scrapedName": "Pharmacie Centrale Ain Chkef",
+    "dbName": "Pharmacie Centrale",
+    "distance": 3,
+    "oldPhone": "0535 69 11 33",
+    "newPhone": "0653 82 83 11"
+  },
+  {
+    "scrapedName": "Pharmacie Centrale Ain Chqef",
+    "dbName": "Pharmacie Centrale",
+    "distance": 3,
+    "oldPhone": "0653 82 83 11",
+    "newPhone": "0535 69 11 33"
+  },
+  {
+    "scrapedName": "Pharmacie Central Ain Chkef",
+    "dbName": "Pharmacie Centrale",
+    "distance": 3,
+    "oldPhone": "0535 69 11 33",
+    "newPhone": "0653 82 83 11"
+  },
+  {
+    "scrapedName": "Pharmacie R'cif",
+    "dbName": "Pharmacie Rcif",
+    "distance": 4,
+    "oldPhone": "",
+    "newPhone": "0535 63 33 23"
+  },
+  {
+    "scrapedName": "Pharmacie Zouagha",
+    "dbName": "Pharmacie Lalla Soukaina",
+    "distance": 3,
+    "oldPhone": "0535 72 97 64",
+    "newPhone": "0535 60 14 75"
+  }
+]

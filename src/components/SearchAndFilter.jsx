@@ -21,9 +21,11 @@ const SearchAndFilter = ({
     { key: 'open', label: t.filterOpen, icon: Clock }
   ];
 
+  // ... existing code ...
   const cities = [
-    { key: 'all', label: isRTL ? 'جميع المدن' : 'All Cities', labelFr: 'Toutes les villes' },
+    { key: 'all', label: isRTL ? 'جميع المدن' : 'Toutes les villes', labelFr: 'Toutes les villes' },
     { key: 'Casablanca', label: isRTL ? 'الدار البيضاء' : 'Casablanca', labelFr: 'Casablanca' },
+    // ... existing code ...
     { key: 'Marrakech', label: isRTL ? 'مراكش' : 'Marrakech', labelFr: 'Marrakech' },
     { key: 'Fès', label: isRTL ? 'فاس' : 'Fes', labelFr: 'Fès' },
     { key: 'Rabat', label: isRTL ? 'الرباط' : 'Rabat', labelFr: 'Rabat' },
@@ -60,8 +62,8 @@ const SearchAndFilter = ({
             <button
               onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
               className={`w-full h-14 px-6 flex items-center gap-3 rounded-2xl transition-all duration-300 group ${isCityDropdownOpen
-                  ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
-                  : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-200'
+                ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
+                : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-200'
                 }`}
             >
               <div className={`p-2 rounded-xl transition-colors ${isCityDropdownOpen ? 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400' : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 dark:group-hover:text-emerald-400'
@@ -69,7 +71,7 @@ const SearchAndFilter = ({
                 <MapPin className="h-5 w-5" />
               </div>
               <div className="flex-1 text-left">
-                <p className="text-xs text-gray-400 dark:text-gray-500 font-medium mb-0.5">{isRTL ? 'المدينة' : 'City'}</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500 font-medium mb-0.5">{isRTL ? 'المدينة' : 'Ville'}</p>
                 <p className="font-semibold truncate">{selectedCityLabel}</p>
               </div>
               <ChevronDown className={`h-4 w-4 text-gray-400 transition-transform duration-300 ${isCityDropdownOpen ? 'rotate-180 text-emerald-500' : ''}`} />
@@ -89,8 +91,8 @@ const SearchAndFilter = ({
                           setIsCityDropdownOpen(false);
                         }}
                         className={`w-full px-4 py-3 text-left transition-all flex items-center justify-between rounded-xl mb-1 last:mb-0 ${selectedCity === city.key
-                            ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
-                            : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-300'
+                          ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
+                          : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-300'
                           }`}
                       >
                         <span className={`font-medium ${selectedCity === city.key ? 'font-bold' : ''}`}>{city.label}</span>
@@ -148,8 +150,8 @@ const SearchAndFilter = ({
               key={key}
               onClick={() => onFilterChange(key)}
               className={`group relative flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300 text-sm overflow-hidden ${filter === key
-                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-gray-900'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
+                ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25 ring-2 ring-emerald-500 ring-offset-2 dark:ring-offset-gray-900'
+                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                 }`}
             >
               {Icon && <Icon className={`h-4 w-4 transition-transform group-hover:scale-110 ${filter === key ? 'text-white' : 'text-emerald-500'}`} />}
@@ -165,8 +167,8 @@ const SearchAndFilter = ({
         <button
           onClick={onOpenFilters}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300 text-sm border ${activeFiltersCount > 0
-              ? 'bg-white dark:bg-gray-800 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/10'
-              : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-emerald-300 dark:hover:border-emerald-700'
+            ? 'bg-white dark:bg-gray-800 border-emerald-500 text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/10'
+            : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-emerald-300 dark:hover:border-emerald-700'
             }`}
         >
           <SlidersHorizontal className="h-4 w-4" />

@@ -57,7 +57,7 @@ const Scanner = ({ onScan, onError }) => {
                 );
             } catch (err) {
                 console.error("Scanner initialization failed:", err);
-                setCameraError("Camera access denied or not available. Please allow camera permissions.");
+                setCameraError("Accès à la caméra refusé ou non disponible. Veuillez autoriser l'accès à la caméra.");
                 if (onError) onError(err);
             }
         };
@@ -76,7 +76,7 @@ const Scanner = ({ onScan, onError }) => {
         return (
             <div className="w-full h-64 bg-gray-100 dark:bg-gray-800 rounded-2xl flex flex-col items-center justify-center p-6 text-center border-2 border-red-200 dark:border-red-900/30">
                 <AlertCircle className="w-10 h-10 text-red-500 mb-3" />
-                <p className="text-gray-800 dark:text-gray-200 font-medium mb-1">Camera Error</p>
+                <p className="text-gray-800 dark:text-gray-200 font-medium mb-1">Erreur de caméra</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{cameraError}</p>
             </div>
         );
@@ -110,7 +110,7 @@ const Scanner = ({ onScan, onError }) => {
                 {/* Guide Text */}
                 <div className="absolute -bottom-8 left-0 right-0 text-center">
                     <span className="inline-block px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-semibold text-white tracking-wide">
-                        EAN-13 Barcode
+                        Code-barres EAN-13
                     </span>
                 </div>
             </div>
@@ -119,7 +119,7 @@ const Scanner = ({ onScan, onError }) => {
             <div className="absolute bottom-6 left-0 right-0 flex justify-center z-10 pointer-events-none">
                 <div className="flex items-center gap-2 text-white/80 text-sm bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
                     <Scan className="w-4 h-4 animate-pulse" />
-                    <span>Align barcode within frame</span>
+                    <span>Alignez le code-barres dans le cadre</span>
                 </div>
             </div>
         </div>
