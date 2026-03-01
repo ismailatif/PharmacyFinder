@@ -346,7 +346,7 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
       </MapContainer>
 
       {/* Layer Control Button */}
-      <div className={`absolute top-4 ${isRTL ? 'left-4' : 'right-16'} z-[400]`}>
+      <div className="absolute top-4 right-16 z-[400]">
         <div className="relative">
           <button
             onClick={() => setShowLayerMenu(!showLayerMenu)}
@@ -358,7 +358,7 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
 
           {/* Layer Menu */}
           {showLayerMenu && (
-            <div className={`absolute top-14 ${isRTL ? 'left-0' : 'right-0'} w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden`}>
+            <div className="absolute top-14 right-0 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
               {layers.map((layer) => (
                 <button
                   key={layer.id}
@@ -381,7 +381,7 @@ const PharmacyMap = ({ pharmacies, onViewDetails, selectedLocation, selectedPhar
       </div>
 
       {/* Full Screen Toggle */}
-      <div className={`absolute top-4 ${isRTL ? 'left-20' : 'right-4'} z-[400]`}>
+      <div className="absolute top-4 right-4 z-[400]">
         <button
           onClick={() => {
             const element = document.getElementById('pharmacy-map-container');
