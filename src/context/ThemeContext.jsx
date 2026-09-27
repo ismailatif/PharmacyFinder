@@ -1,34 +1,80 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { authApi } from '../utils/api';
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setThemeState] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    return savedTheme || 'system';
   });
 
+  const getEffectiveTheme = (themeValue = theme) => {
+    if (themeValue === 'system') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return themeValue === 'dark' ? 'dark' : 'light';
+  };
+
+  // Apply dark class to document.documentElement
   useEffect(() => {
     const root = window.document.documentElement;
-    if (theme === 'dark') {
+    const effectiveTheme = getEffectiveTheme(theme);
+
+    if (effectiveTheme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
+
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  // Listen for OS system theme changes when theme is 'system'
+  useEffect(() => {
+    if (theme !== 'system') return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => {
+      const root = window.document.documentElement;
+      if (mediaQuery.matches) {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [theme]);
+
+  const setTheme = (newTheme, saveToBackend = true) => {
+    setThemeState(newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Automatically persist theme change to backend if logged in
+    if (saveToBackend) {
+      authApi.updatePreferences({ theme: newTheme }).catch(() => {
+        // Silent catch if user is unauthenticated or offline
+      });
+    }
+  };
+
   const toggleTheme = (e) => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const effectiveTheme = getEffectiveTheme(theme);
+    const newTheme = effectiveTheme === 'light' ? 'dark' : 'light';
+
+    const applyNewTheme = () => {
+      setTheme(newTheme, true);
+    };
 
     if (!document.startViewTransition || !e) {
-      setTheme(newTheme);
+      applyNewTheme();
       return;
     }
 
     const x = e.clientX;
     const y = e.clientY;
-
     const right = window.innerWidth - x;
     const bottom = window.innerHeight - y;
     const maxRadius = Math.hypot(
@@ -41,7 +87,7 @@ export const ThemeProvider = ({ children }) => {
     root.classList.add(isDark ? 'theme-transition-to-dark' : 'theme-transition-to-light');
 
     const transition = document.startViewTransition(() => {
-      setTheme(newTheme);
+      applyNewTheme();
     });
 
     transition.ready.then(() => {
@@ -71,7 +117,7 @@ export const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, getEffectiveTheme }}>
       {children}
     </ThemeContext.Provider>
   );

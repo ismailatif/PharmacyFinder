@@ -37,8 +37,9 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { useLanguage } from '../context/LanguageContext';
 import 'leaflet/dist/leaflet.css';
 import { useAuth } from '../context/AuthContext';
-import { authApi } from '../utils/api';
+import { authApi, reviewApi } from '../utils/api';
 import { toast } from 'react-hot-toast';
+import { MessageSquare, Send, Trash2, Edit3 } from 'lucide-react';
 
 
 // Create custom pharmacy marker icon
@@ -64,6 +65,98 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
   const { language, t, isRTL } = useLanguage();
   const { user, setUser, isAuthenticated } = useAuth();
   const [isSaving, setIsSaving] = useState(false);
+
+  // Review states
+  const [reviews, setReviews] = useState([]);
+  const [loadingReviews, setLoadingReviews] = useState(false);
+  const [submittingReview, setSubmittingReview] = useState(false);
+  const [userRating, setUserRating] = useState(5);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [userComment, setUserComment] = useState('');
+  const [editingReviewId, setEditingReviewId] = useState(null);
+  const [currentRating, setCurrentRating] = useState(pharmacy?.rating || 0);
+  const [currentReviewCount, setCurrentReviewCount] = useState(pharmacy?.reviewCount || 0);
+
+  const targetId = pharmacy.id || pharmacy._id;
+
+  const fetchReviews = async () => {
+    try {
+      setLoadingReviews(true);
+      const response = await reviewApi.getReviews(targetId);
+      if (response.data.success) {
+        setReviews(response.data.data);
+        if (user) {
+          const myRev = response.data.data.find(r => 
+            (r.user && (r.user._id === user._id || r.user === user._id))
+          );
+          if (myRev) {
+            setUserRating(myRev.rating);
+            setUserComment(myRev.comment);
+            setEditingReviewId(myRev._id);
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Error loading reviews:', err);
+    } finally {
+      setLoadingReviews(false);
+    }
+  };
+
+  useEffect(() => {
+    if (targetId) {
+      fetchReviews();
+    }
+  }, [targetId, user]);
+
+  const handleSubmitReview = async (e) => {
+    e.preventDefault();
+    if (!isAuthenticated) {
+      toast.error(t.loginToReview);
+      return;
+    }
+
+    if (!userComment.trim()) {
+      toast.error(language === 'fr' ? 'Veuillez rédiger un commentaire' : 'يرجى كتابة تعليق');
+      return;
+    }
+
+    try {
+      setSubmittingReview(true);
+      const response = await reviewApi.submitReview(targetId, userRating, userComment);
+      if (response.data.success) {
+        toast.success(t.reviewSubmitted);
+        if (response.data.stats) {
+          setCurrentRating(response.data.stats.rating);
+          setCurrentReviewCount(response.data.stats.reviewCount);
+        }
+        fetchReviews();
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || (language === 'fr' ? 'Échec de la publication' : 'فشل نشر التقييم'));
+    } finally {
+      setSubmittingReview(false);
+    }
+  };
+
+  const handleDeleteReview = async (reviewId) => {
+    try {
+      const response = await reviewApi.deleteReview(targetId, reviewId);
+      if (response.data.success) {
+        toast.success(t.reviewDeleted);
+        if (response.data.stats) {
+          setCurrentRating(response.data.stats.rating);
+          setCurrentReviewCount(response.data.stats.reviewCount);
+        }
+        setUserComment('');
+        setUserRating(5);
+        setEditingReviewId(null);
+        fetchReviews();
+      }
+    } catch (err) {
+      toast.error(language === 'fr' ? 'Erreur de suppression' : 'خطأ عند الحذف');
+    }
+  };
 
   const isSaved = user?.savedPharmacies?.some(p =>
     (typeof p === 'object' ? p._id === (pharmacy.id || pharmacy._id) : p === (pharmacy.id || pharmacy._id))
@@ -229,8 +322,8 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
               <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm flex-wrap">
                 <div className="flex items-center gap-1">
                   <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                  <span className="font-medium">{pharmacy.rating}</span>
-                  <span>({pharmacy.reviewCount} {t.reviews})</span>
+                  <span className="font-medium">{currentRating}</span>
+                  <span>({currentReviewCount} {t.reviews})</span>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -580,6 +673,185 @@ const PharmacyDetails = ({ pharmacy, onBack }) => {
                     {specialty}
                   </span>
                 ))}
+              </div>
+            </div>
+
+            {/* AVIS / REVIEWS SECTION */}
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-emerald-100 dark:border-gray-700 p-6 space-y-6">
+              <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-700 pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                    <MessageSquare className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {t.reviews} ({currentReviewCount})
+                    </h2>
+                    <div className="flex items-center gap-2 mt-0.5 text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center text-yellow-400">
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <Star
+                            key={s}
+                            className={`h-4 w-4 ${s <= Math.round(currentRating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`}
+                          />
+                        ))}
+                      </div>
+                      <span className="font-semibold text-gray-900 dark:text-white">{currentRating} / 5</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* WRITE / EDIT REVIEW FORM */}
+              <div className="bg-gray-50 dark:bg-gray-700/40 rounded-2xl p-5 border border-gray-100 dark:border-gray-700 space-y-4">
+                <h3 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                  <Edit3 className="h-4 w-4 text-emerald-500" />
+                  {editingReviewId ? (language === 'fr' ? 'Modifier votre avis' : 'تعديل تقييمك') : t.writeReview}
+                </h3>
+
+                {isAuthenticated ? (
+                  <form onSubmit={handleSubmitReview} className="space-y-4">
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">
+                        {t.yourRating}
+                      </label>
+                      <div className="flex items-center gap-1.5">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            onClick={() => setUserRating(star)}
+                            onMouseEnter={() => setHoverRating(star)}
+                            onMouseLeave={() => setHoverRating(0)}
+                            className="p-1 text-yellow-400 hover:scale-125 transition-transform focus:outline-none"
+                          >
+                            <Star
+                              className={`h-7 w-7 ${
+                                star <= (hoverRating || userRating)
+                                  ? 'fill-yellow-400 text-yellow-400'
+                                  : 'text-gray-300 dark:text-gray-600'
+                              }`}
+                            />
+                          </button>
+                        ))}
+                        <span className="ml-2 font-bold text-sm text-gray-700 dark:text-gray-300">
+                          {hoverRating || userRating} / 5
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">
+                        {t.yourComment}
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={userComment}
+                        onChange={(e) => setUserComment(e.target.value)}
+                        placeholder={language === 'fr' ? 'Partagez votre expérience avec cette pharmacie...' : 'شارِك تجربتك مع هذه الصيدلية...'}
+                        className="w-full p-3.5 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all placeholder-gray-400"
+                        maxLength={1000}
+                      />
+                    </div>
+
+                    <div className="flex justify-end gap-3">
+                      <button
+                        type="submit"
+                        disabled={submittingReview}
+                        className="inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg shadow-emerald-500/25 transition-all disabled:opacity-50 text-sm cursor-pointer"
+                      >
+                        <Send className="h-4 w-4" />
+                        {submittingReview 
+                          ? (language === 'fr' ? 'Publication...' : 'جاري النشر...') 
+                          : t.submitReview}
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="text-center py-4 px-2">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-medium mb-1">{t.loginToReview}</p>
+                  </div>
+                )}
+              </div>
+
+              {/* REVIEWS LIST */}
+              <div className="space-y-4">
+                {loadingReviews ? (
+                  <div className="flex justify-center py-8">
+                    <div className="w-8 h-8 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
+                  </div>
+                ) : reviews.length > 0 ? (
+                  reviews.map((rev) => {
+                    const isMyReview = user && (rev.user?._id === user._id || rev.user === user._id);
+                    const formattedDate = new Date(rev.createdAt).toLocaleDateString(language === 'ar' ? 'ar-MA' : 'fr-FR', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    });
+
+                    return (
+                      <div
+                        key={rev._id}
+                        className={`p-4 rounded-xl border transition-all ${
+                          isMyReview
+                            ? 'bg-emerald-50/50 dark:bg-emerald-900/10 border-emerald-200 dark:border-emerald-800/40'
+                            : 'bg-gray-50/50 dark:bg-gray-700/20 border-gray-100 dark:border-gray-700'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-emerald-500 text-white font-bold text-sm flex items-center justify-center shadow-md">
+                              {(rev.userName || 'U').charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                              <div className="flex items-center gap-2">
+                                <span className="font-semibold text-gray-900 dark:text-white text-sm">
+                                  {rev.userName}
+                                </span>
+                                {isMyReview && (
+                                  <span className="text-[10px] bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-bold px-2 py-0.5 rounded-md">
+                                    {language === 'fr' ? 'Vous' : 'أنت'}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-xs text-gray-400 block mt-0.5">{formattedDate}</span>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-3">
+                            <div className="flex items-center text-yellow-400">
+                              {[1, 2, 3, 4, 5].map((st) => (
+                                <Star
+                                  key={st}
+                                  className={`h-3.5 w-3.5 ${st <= rev.rating ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300 dark:text-gray-600'}`}
+                                />
+                              ))}
+                            </div>
+
+                            {(isMyReview || user?.role === 'admin') && (
+                              <button
+                                type="button"
+                                onClick={() => handleDeleteReview(rev._id)}
+                                className="p-1.5 text-gray-400 hover:text-red-500 dark:hover:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors cursor-pointer"
+                                title={t.deleteReview}
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </button>
+                            )}
+                          </div>
+                        </div>
+
+                        <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed pl-12 pr-2">
+                          {rev.comment}
+                        </p>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="text-center py-8 text-sm text-gray-500 dark:text-gray-400 font-medium">
+                    {t.noReviewsYet}
+                  </div>
+                )}
               </div>
             </div>
           </div>

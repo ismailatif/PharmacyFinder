@@ -59,11 +59,6 @@ const ProfilePage = () => {
         const prefs = response.data.preferences;
         setPreferences(prefs);
 
-        // Apply theme from database
-        if (prefs.theme && prefs.theme !== theme) {
-          setTheme(prefs.theme);
-        }
-
         // Apply language from database
         if (prefs.language && prefs.language !== language) {
           setLanguage(prefs.language);
@@ -504,7 +499,10 @@ const ProfilePage = () => {
                           type="button"
                           whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          onClick={() => setPreferences({ ...preferences, theme: theme.value })}
+                          onClick={() => {
+                            setPreferences({ ...preferences, theme: theme.value });
+                            setTheme(theme.value, true);
+                          }}
                           className={`relative p-4 rounded-2xl border-2 transition-all duration-300 ${preferences.theme === theme.value
                             ? 'border-emerald-500 bg-gradient-to-br ' + theme.gradient + ' shadow-lg shadow-emerald-500/25'
                             : 'border-gray-200 dark:border-gray-700 hover:border-emerald-300 dark:hover:border-emerald-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm'

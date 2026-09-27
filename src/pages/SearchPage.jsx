@@ -17,7 +17,7 @@ import PageWrapper from '../components/PageWrapper';
 
 import Pagination from '../components/Pagination';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 9;
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -96,7 +96,12 @@ const SearchPage = () => {
 
     // Apply city filter
     if (selectedCity !== 'all') {
-      filtered = filtered.filter((pharmacy) => pharmacy.city === selectedCity);
+      const normSelected = selectedCity.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      filtered = filtered.filter((pharmacy) => {
+        if (!pharmacy.city) return false;
+        const normCity = pharmacy.city.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        return normCity === normSelected;
+      });
     }
 
     // Apply search filter

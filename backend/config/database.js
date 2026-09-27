@@ -10,6 +10,10 @@ const connectDB = async () => {
         console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
         console.log(`📊 Database: ${conn.connection.name}`);
 
+        // Sync real pharmacy ratings and review counts from Review collection
+        const { syncAllPharmacyRatings } = await import('../controllers/reviewController.js');
+        await syncAllPharmacyRatings();
+
         // Connection event listeners
         mongoose.connection.on('error', (err) => {
             console.error(`❌ MongoDB connection error: ${err}`);

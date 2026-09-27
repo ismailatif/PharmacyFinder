@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, SlidersHorizontal, MapPin, ChevronDown, X, Shield, Clock, CheckCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -12,8 +12,9 @@ const SearchAndFilter = ({
   selectedCity,
   onCityChange
 }) => {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
+  const [citySearchTerm, setCitySearchTerm] = useState('');
 
   const quickFilters = [
     { key: 'all', label: t.filterAll, icon: null },
@@ -21,19 +22,43 @@ const SearchAndFilter = ({
     { key: 'open', label: t.filterOpen, icon: Clock }
   ];
 
-  // ... existing code ...
-  const cities = [
+  const cities = useMemo(() => [
     { key: 'all', label: isRTL ? 'جميع المدن' : 'Toutes les villes', labelFr: 'Toutes les villes' },
     { key: 'Casablanca', label: isRTL ? 'الدار البيضاء' : 'Casablanca', labelFr: 'Casablanca' },
-    // ... existing code ...
-    { key: 'Marrakech', label: isRTL ? 'مراكش' : 'Marrakech', labelFr: 'Marrakech' },
-    { key: 'Fès', label: isRTL ? 'فاس' : 'Fes', labelFr: 'Fès' },
     { key: 'Rabat', label: isRTL ? 'الرباط' : 'Rabat', labelFr: 'Rabat' },
-    { key: 'Tanger', label: isRTL ? 'طنجة' : 'Tangier', labelFr: 'Tanger' },
-    { key: 'Agadir', label: isRTL ? 'أكادير' : 'Agadir', labelFr: 'Agadir' }
-  ];
+    { key: 'Fès', label: isRTL ? 'فاس' : 'Fès (Fes)', labelFr: 'Fès' },
+    { key: 'Marrakech', label: isRTL ? 'مراكش' : 'Marrakech', labelFr: 'Marrakech' },
+    { key: 'Tanger', label: isRTL ? 'طنجة' : 'Tanger (Tangier)', labelFr: 'Tanger' },
+    { key: 'Agadir', label: isRTL ? 'أكادير' : 'Agadir', labelFr: 'Agadir' },
+    { key: 'Meknès', label: isRTL ? 'مكناس' : 'Meknès', labelFr: 'Meknès' },
+    { key: 'Oujda', label: isRTL ? 'وجدة' : 'Oujda', labelFr: 'Oujda' },
+    { key: 'Kénitra', label: isRTL ? 'القنيطرة' : 'Kénitra', labelFr: 'Kénitra' },
+    { key: 'Tétouan', label: isRTL ? 'تطوان' : 'Tétouan', labelFr: 'Tétouan' },
+    { key: 'Safi', label: isRTL ? 'آسفي' : 'Safi', labelFr: 'Safi' },
+    { key: 'El Jadida', label: isRTL ? 'الجديدة' : 'El Jadida', labelFr: 'El Jadida' },
+    { key: 'Nador', label: isRTL ? 'الناظور' : 'Nador', labelFr: 'Nador' },
+    { key: 'Settat', label: isRTL ? 'سطات' : 'Settat', labelFr: 'Settat' },
+    { key: 'Mohammedia', label: isRTL ? 'المحمدية' : 'Mohammedia', labelFr: 'Mohammedia' },
+    { key: 'Béni Mellal', label: isRTL ? 'بني ملال' : 'Béni Mellal', labelFr: 'Béni Mellal' },
+    { key: 'Khouribga', label: isRTL ? 'خريبكة' : 'Khouribga', labelFr: 'Khouribga' },
+    { key: 'Taza', label: isRTL ? 'تازة' : 'Taza', labelFr: 'Taza' },
+    { key: 'Essaouira', label: isRTL ? 'الصويرة' : 'Essaouira', labelFr: 'Essaouira' },
+    { key: 'Al Hoceima', label: isRTL ? 'الحسيمة' : 'Al Hoceima', labelFr: 'Al Hoceima' },
+  ], [isRTL]);
 
-  const selectedCityLabel = cities.find(c => c.key === selectedCity)?.label || cities[0].label;
+  const filteredCities = useMemo(() => {
+    if (!citySearchTerm.trim()) return cities;
+    const norm = (str) => (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const query = norm(citySearchTerm);
+    return cities.filter(c =>
+      c.key === 'all' ||
+      norm(c.key).includes(query) ||
+      norm(c.label).includes(query) ||
+      norm(c.labelFr).includes(query)
+    );
+  }, [cities, citySearchTerm]);
+
+  const selectedCityLabel = cities.find(c => c.key.toLowerCase() === selectedCity.toLowerCase())?.label || cities[0].label;
 
   const [localSearchQuery, setLocalSearchQuery] = useState(searchQuery);
 
@@ -60,7 +85,10 @@ const SearchAndFilter = ({
           {/* City Selector */}
           <div className="relative min-w-[220px]">
             <button
-              onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
+              onClick={() => {
+                setIsCityDropdownOpen(!isCityDropdownOpen);
+                if (!isCityDropdownOpen) setCitySearchTerm('');
+              }}
               className={`w-full h-14 px-6 flex items-center gap-3 rounded-2xl transition-all duration-300 group ${isCityDropdownOpen
                 ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
                 : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-200'
@@ -80,27 +108,66 @@ const SearchAndFilter = ({
             {/* Dropdown Menu */}
             {isCityDropdownOpen && (
               <>
-                <div className="fixed inset-0 z-10" onClick={() => setIsCityDropdownOpen(false)} />
-                <div className="absolute top-full mt-4 w-[280px] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-2xl shadow-emerald-500/20 z-20 overflow-hidden animate-in fade-in zoom-in-95 duration-200 p-2">
-                  <div className="max-h-[320px] overflow-y-auto custom-scrollbar">
-                    {cities.map((city) => (
-                      <button
-                        key={city.key}
-                        onClick={() => {
-                          onCityChange(city.key);
-                          setIsCityDropdownOpen(false);
-                        }}
-                        className={`w-full px-4 py-3 text-left transition-all flex items-center justify-between rounded-xl mb-1 last:mb-0 ${selectedCity === city.key
-                          ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
-                          : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-300'
-                          }`}
-                      >
-                        <span className={`font-medium ${selectedCity === city.key ? 'font-bold' : ''}`}>{city.label}</span>
-                        {selectedCity === city.key && (
-                          <CheckCircle className="h-4 w-4 text-emerald-500" />
-                        )}
-                      </button>
-                    ))}
+                <div
+                  className="fixed inset-0 z-10"
+                  onClick={() => {
+                    setIsCityDropdownOpen(false);
+                    setCitySearchTerm('');
+                  }}
+                />
+                <div className={`absolute top-full mt-4 w-[280px] bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-2xl shadow-emerald-500/20 z-20 overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col ${isRTL ? 'right-0' : 'left-0'}`}>
+                  {/* City Search Field */}
+                  <div className="p-2 border-b border-gray-100 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-800/90 backdrop-blur-sm sticky top-0 z-10">
+                    <div className="relative flex items-center">
+                      <Search className={`absolute h-4 w-4 text-gray-400 pointer-events-none ${isRTL ? 'right-3' : 'left-3'}`} />
+                      <input
+                        type="text"
+                        autoFocus
+                        value={citySearchTerm}
+                        onChange={(e) => setCitySearchTerm(e.target.value)}
+                        placeholder={isRTL ? 'بحث عن مدينة...' : (language === 'fr' ? 'Rechercher une ville...' : 'Search city...')}
+                        className={`w-full py-2.5 ${isRTL ? 'pr-9 pl-7' : 'pl-9 pr-7'} text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 text-gray-900 dark:text-white placeholder-gray-400`}
+                      />
+                      {citySearchTerm && (
+                        <button
+                          type="button"
+                          onClick={() => setCitySearchTerm('')}
+                          className={`absolute ${isRTL ? 'left-2' : 'right-2'} p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 rounded-full`}
+                        >
+                          <X className="h-3.5 w-3.5" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Cities List */}
+                  <div className="max-h-[260px] overflow-y-auto custom-scrollbar p-2">
+                    {filteredCities.length > 0 ? (
+                      filteredCities.map((city) => (
+                        <button
+                          key={city.key}
+                          type="button"
+                          onClick={() => {
+                            onCityChange(city.key);
+                            setIsCityDropdownOpen(false);
+                            setCitySearchTerm('');
+                          }}
+                          className={`w-full px-4 py-3 text-left transition-all flex items-center justify-between rounded-xl mb-1 last:mb-0 ${selectedCity === city.key
+                            ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400'
+                            : 'hover:bg-gray-50 dark:hover:bg-gray-700/50 text-gray-700 dark:text-gray-300'
+                            }`}
+                        >
+                          <span className={`font-medium ${selectedCity === city.key ? 'font-bold' : ''}`}>{city.label}</span>
+                          {selectedCity === city.key && (
+                            <CheckCircle className="h-4 w-4 text-emerald-500" />
+                          )}
+                        </button>
+                      ))
+                    ) : (
+                      <div className="py-6 px-4 text-center text-xs text-gray-400 dark:text-gray-500 font-medium">
+                        {isRTL ? 'لم يتم العثور على أي مدينة' : (language === 'fr' ? 'Aucune ville trouvée' : 'No cities found')}
+                      </div>
+                    )}
                   </div>
                 </div>
               </>

@@ -66,4 +66,10 @@ export const medicationApi = {
     search: (query, page = 1, limit = 10) => api.get(`/medications/search?q=${query}&page=${page}&limit=${limit}`)
 };
 
+export const reviewApi = {
+    getReviews: (pharmacyId) => api.get(`/pharmacies/${pharmacyId}/reviews`),
+    submitReview: (pharmacyId, rating, comment) => api.post(`/pharmacies/${pharmacyId}/reviews`, { rating, comment }),
+    deleteReview: (pharmacyId, reviewId) => api.delete(`/pharmacies/${pharmacyId}/reviews/${reviewId}`)
+};
+
 export default api;

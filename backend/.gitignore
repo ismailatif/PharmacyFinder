@@ -1,5 +1,7 @@
 node_modules/
 .env
+.env*.local
+*.local
 *.log
 .DS_Store
 osrm-data/

@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const { language, setLanguage, t, isRTL } = useLanguage();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, getEffectiveTheme } = useTheme();
   const { user, isAuthenticated, logout } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -26,6 +26,8 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const isDarkMode = getEffectiveTheme ? getEffectiveTheme(theme) === 'dark' : theme === 'dark';
 
   return (
     <header
@@ -62,7 +64,7 @@ const Header = () => {
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle Theme"
             >
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
 
             {/* Language Switcher */}

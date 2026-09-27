@@ -21,16 +21,8 @@ export const AuthProvider = ({ children }) => {
       if (userData.preferences.language) {
         setLanguage(userData.preferences.language);
       }
-      if (userData.preferences.theme && userData.preferences.theme !== 'system') {
-        const theme = userData.preferences.theme;
-        setTheme(theme);
-        // Clean up view transition classes properly if needed, but context handles simple switching
-        const root = window.document.documentElement;
-        if (theme === 'dark') {
-          root.classList.add('dark');
-        } else {
-          root.classList.remove('dark');
-        }
+      if (userData.preferences.theme) {
+        setTheme(userData.preferences.theme, false);
       }
     }
   };
